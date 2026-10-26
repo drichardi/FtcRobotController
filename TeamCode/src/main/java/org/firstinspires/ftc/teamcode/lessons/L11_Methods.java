@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.lessons;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
@@ -21,6 +22,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  */
 
 @Autonomous(name = "L11 Methods", group = "Lessons")
+@Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
 public class L11_Methods extends LinearOpMode {
 
     // These are FIELDS: variables that belong to the whole class, not one method.

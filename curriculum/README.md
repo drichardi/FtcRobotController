@@ -45,6 +45,7 @@ curriculum/
 ├── lessons/00 … 16-*.md       ← student handouts (00 = GitHub Desktop + project tour)
 └── reference/
     ├── blocks-to-java.md      ← student cheat sheet (print it!)
+    ├── deploying-and-managing.md ← deploy (USB/Wi-Fi), menu cleanup, deploy troubleshooting
     └── frc-bridge.md          ← how this maps to FRC / WPILib
 
 TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/
@@ -52,9 +53,11 @@ TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/
 └── RobotHardware.java                              ← the robot class (Lessons 15–16)
 ```
 
-All 17 Java files compile against FTC SDK 12.0 (this fork's version). They show up on the
-Driver Station under the group **Lessons**. Answer keys and checkpoint quizzes are kept
-**outside** this repository so students can't see them.
+All 17 Java files compile against FTC SDK 12.0 (this fork's version). The original lesson
+OpModes are marked **`@Disabled`** so they don't fill up the Driver Station menu. Students delete
+that line in their own copies (Lesson 00, Step 7). To demo an original yourself, remove
+`@Disabled` locally, deploy, and don't commit that change. Answer keys and checkpoint quizzes are
+kept **outside** this repository so students can't see them.
 
 ---
 
@@ -89,7 +92,7 @@ About 2.5 sessions per week. Adjust the week column to your A/B calendar.
 | 9 | 4 | **Checkpoint 1:** Bronze license *(build-heavy day)* | Units 1–3 review | Drive test | 25 |
 | 10 | 4 | [09 Loops](lessons/09-loops.md) | `for` / `while`, off-by-one | Autonomous patterns | 40 |
 | 11 | 5 | [10 Timer Auto](lessons/10-timer-auto.md) | Loop conditions, nested loops | `ElapsedTime`, non-blocking code | 40 |
-| 12 | 5 | **FTCSIM Java challenge day** / catch-up *(build-heavy day)* | Practice | Sim puzzles in Java | 25 |
+| 12 | 5 | **FTCSIM Java challenge day** / catch-up + **menu cleanup** ([deploying & managing](reference/deploying-and-managing.md)) *(build-heavy day)* | Practice | Sim puzzles in Java, `@Disabled`, deleting files | 25 |
 | 13 | 6 | [11 Methods](lessons/11-methods.md) | Methods, parameters, fields | Reusable drive commands | 40 |
 | 14 | 6 | [12 Encoder Drive](lessons/12-encoder-drive.md) | Return values, constants, casting | Encoders, `RUN_TO_POSITION`, calibration | 45 |
 | 15 | 6 | [13 Toggle](lessons/13-toggle.md) + **Checkpoint 2:** Silver license | State, edge detection | Servos, toggles | 45 |
@@ -155,6 +158,9 @@ your fork (drichardi/FtcRobotController)      ← you add and update lessons her
 - [ ] **Clone folder:** pick a short local path that isn't synced to the cloud (for example
   `C:\Robotics`). OneDrive-synced folders cause random build failures.
 - [ ] **USB-C data cables** for deploying to each Control Hub. Some cables only charge.
+- [ ] **Clear old Blocks and OnBot Java programs** off each Control Hub. An Android Studio deploy
+  doesn't remove them, so they'd stay on the menu. Download any worth keeping first. Steps are in
+  [deploying-and-managing.md](reference/deploying-and-managing.md#leftover-blocks-and-onbot-java-programs).
 - [ ] Write your fork's URL in Step 1 of the Lesson 00 handout (or on the board).
 
 *Alternative:* GitHub Classroom group assignments can create group repos for you and skip
@@ -236,7 +242,9 @@ makes the programming matter to the whole team.
 
 | Symptom | Likely cause |
 |---|---|
-| OpMode isn't on the Driver Station menu | Build didn't finish or failed; wrong annotation; looking under TeleOp for an `@Autonomous` |
+| OpMode isn't on the Driver Station menu | Student didn't delete `@Disabled` in their copy; build didn't finish or failed; looking under TeleOp for an `@Autonomous` |
+| Teammate's program vanished, or a deleted one came back | Someone deployed without pulling first. See [deploying-and-managing.md](reference/deploying-and-managing.md) |
+| Nobody in a group can deploy | Someone pushed code that doesn't build. The **Build** tab shows whose file. |
 | Error at INIT: "unable to find a hardware device" | Name in code doesn't match the configuration (check capitals and `_`) |
 | Robot spins when it should drive straight | Missing or wrong `setDirection(REVERSE)` |
 | Pushing stick up drives backward | Forgot the `-` on `left_stick_y` |

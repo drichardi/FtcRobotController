@@ -3,7 +3,7 @@
 **Code:** [`L11_Methods.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L11_Methods.java)
 **Big idea:** **Abstraction.** Give a chunk of code a name, then use the name instead of the details.
 **Hardware:** `left_drive`, `right_drive`.
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, and give it a unique `name` ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
 
 ---
 

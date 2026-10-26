@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.lessons;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 /*
@@ -14,6 +15,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  */
 
 @Autonomous(name = "L16 Auto With Class", group = "Lessons")
+@Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
 public class L16_AutoWithClass extends LinearOpMode {
 
     // How far each wheel travels for a 90 degree spin. Measure and tune on YOUR robot!

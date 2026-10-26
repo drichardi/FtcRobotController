@@ -145,12 +145,21 @@ the file is in.
 2. Right-click **your** folder → **Paste**. In the *Copy Class* window, keep the name and click **OK**.
 3. Open **your** copy. Check that the `package` line now ends in `.students.yourname`.
    Android Studio changed it for you.
-4. Change the annotation so your program has a **unique** name:
+4. Find these two lines near the top of your copy:
+   ```java
+   @TeleOp(name = "L01 Hello Robot", group = "Lessons")
+   @Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
+   ```
+   Change them to this, using your own name:
    ```java
    @TeleOp(name = "L01 Hello Robot - Ava", group = "Ava")
    ```
-   *Why?* Everyone in your group copies the same lessons. If two programs have the same name,
-   the Robot Controller shows a duplicate-name warning and you can't tell whose program is whose.
+   - **Give it a unique name.** Everyone in your group copies the same lessons. If two programs
+     have the same name, the Robot Controller shows a duplicate-name warning and you can't tell
+     whose program is whose.
+   - **Delete the `@Disabled` line.** The teacher's originals are hidden so they don't fill the
+     menu. Your copy needs that line gone so it shows up. (The `import ... Disabled;` line near
+     the top can stay. Android Studio will just gray it out as unused.)
 
 ## Step 8 · Deploy to the robot (take turns)
 1. Plug the Control Hub into your laptop with a USB-C **data** cable, and turn the robot on.
@@ -162,6 +171,10 @@ the file is in.
 > 💡 **Important:** Deploying replaces **all** the code on the Control Hub with **your laptop's**
 > version. If a teammate pushed new code and you didn't pull it, their programs vanish from the
 > robot until someone deploys again. **Pull before you deploy.**
+
+📘 Keep [**Deploying and Managing Programs**](../reference/deploying-and-managing.md) handy.
+It explains what a deploy really does, how to deploy over Wi-Fi, how to clean up a crowded
+Driver Station menu, and how to fix deploy errors.
 
 ## Step 9 · Your first commit and push
 1. Switch to **GitHub Desktop**. The **Changes** tab lists every file you changed.
@@ -182,7 +195,8 @@ Do this **every** class, starting today.
 **▶ Start of class**
 1. GitHub Desktop → **Fetch origin** → **Pull origin**.
 2. Open Android Studio. If it asks, click **Sync Now**.
-3. Copy today's lesson from `lessons/` into **your** folder and give it a unique `name`.
+3. Copy today's lesson from `lessons/` into **your** folder, give it a unique `name`, and delete its `@Disabled` line.
+4. Menu getting long? Add `@Disabled` to your old lessons ([how](../reference/deploying-and-managing.md#cleaning-up-the-driver-station-menu)).
 
 **■ End of class** (5 minutes before cleanup)
 1. Make sure your code builds: **Build** → **Make Project** (the 🔨 hammer). Don't push broken code.
@@ -206,7 +220,8 @@ Do this **every** class, starting today.
 | Red errors in Android Studio after pulling | Android Studio needs to re-read the project | **File** → **Sync Project with Gradle Files** |
 | Group repo isn't in the Clone list | Invite not accepted, or signed into the wrong account | Accept the invite at github.com/notifications, then check **File → Options → Accounts** |
 | Control Hub isn't in the device dropdown | Cable or connection problem | Try another port or cable (some cables only charge). Make sure the robot is on. |
-| My OpMode isn't on the Driver Station | Deploy failed, or it's under another name | Did the bottom bar say *Launch succeeded*? Look under your group name. Is there an `@Disabled` line? |
+| My OpMode isn't on the Driver Station | `@Disabled` is still there, the deploy failed, or it's under another name | Delete `@Disabled` from **your copy**. Did the bottom bar say *Launch succeeded*? Look under your name. Autonomous programs are in a separate menu from TeleOp. |
+| Build fails because of an error in a teammate's file | They pushed code that doesn't build | Tell them. They fix it and push, then you pull. More fixes are in [Deploying and Managing](../reference/deploying-and-managing.md#deploy-troubleshooting). |
 | I broke my file and want it back | — | GitHub Desktop: right-click the file in **Changes** → **Discard changes**. ⚠️ This throws away everything since your last commit. |
 
 ---

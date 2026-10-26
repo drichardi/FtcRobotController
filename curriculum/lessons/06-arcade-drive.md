@@ -3,7 +3,7 @@
 **Code:** [`L06_ArcadeDrive.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L06_ArcadeDrive.java)
 **Big idea:** **Expressions.** Combine variables with math to create the behavior you want.
 **Hardware:** `left_drive`, `right_drive`.
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, and give it a unique `name` ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
 
 ---
 
