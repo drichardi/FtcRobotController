@@ -2,7 +2,8 @@
 import html
 import os
 
-OUT = r"G:\Eng_Robotics\FtcRobotController\curriculum\images"
+# The .svg files are written to curriculum/images/ (the folder above this one).
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 ACC = "#e8590c"      # callout / highlight orange
 INK = "#1f2328"
