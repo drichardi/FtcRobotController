@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.lessons;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -18,6 +19,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  */
 
 @TeleOp(name = "L15 TeleOp With Class", group = "Lessons")
+@Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
 public class L15_TeleOpWithClass extends LinearOpMode {
 
     @Override

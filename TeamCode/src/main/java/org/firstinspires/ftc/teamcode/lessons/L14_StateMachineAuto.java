@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.lessons;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.TouchSensor;
@@ -24,6 +25,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 
 @Autonomous(name = "L14 State Machine Auto", group = "Lessons")
+@Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
 public class L14_StateMachineAuto extends LinearOpMode {
 
     // Our own type. A variable of type AutoState can ONLY hold one of these four values.

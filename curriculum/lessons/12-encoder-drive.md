@@ -3,7 +3,7 @@
 **Code:** [`L12_EncoderDrive.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L12_EncoderDrive.java)
 **Big idea:** Methods can **return** an answer. **Constants** (`static final`) keep important numbers in one place.
 **Hardware:** `left_drive`, `right_drive`, **with encoder cables plugged in.**
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, and give it a unique `name` ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
 
 ---
 

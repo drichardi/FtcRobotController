@@ -3,7 +3,7 @@
 **Code:** [`L16_AutoWithClass.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L16_AutoWithClass.java) (uses `RobotHardware.java`)
 **Big idea:** **Reuse.** One well-built class powers both TeleOp and Autonomous.
 **Hardware:** everything in `RobotHardware.init()`.
-**Start of class:** Pull, then copy `L16_AutoWithClass.java` into the **same** folder as your `RobotHardware.java` from Lesson 15 and give it a unique `name`. Delete any `import org.firstinspires.ftc.teamcode.lessons.RobotHardware;` line so it uses **your** robot class.
+**Start of class:** Pull, then copy `L16_AutoWithClass.java` into the **same** folder as your `RobotHardware.java` from Lesson 15, give it a unique `name`, and delete its `@Disabled` line. Delete any `import org.firstinspires.ftc.teamcode.lessons.RobotHardware;` line so it uses **your** robot class.
 
 ---
 

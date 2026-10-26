@@ -3,7 +3,7 @@
 **Code:** [`L14_StateMachineAuto.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L14_StateMachineAuto.java)
 **Big idea:** Break a complicated job into named **states** and the **transitions** between them. This is how real FTC and FRC autonomous code is built.
 **Hardware:** `left_drive`, `right_drive`, `touch_sensor`.
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, and give it a unique `name` ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
 
 ---
 

@@ -3,7 +3,7 @@
 **Code:** [`RobotHardware.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/RobotHardware.java) and [`L15_TeleOpWithClass.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L15_TeleOpWithClass.java)
 **Big idea:** A **class** is a blueprint; an **object** is a thing built from it. **Encapsulation** hides the details behind public methods.
 **Hardware:** everything in `RobotHardware.init()`.
-**Start of class:** Pull, then copy **both** `RobotHardware.java` and `L15_TeleOpWithClass.java` into your `students/yourname` folder (select both, then copy, so they stay linked). Give L15 a unique `name`. **Check:** if your L15 copy has a line `import org.firstinspires.ftc.teamcode.lessons.RobotHardware;`, delete it. Your L15 should use **your** `RobotHardware`, because you will be changing it.
+**Start of class:** Pull, then copy **both** `RobotHardware.java` and `L15_TeleOpWithClass.java` into your `students/yourname` folder (select both, then copy, so they stay linked). Give L15 a unique `name` and delete its `@Disabled` line. **Check:** if your L15 copy has a line `import org.firstinspires.ftc.teamcode.lessons.RobotHardware;`, delete it. Your L15 should use **your** `RobotHardware`, because you will be changing it.
 
 ---
 

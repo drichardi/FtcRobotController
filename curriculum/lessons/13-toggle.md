@@ -3,7 +3,7 @@
 **Code:** [`L13_Toggle.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L13_Toggle.java)
 **Big idea:** **State.** Sometimes the right action depends on what happened *before*.
 **Hardware:** `claw` servo.
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, and give it a unique `name` ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
 
 ---
 

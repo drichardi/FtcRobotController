@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.lessons;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -24,9 +25,11 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  *     The robot ignores them. They are notes for humans.
  */
 
-// The line starting with @ is an "annotation". It puts this program on the Driver Station
-// menu. "name" is what you'll see on the menu; "group" sorts it with the other lessons.
+// Lines starting with @ are "annotations". @TeleOp puts this program on the Driver Station
+// menu: "name" is what you'll see on the menu, and "group" sorts it under a heading.
+// @Disabled takes it back OFF the menu, so the teacher's originals don't crowd the list.
 @TeleOp(name = "L01 Hello Robot", group = "Lessons")
+@Disabled  // Hides this ORIGINAL from the menu. Delete this line in YOUR copy so your copy shows up.
 public class L01_HelloRobot extends LinearOpMode {
 
     @Override
