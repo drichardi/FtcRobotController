@@ -1,3 +1,12 @@
+> ## 🤖 Students: start here
+> This copy of the FTC SDK includes a self-guided **Blocks-to-Java course** with illustrated lessons.
+>
+> 👉 **[Open the student start page](curriculum/START-HERE.md)** · Teachers: [course guide](curriculum/README.md)
+>
+> *Everything below this box is FIRST's original FTC SDK documentation.*
+
+---
+
 ## NOTICE
 
 This repository contains the public FTC SDK for the BIOBUZZ (2026-2027) competition season.

@@ -118,3 +118,7 @@ Make the Driver Station show a 3-line "robot introduction": its name, what it wi
 | Telemetry doesn't change | Is `telemetry.update();` still there after your `addData` lines? |
 
 More help: [Blocks → Java cheat sheet](../reference/blocks-to-java.md)
+
+---
+<!-- lesson-nav -->
+[← Lesson 00: Getting the Code](00-getting-the-code.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 02: Drive in Sequence →](02-drive-sequence.md)

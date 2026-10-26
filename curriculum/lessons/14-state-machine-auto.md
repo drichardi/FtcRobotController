@@ -105,3 +105,7 @@ to do. Draw the diagram first, have a classmate check it, then code it.
 | A state ends instantly | Did the previous transition reset `stateTimer`? |
 | Two states seem to run at once | A `break;` is missing. |
 | The program never ends | Does some transition finally set the state to `DONE`? |
+
+---
+<!-- lesson-nav -->
+[← Lesson 13: Toggles](13-toggle.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 15: Robot Class: TeleOp →](15-robot-class-teleop.md)

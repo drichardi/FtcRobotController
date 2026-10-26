@@ -108,3 +108,7 @@ Start with `0.3 + ...`. How much more do you need to add when the trigger is ful
 | *incompatible types: … cannot be converted to boolean* | You probably wrote `=` where you meant `==`. |
 | Gear doesn't stick when I let go | The gear variable is declared inside the loop. Move it above. |
 | *'else' without 'if'* | A `}` is missing or extra just before the `else`. Click a brace to see its partner. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 06: Arcade Drive](06-arcade-drive.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 08: Sensors and Logic →](08-sensors-and-logic.md)

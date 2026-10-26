@@ -105,3 +105,7 @@ Create a "robot stat card" that uses at least one variable of each of the 4 type
 | *incompatible types* | You put the wrong kind of value in a box (like a decimal in an `int`). |
 | *cannot find symbol* | A name is misspelled, or a String is missing its quotes. |
 | *variable is already defined* | You wrote the type twice. Leave the type off when changing a variable. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 02: Drive in Sequence](02-drive-sequence.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 04: Reading the Gamepad →](04-gamepad-input.md)

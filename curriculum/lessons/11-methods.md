@@ -99,3 +99,7 @@ instead of `4`.
 | *cannot find symbol* for a motor inside a method | The motor variable is declared inside `runOpMode()`. It needs to be a field at the top of the class. |
 | *method … cannot be applied to given types* | You called it with the wrong number or types of arguments. Compare the call with the definition. |
 | *illegal start of expression* | A method is accidentally inside another method. Each method needs its own closing `}`. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 10: Timers](10-timer-auto.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 12: Encoders →](12-encoder-drive.md)

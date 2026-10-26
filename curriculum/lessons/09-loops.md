@@ -116,3 +116,7 @@ the `sleep` for driving straight. What is `sideTime` when `side` is 1? When it's
 | The square doesn't close | Tune `turnTimeMs` first, then `driveTimeMs`. Floors and batteries change the result. |
 | The loop never ends | Does the loop's question ever become false? Is something changing the counter? |
 | STOP doesn't stop it right away | Add `&& opModeIsActive()` to the loop's question. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 08: Sensors and Logic](08-sensors-and-logic.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 10: Timers →](10-timer-auto.md)

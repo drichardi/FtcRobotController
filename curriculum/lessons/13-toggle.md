@@ -124,3 +124,7 @@ variable. To keep it between 0 and 10, add `&& number < 10` (or `> 0`) to the ri
 | The toggle flickers or lands randomly | The memory line is missing, or it's above the `if`. |
 | It never toggles | The memory line is above the `if`, or the memory variable is declared inside the loop. |
 | The servo buzzes or strains | It's being pushed past what the claw can reach. Bring the positions closer together. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 12: Encoders](12-encoder-drive.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 14: State Machines →](14-state-machine-auto.md)
