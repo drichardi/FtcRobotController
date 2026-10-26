@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  *
  *   int      whole numbers              int teamNumber = 12345;
  *   double   numbers with decimals      double wheelDiameter = 3.78;
- *   boolean  true or false              boolean isRedAlliance = true;
+ *   boolean  true or false              boolean hasClaw = true;
  *   String   text (capital S!)          String robotName = "Sparky";
  *
  * In Blocks you made a variable once and could put anything in it.
@@ -30,7 +30,7 @@ public class L03_Variables extends LinearOpMode {
         // --- Declaring variables:  type  name  =  value; ---
         String robotName = "Sparky";
         int teamNumber = 12345;
-        boolean isRedAlliance = true;
+        boolean hasClaw = true;
         double wheelDiameterInches = 3.78;
 
         // --- Doing math with variables ---
@@ -53,7 +53,7 @@ public class L03_Variables extends LinearOpMode {
 
         telemetry.addData("Robot", robotName);
         telemetry.addData("Team", teamNumber);
-        telemetry.addData("Red alliance?", isRedAlliance);
+        telemetry.addData("Has a claw?", hasClaw);
         telemetry.addData("Wheel circumference (in)", wheelCircumference);
         telemetry.addData("Distance for 10 rotations (in)", inchesPerTenRotations);
         telemetry.addData("7 / 2 with ints", cookiesEach);

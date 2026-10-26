@@ -34,5 +34,11 @@ Run it and fill in the "Actual" column. Which surprised you?
 ## 5. Make
 Create a "robot stat card" that uses at least one variable of each of the 4 types and at least two math operations.
 
+## 🔁 Other half: Autonomous
+Open your copy of **L02 Drive Sequence**. The numbers `0.5` and `1000` appear several times.
+1. Create `double drivePower = 0.5;` and `long driveTimeMs = 1000;` above `waitForStart()`.
+2. Replace the matching numbers in the steps with your variables.
+3. Now speed up the whole routine by changing **one** line. Why is that better than hunting for every `0.5`?
+
 ---
-**Exit ticket:** Which type would you use for: (a) number of game pieces scored, (b) motor power, (c) whether the claw is open, (d) the alliance color? Why?
+**Exit ticket:** Which type would you use for: (a) the number of cones the robot drove around, (b) motor power, (c) whether the claw is open, (d) your robot's name? Why?

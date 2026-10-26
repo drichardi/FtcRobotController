@@ -23,11 +23,24 @@ Run it once with a wall in front of the robot and once without.
 4. There is no `sleep()` anywhere. Why does that matter if you wanted to raise an arm *while* driving?
 
 ## 5. Modify
-1. Add a `WAIT` state at the very beginning that waits 1 second before driving. Real teams use this so they don't crash into their alliance partner!
+1. Add a `WAIT` state at the very beginning that waits 1 second before driving. That gives whoever pressed START time to step back from the robot.
 2. Change the `TURN` state to turn the other way.
 
 ## 6. Make
-Design a state machine for a task in **this season's game** that your robot will actually do in autonomous. Draw the diagram first, have another team check it, then code it.
+Design a state machine for **three sections of the obstacle course** in a row (for example:
+straightaway → turn → drive to the wall). Draw the diagram first, have another group check it,
+then code it. 🏁 That's **Level 6**.
+
+## 🔁 Other half: TeleOp, one-button pick-up
+State machines let driver control run a sequence **without** `sleep()`, so the driver can keep
+steering. In your TeleOp, pressing B starts this sequence:
+
+`IDLE → OPEN claw (0.3 s) → CLOSE claw (0.3 s) → LIFT arm (0.5 s) → IDLE`
+
+Each state does its action and moves on when its timer runs out, just like this lesson's autonomous.
+Driving code goes **outside** the `switch` so it runs every loop.
+1. Can you drive while the sequence runs? Compare with the wiggle button from Lesson 09.
+2. Bonus: pressing B again in the middle **cancels** the sequence and goes back to `IDLE`.
 
 ---
 **Exit ticket:** Name the states and transitions for a microwave oven (door, start button, timer, beep).

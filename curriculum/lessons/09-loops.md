@@ -27,5 +27,15 @@ Run it. Tune `driveTimeMs` and `turnTimeMs` until the square nearly closes. Reco
 ## 5. Make — Square spiral
 Make each side **longer** than the one before by using the loop variable `side` in the math for the drive time. Drive 8 sides.
 
+## 🔁 Other half: TeleOp
+Add a "wiggle" button to your arcade drive TeleOp: when X is pressed, a `for` loop spins the
+robot left then right 3 times (about 150 ms each, using `sleep`).
+1. Press X while driving. Can you steer during the wiggle? Why not?
+2. Hold X down. What happens, and why?
+*(This is the problem with `sleep()` in driver control. Lessons 10 and 14 show the fix.)*
+
+🏁 **Obstacle course:** **Level 3**: drive the straightaway and first turn autonomously, then
+switch to your TeleOp and finish by hand.
+
 ---
 **Exit ticket:** When would you choose a `for` loop instead of a `while` loop? Give a robot example of each.

@@ -25,5 +25,13 @@ Run it. Then tune `INCHES_PER_90_DEGREE_TURN` until the turn is a clean 90°. Re
 ## 5. Make
 Move turning **into** `RobotHardware` as `turnDegrees(double degrees, double power)`. Calculate the inches from the degrees using your tuned value (90° → `INCHES_PER_90_DEGREE_TURN`). Now any OpMode can turn any angle.
 
+## 🔁 Other half: TeleOp "nudge" button
+Add a button to your L15 TeleOp copy: pressing X calls `robot.encoderDrive(6, 6, 0.3, 2.0)` to
+move forward exactly 6 inches. That's handy for lining up a pick-up on the obstacle course.
+1. What happens to the joysticks during the nudge? Why?
+2. Is that OK for a short 6" move? When would it **not** be OK?
+
+🏁 **Obstacle course:** **Level 7**: the whole course autonomously, pick-up included.
+
 ---
 **Exit ticket:** You find a bug in `encoderDrive`. How many files do you need to fix? Before this unit, how many would it have been?

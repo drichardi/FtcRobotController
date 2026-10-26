@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  * Big idea: REUSE. TeleOp (L15) and this Autonomous share one RobotHardware class.
  * Fix a bug or tune a constant there, and BOTH programs get better.
  *
- * Plan: grab a game piece, drive forward 24", turn ~90 degrees, drive 12", drop it, back away.
+ * Plan: grab a block, drive forward 24", turn ~90 degrees, drive 12", drop it, back away.
  *
  * ROBOT CONFIGURATION NEEDED: everything listed in RobotHardware.init()
  */
@@ -25,7 +25,7 @@ public class L16_AutoWithClass extends LinearOpMode {
     public void runOpMode() {
         RobotHardware robot = new RobotHardware(this);
         robot.init();
-        telemetry.addData("Status", "Ready. Preload a game piece in the claw.");
+        telemetry.addData("Status", "Ready. Put a block in the claw.");
         telemetry.update();
 
         waitForStart();

@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /*
  * LESSON 14 - State Machines
  * Big idea: break a complicated job into named STATES and the rules for moving between them.
- * This is how real competition autonomous programs (FTC and FRC) are built.
+ * This is how real FTC and FRC teams organize their autonomous code.
  *
  *   DRIVE_TO_WALL --(bumper hit OR 4 s)--> BACK_UP --(0.5 s)--> TURN --(0.6 s)--> DONE
  *

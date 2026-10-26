@@ -43,5 +43,13 @@ One of these changes builds just fine. Why do you think that is?
 ## 6. Make
 Make the Driver Station show a 3-line "robot introduction": its name, what it will do, and a fun fact.
 
+## 🔁 Other half: Autonomous
+Make a second copy of your Hello Robot, named `L01 Hello Auto - yourname`. Change `@TeleOp` to
+`@Autonomous`, and the matching `import` line from `...opmode.TeleOp` to `...opmode.Autonomous`.
+Deploy it.
+1. Where does it show up on the Driver Station now?
+2. What's different about how you start it?
+From here on, every lesson has a part for **driver control** and a part for **autonomous**.
+
 ---
 **Exit ticket:** Name three rules of Java that Blocks never made you think about.

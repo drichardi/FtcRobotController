@@ -20,11 +20,19 @@ Drive the robot around. Find the **Input**, **Process**, and **Output** sections
 3. Why is `maxSpeed` a variable instead of typing `0.5` in two places?
 
 ## 4. Modify
-1. Find the `maxSpeed` that your drive team likes best.
+1. Find the `maxSpeed` that your drivers like best.
 2. Make the robot drive **backward** when sticks are pushed up (a "reverse mode" for driving back to the start).
 
 ## 5. Make
 Add telemetry that shows the robot's *average* power: `(leftPower + rightPower) / 2`. When is it 0 even though the wheels are moving?
+
+## 🔁 Other half: Autonomous
+In your L02 copy, the `drivePower` variable from Lesson 03 does the same job as `maxSpeed` here.
+1. Run your sequence on the obstacle course's straightaway. Mark where the robot stops.
+2. Change **only** `drivePower` from `0.5` to `0.8`. Where does it stop now?
+3. Why does that make **timed** autonomous tricky? *(Hold that thought for Lesson 12.)*
+
+🏁 **Obstacle course:** you can now try **Level 1**: drive the whole course by hand.
 
 ---
 **Exit ticket:** Write the Input, Process, and Output for something that isn't a robot (a microwave, a video game, a thermostat…).

@@ -34,5 +34,18 @@ Test both predictions.
 ## 6. Make
 Use `gamepad1.rumble(200);` to make the gamepad buzz when the driver tries to go past the top limit. (Bonus: how do you stop it from buzzing nonstop?)
 
+## 🔁 Other half: Autonomous
+Write an autonomous that raises the arm **until the limit switch is pressed**, then stops:
+```java
+waitForStart();
+while (opModeIsActive() && !topLimit.isPressed()) {
+    arm.setPower(0.4);
+}
+arm.setPower(0);
+```
+1. Read the `while` condition out loud. When does the loop end?
+2. What happens if the touch sensor is unplugged or never gets pressed? Why is that dangerous?
+   *(Lesson 10 fixes this with a timer.)*
+
 ---
-**Exit ticket:** A safety rule says "the robot can only shoot if the flywheel is up to speed AND the driver presses the trigger AND we are NOT in endgame." Write it as one Java boolean expression.
+**Exit ticket:** A rule says "the arm may go up only if the driver presses Y AND the arm is NOT at the top AND the claw is closed." Write it as one Java boolean expression.

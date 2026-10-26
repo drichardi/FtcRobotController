@@ -58,7 +58,7 @@ Useful when the robot is on the field and you don't want to chase it with a cabl
 ---
 
 ## Cleaning up the Driver Station menu
-Each lesson adds a program to your folder. By Week 6 your group could have 50+ programs on the
+Each lesson adds a program to your folder. After a dozen lessons your group could have 50+ programs on the
 menu. Two tools fix that:
 
 ### Option 1: `@Disabled` (hide it, keep it)
@@ -83,8 +83,8 @@ the file is there. Nothing you ever committed is truly lost.
 
 ### Group menu rule
 Agree on a limit as a group. A good one: **each person keeps at most 3 of their own programs
-enabled** (the current lesson and the one or two you're still working on). Do a cleanup on
-catch-up days.
+enabled** (the current lesson and the one or two you're still working on). Do a cleanup
+every few lessons, and before obstacle course runs.
 
 ### Why the teacher's originals are hidden
 Every file in `lessons/` already has `@Disabled`, so the 17 originals never clutter the menu.
