@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-label="Encoders: from ticks to inches">
+<title>Encoders: from ticks to inches</title>
+<defs><marker id="m1f883d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f883d"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="419" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Encoders count how far the wheel turns</text>
+<rect x="30" y="60" width="280" height="300" rx="10" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<rect x="70" y="140" width="120" height="70" rx="8" fill="#57606a" stroke="none" stroke-width="1"/>
+<text x="130" y="182" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">motor</text>
+<circle cx="220" cy="175" r="30" fill="#ffffff" stroke="#e8590c" stroke-width="3"/>
+<line x1="240.0" y1="175.0" x2="248.0" y2="175.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="237.32050807568876" y1="185.0" x2="244.2487113059643" y2="189.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="230.0" y1="192.32050807568876" x2="234.0" y2="199.2487113059643" stroke="#e8590c" stroke-width="2"/>
+<line x1="220.0" y1="195.0" x2="220.0" y2="203.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="210.0" y1="192.32050807568876" x2="206.0" y2="199.2487113059643" stroke="#e8590c" stroke-width="2"/>
+<line x1="202.67949192431124" y1="185.0" x2="195.7512886940357" y2="189.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="200.0" y1="175.0" x2="192.0" y2="175.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="202.6794919243112" y1="165.0" x2="195.7512886940357" y2="161.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="210.0" y1="157.67949192431124" x2="206.0" y2="150.75128869403574" stroke="#e8590c" stroke-width="2"/>
+<line x1="220.0" y1="155.0" x2="220.0" y2="147.0" stroke="#e8590c" stroke-width="2"/>
+<line x1="230.0" y1="157.67949192431124" x2="234.0" y2="150.7512886940357" stroke="#e8590c" stroke-width="2"/>
+<line x1="237.32050807568876" y1="165.0" x2="244.24871130596426" y2="161.0" stroke="#e8590c" stroke-width="2"/>
+<text x="170" y="250" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">The encoder counts “ticks”</text>
+<text x="170" y="272" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">as the shaft spins.</text>
+<text x="170" y="306" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">e.g. 537.7 ticks = 1 rotation</text>
+<text x="170" y="326" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">(look up YOUR motor)</text>
+<rect x="340" y="60" width="280" height="300" rx="10" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<circle cx="480" cy="170" r="70" fill="#ffffff" stroke="#1f2328" stroke-width="6"/>
+<circle cx="480" cy="170" r="8" fill="#1f2328" stroke="none" stroke-width="1"/>
+<line x1="410" y1="170" x2="550" y2="170" stroke="#0969da" stroke-width="2"/>
+<text x="480" y="162" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#0969da" font-weight="normal" text-anchor="middle" xml:space="preserve">diameter</text>
+<path d="M420,120 A78,78 0 0 1 540,120" stroke="#1f883d" stroke-width="3" fill="none" marker-end="url(#m1f883d)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="480" y="278" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">One rotation rolls the robot</text>
+<text x="480" y="300" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">π × diameter inches</text>
+<text x="480" y="326" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">(the wheel’s circumference)</text>
+<rect x="650" y="60" width="300" height="300" rx="10" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<text x="800" y="100" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">Put them together</text>
+<text x="800" y="140" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">ticks per inch =</text>
+<text x="800" y="168" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#e8590c" font-weight="normal" text-anchor="middle" xml:space="preserve">ticks per rotation</text>
+<line x1="700" y1="178" x2="900" y2="178" stroke="#1f2328" stroke-width="2"/>
+<text x="800" y="200" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f883d" font-weight="normal" text-anchor="middle" xml:space="preserve">π × diameter</text>
+<text x="800" y="250" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">To drive 24 inches:</text>
+<text x="800" y="274" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">target = 24 × ticks per inch</text>
+<text x="800" y="310" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">Battery low? Still 24 inches.</text>
+<text x="800" y="330" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">(Time-based driving can’t say that.)</text>
+<text x="490" y="395" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">Gears between the motor and wheel? Multiply ticks per rotation by the gear ratio.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="520" viewBox="0 0 820 520" role="img" aria-label="The game loop">
+<title>The game loop</title>
+<defs><marker id="m59636e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker></defs>
+<rect x="0.5" y="0.5" width="819" height="519" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">The game loop: every TeleOp works like this</text>
+<rect x="340" y="54" width="140" height="36" rx="8" fill="#dafbe1" stroke="#1f883d" stroke-width="1.5"/>
+<text x="410.0" y="76.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">START pressed</text>
+<line x1="410" y1="92" x2="410" y2="116" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<rect x="300" y="120" width="220" height="84" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.5"/>
+<text x="410.0" y="147.65" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">1  READ</text>
+<text x="410.0" y="166.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">gamepad sticks,</text>
+<text x="410.0" y="185.45000000000002" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">buttons, sensors</text>
+<rect x="560" y="230" width="220" height="84" rx="8" fill="#fbefff" stroke="#8250df" stroke-width="1.5"/>
+<text x="670.0" y="267.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">2  DECIDE</text>
+<text x="670.0" y="286.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">math, if / else</text>
+<rect x="300" y="370" width="220" height="84" rx="8" fill="#fff1e5" stroke="#e8590c" stroke-width="1.5"/>
+<text x="410.0" y="397.65" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">3  ACT</text>
+<text x="410.0" y="416.54999999999995" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">setPower(),</text>
+<text x="410.0" y="435.44999999999993" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">setPosition()</text>
+<rect x="40" y="230" width="220" height="84" rx="8" fill="#fff8c5" stroke="#bf8700" stroke-width="1.5"/>
+<text x="150.0" y="267.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">4  SHOW</text>
+<text x="150.0" y="286.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">telemetry.update()</text>
+<path d="M522,162 Q660,170 668,226" stroke="#59636e" stroke-width="2" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M668,318 Q660,400 524,408" stroke="#59636e" stroke-width="2" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M298,408 Q160,400 152,318" stroke="#59636e" stroke-width="2" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M152,226 Q160,170 296,162" stroke="#59636e" stroke-width="2" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="410" y="278" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">while (opModeIsActive())</text>
+<text x="410" y="302" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">repeats about 50+ times every second</text>
+<rect x="40" y="470" width="740" height="36" rx="8" fill="#ffebe9" stroke="#cf222e" stroke-width="1"/>
+<text x="410" y="494" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">STOP pressed → opModeIsActive() becomes false → the loop ends → the program ends</text>
+</svg>

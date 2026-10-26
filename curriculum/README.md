@@ -1,69 +1,72 @@
-# Blocks to Java: A Robotics Programming Guide
+# Blocks to Java: A Robotics Programming Resource
 
-A set of lessons, handouts, and working robot code to help students move from FTC Blocks to
-confident Java. It isn't a fixed schedule. Use the lessons in order, at whatever pace your
-build time allows, and skip or stretch as needed.
+A self-guided set of lessons, illustrated handouts, and working robot code that helps students
+move from FTC Blocks to confident Java. It's built for open-ended, project-based classes:
+students explore one lesson at a time on their own, and the teacher steps in with a short
+explanation when it helps.
 
-Everything points toward one shared goal: **each group gets its robot through a small
-obstacle course**, first by driving it, then autonomously.
+**Students start at [START-HERE.md](START-HERE.md).** This page is the teacher guide.
 
 ---
 
-## How to use this guide
-- **Lessons build on each other**, so go in order. Each one is a self-contained chunk of about
-  30–45 minutes that can be taught by the teacher or worked through by students on their own.
-- **Each handout uses the same five steps (PRIMM):** **P**redict what the code does → **R**un
-  it → **I**nvestigate with guided questions → **M**odify it → **M**ake something new.
-  Students always start from code that works, which is the gentlest move up from Blocks.
-- **Each handout pairs driver control (TeleOp) with autonomous.** Every lesson teaches its idea
-  in one mode, and the **🔁 Other half** section applies the same idea in the other mode. So
-  both kinds of program grow together, and both show up on the obstacle course.
-- **You don't need to finish every lesson.** The **core path** (Lessons 00–10) is enough to
-  drive the course by hand and get through part of it autonomously. Lessons 11–16 make the
-  code more precise and better organized.
+## How it's designed
+- **Self-guided.** Every handout explains its new idea in a **📖 Learn it** section with a
+  diagram, then walks students through it. If you give a short explanation, that section and its
+  diagram work as a ready-made 5-minute mini-lesson.
+- **Visual.** Lesson 00 has a picture for every step (GitHub, GitHub Desktop, Android Studio,
+  Driver Station), with numbered callouts that match the numbered instructions. Each lesson has
+  a concept diagram. All of them are in [`images/`](images/).
+- **The same five steps every time (PRIMM):** **P**redict what the code does → **R**un it →
+  **I**nvestigate with guided questions → **M**odify it → **M**ake something new. Students
+  always start from code that works, which is the gentlest move up from Blocks.
+- **Hints, not answers.** Harder questions have a collapsible 💡 hint, so students can get
+  unstuck without being handed the answer.
+- **Each lesson ends with a checklist and a "Stuck?" table**, so students can tell when
+  they're ready to move on and fix the most common problems on their own.
+- **One idea at a time.** Each lesson teaches one computer science idea through one robot
+  skill. Most lessons are either driver control (TeleOp) or autonomous, not both.
+- **Go at any pace.** Lessons take 30–45 minutes of focused work. Students can spread them
+  across build days however your class runs. Not everyone has to finish all 16.
 
 ### Habits that make it work
 - **Every student codes.** Every student has their own laptop and their own folder in the
-  group repo, so every line they commit is theirs. Students sit with a **buddy** working on
-  the same lesson, and compare predictions and explain their code to each other before moving on.
+  group repo, so every line they commit is theirs.
 - **Programming doesn't wait for the robot.** Give each group a [bench board](#the-bench-board)
   so code can be tested while the robot is being built. Several lessons need nothing but a
   Control Hub and a gamepad.
-- **Start with reading, end with a reflection.** A good warm-up is 5–8 lines of code on the board
-  with students predicting what it does. A good finish is the handout's one-question exit
-  ticket plus a quick engineering-notebook entry.
+- **Talk about code.** Encourage students to explain their code to a classmate before asking you.
+  Explaining it out loud finds a lot of bugs.
 
 ---
 
-## Learning path
+## Lessons
 
-| # | Lesson | CS idea | Robot skill | Main mode · 🔁 other half | Hardware |
+| # | Lesson | CS idea | Robot skill | Type | Hardware |
 |---|---|---|---|---|---|
 | 00 | [Getting the Code](lessons/00-getting-the-code.md) | Version control, packages | GitHub Desktop, Android Studio, deploying | — | Control Hub |
-| 01 | [Hello Robot](lessons/01-hello-robot.md) | Syntax, comments, errors | Telemetry | TeleOp · Auto | Hub only |
+| 01 | [Hello Robot](lessons/01-hello-robot.md) | Syntax, comments, errors | Telemetry | TeleOp | Hub only |
 | 02 | [Drive Sequence](lessons/02-drive-sequence.md) | Sequence | Motors, `sleep` | Auto | Drive motors |
-| 03 | [Variables](lessons/03-variables.md) | Variables, types, operators | — | (none) · Auto | Hub only |
-| 04 | [Gamepad Input](lessons/04-gamepad-input.md) | Input, the game loop | Gamepad | TeleOp · Auto | Hub + gamepad |
-| 05 | [Tank Drive](lessons/05-tank-drive.md) | Input → process → output | Driving by hand | TeleOp · Auto | Drive motors |
-| 06 | [Arcade Drive](lessons/06-arcade-drive.md) | Expressions | Arcade drive, arcs | TeleOp · Auto | Drive motors |
-| 07 | [Buttons and If](lessons/07-buttons-and-if.md) | `if`/`else`, scope | Speed modes, choosing a route | TeleOp · Auto | Drive motors |
-| 08 | [Sensors and Logic](lessons/08-sensors-and-logic.md) | Boolean logic | Touch sensor, arm limit | TeleOp · Auto | Arm + touch sensor |
-| 09 | [Loops](lessons/09-loops.md) | `for`/`while`, off-by-one | Repeated moves | Auto · TeleOp | Drive motors |
-| 10 | [Timer Auto](lessons/10-timer-auto.md) | Loop conditions | Timers, stop on a sensor | Auto · TeleOp | Drive + touch sensor |
-| 11 | [Methods](lessons/11-methods.md) | Methods, parameters | Reusable moves | Auto · TeleOp | Drive motors |
-| 12 | [Encoder Drive](lessons/12-encoder-drive.md) | Return values, constants | Driving by inches | Auto · TeleOp | Drive motors with encoders |
-| 13 | [Toggle](lessons/13-toggle.md) | State, edge detection | Claw toggle, picking a route during INIT | TeleOp · Auto | Claw servo |
-| 14 | [State Machine](lessons/14-state-machine-auto.md) | Enums, `switch` | Multi-step routines | Auto · TeleOp | Drive + touch sensor |
-| 15 | [Robot Class: TeleOp](lessons/15-robot-class-teleop.md) | Classes, objects | One hardware class for all programs | TeleOp · Auto | Everything |
-| 16 | [Robot Class: Auto](lessons/16-robot-class-auto.md) | Reuse | Shared code across programs | Auto · TeleOp | Everything |
-| 🏁 | [Obstacle Course](obstacle-course.md) | Design → test → improve | Run the course by hand and autonomously | Both | Everything |
+| 03 | [Variables](lessons/03-variables.md) | Variables, types, operators | — | TeleOp | Hub only |
+| 04 | [Gamepad Input](lessons/04-gamepad-input.md) | Input, the game loop | Gamepad | TeleOp | Hub + gamepad |
+| 05 | [Tank Drive](lessons/05-tank-drive.md) | Input → process → output | Driving by hand | TeleOp | Drive motors |
+| 06 | [Arcade Drive](lessons/06-arcade-drive.md) | Expressions | Arcade drive | TeleOp | Drive motors |
+| 07 | [Buttons and If](lessons/07-buttons-and-if.md) | `if`/`else`, scope | Speed modes | TeleOp | Drive motors |
+| 08 | [Sensors and Logic](lessons/08-sensors-and-logic.md) | Boolean logic | Touch sensor, arm limit | TeleOp | Arm + touch sensor |
+| 09 | [Loops](lessons/09-loops.md) | `for`/`while`, off-by-one | Repeated moves | Auto | Drive motors |
+| 10 | [Timer Auto](lessons/10-timer-auto.md) | Loop conditions | Timers, stopping on a sensor | Auto | Drive + touch sensor |
+| 11 | [Methods](lessons/11-methods.md) | Methods, parameters | Reusable moves | Auto | Drive motors |
+| 12 | [Encoder Drive](lessons/12-encoder-drive.md) | Return values, constants | Driving by inches | Auto | Drive motors with encoders |
+| 13 | [Toggle](lessons/13-toggle.md) | State, edge detection | Claw toggle | TeleOp | Claw servo |
+| 14 | [State Machine](lessons/14-state-machine-auto.md) | Enums, `switch` | Multi-step routines | Auto | Drive + touch sensor |
+| 15 | [Robot Class: TeleOp](lessons/15-robot-class-teleop.md) | Classes, objects | One hardware class for all programs | TeleOp | Everything |
+| 16 | [Robot Class: Auto](lessons/16-robot-class-auto.md) | Reuse | Shared code across programs | Auto | Everything |
+
+**A natural stopping point** for students who need more time is after **Lesson 10**. By then
+they can drive by hand, use sensors, and write a simple autonomous. Lessons 11–16 make the code
+more precise and better organized.
 
 **Optional warm-up before Lesson 01:** [FTCSIM](#ftcsim). Students solve a few puzzles in Blocks,
 then switch to the Java view to see the same program as text.
-
-**Good times for an obstacle course run:** after **Lesson 07** (drive it by hand with speed
-modes), after **Lesson 10** (first autonomous section using timers), and after **Lesson 12 or 14**
-(more accurate autonomous). See [Obstacle Course](obstacle-course.md) for levels and logistics.
 
 ---
 
@@ -71,9 +74,10 @@ modes), after **Lesson 10** (first autonomous section using timers), and after *
 
 ```
 curriculum/
-├── README.md                     ← this guide
-├── obstacle-course.md            ← course ideas, levels, run log, one-group-at-a-time logistics
+├── START-HERE.md                 ← students begin here
+├── README.md                     ← this teacher guide
 ├── lessons/00 … 16-*.md          ← student handouts
+├── images/                       ← screen drawings (00-*.svg) and concept diagrams (concept-*.svg)
 └── reference/
     ├── blocks-to-java.md         ← cheat sheet (print it!)
     ├── deploying-and-managing.md ← deploying (USB/Wi-Fi), cleaning up the menu, deploy troubleshooting
@@ -84,11 +88,19 @@ TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/
 └── RobotHardware.java                              ← the robot class (Lessons 15–16)
 ```
 
-All 17 Java files compile against FTC SDK 12.0 (this fork's version). The original lesson
-OpModes are marked **`@Disabled`** so they don't fill up the Driver Station menu. Students delete
-that line in their own copies (Lesson 00, Step 7). To demo an original yourself, remove
-`@Disabled` locally, deploy, and don't commit that change. The answer key and optional skill
-checks are kept **outside** this repository so students can't see them.
+All 17 Java files compile against FTC SDK 12.0 (this fork's version), and each one is heavily
+commented for students. The original lesson OpModes are marked **`@Disabled`** so they don't
+fill up the Driver Station menu. Students delete that line in their own copies (Lesson 00,
+Step 7). To demo an original yourself, remove `@Disabled` locally, deploy, and don't commit that
+change.
+
+**About the pictures:** the screen images are simplified drawings, not real screenshots, and
+each one says so. They show the layout and where to click. If your versions of GitHub Desktop or
+Android Studio look different, the steps are the same. The images are SVG files, so you can open
+and edit their text in any text editor.
+
+The answer key and optional skill checks are kept **outside** this repository so students can't
+see them.
 
 ---
 
@@ -107,13 +119,14 @@ your fork (drichardi/FtcRobotController)      ← you add and update lessons her
 
 - **Each student copies lessons into their own folder** (`students/<name>`), gives each copy a
   unique name, and deletes `@Disabled`. Nobody ever edits the same file as someone else, so
-  beginners never hit merge conflicts. Obstacle-course code is the one exception: groups share
-  a folder and split the files by owner.
+  beginners never hit merge conflicts.
 - **Pushing new or fixed lessons to groups:** commit to your fork. Each group's Captain opens
   their repo on GitHub.com and clicks **Sync fork → Update branch**, and then everyone pulls.
   Because students never edit `lessons/`, this always goes through cleanly.
 - **Checking participation:** each group repo's **Insights → Contributors** page and commit
   history show who committed what.
+- **Later, for shared group projects:** when several students need to work in one shared
+  folder, have them agree on an **owner for each file**, and pull and push often.
 
 ### Before Lesson 00 (allow a week)
 - [ ] **GitHub accounts** for every student. GitHub requires users to be **13 or older**.
@@ -133,7 +146,6 @@ your fork (drichardi/FtcRobotController)      ← you add and update lessons her
 - [ ] **Clear old Blocks and OnBot Java programs** off each Control Hub. An Android Studio deploy
   doesn't remove them, so they'd stay on the menu. Download any worth keeping first. Steps are in
   [deploying-and-managing.md](reference/deploying-and-managing.md#leftover-blocks-and-onbot-java-programs).
-- [ ] Write your fork's URL in Step 1 of the Lesson 00 handout (or on the board).
 
 *Alternative:* GitHub Classroom group assignments can create group repos for you and skip
 Steps 1–2 of Lesson 00. However, a Classroom repo isn't a fork, so the one-click **Sync fork**
@@ -159,8 +171,7 @@ Programming usually gets left behind because the robot isn't done yet. To fix th
 group a **bench board**: a piece of plywood or a Tetrix/goBILDA plate with a Control Hub,
 battery, switch, 2 motors with wheels or flags taped on, 1 servo, and 1 touch sensor, all wired
 to the configuration above. Students can do every lesson on it while the real robot is being
-built, then move their code to the robot for obstacle course runs. Programmers learn wiring
-along the way, and groups waiting for the course have something real to test on.
+built. Programmers learn wiring along the way.
 
 ### FTCSIM
 [FTCSIM](https://ftcsim.org) (from FIRST Robotics Canada) runs in a browser and supports Blocks
@@ -172,22 +183,20 @@ each puzzle's Java view before pasting lesson code in.
 ---
 
 ## Checking understanding
-- **Exit tickets:** one question at the bottom of each handout. Use them to plan the next warm-up.
-- **Optional skill checks** (in the teacher answer key): two short individual checks, each with a
-  hands-on task and a code-reading quiz.
-  - **Ready to drive** (after Lesson 08): write arcade drive with a slow mode from a blank
-    OpMode. Consider requiring it before a student drives on the obstacle course.
+- **Checklists and exit tickets:** every handout ends with an "I can…" checklist and one exit
+  ticket question. A quick look at exit tickets shows who's ready to move on.
+- **Commit history:** each student's commits show steady progress (or a stall worth checking on).
+- **Optional skill checks** (in the teacher answer key): two short individual checks, each with
+  a hands-on task and a code-reading quiz.
+  - **Ready to drive** (after Lesson 08): write arcade drive with a slow mode from a blank OpMode.
   - **Ready for autonomous** (after Lesson 13): drive a square using methods and a timer loop.
-- **Obstacle course run log:** every group records what it changed between runs and why
-  (template in [obstacle-course.md](obstacle-course.md)). This is the clearest picture of how
-  well a group is thinking like engineers.
 
 ---
 
 ## Supporting different learners
 
 **For students who are flying:**
-- Every *Make* and *🔁 Other half* section is open-ended. Push for clean code, not just working code.
+- Every *Make* section is open-ended. Push for clean code, not just working code.
 - Extensions: IMU-based turning (`RobotAutoDriveByGyro_Linear` sample), mecanum drive
   (`BasicOmniOpMode_Linear` sample), AprilTags (`ConceptAprilTagEasy` sample). All of them are
   in this fork under `FtcRobotController/.../external/samples`.
@@ -196,9 +205,8 @@ each puzzle's Java view before pasting lesson code in.
 **For students who are struggling:**
 - Let them build the idea in Blocks first, then translate it with the cheat sheet.
 - Use **trace tables**: write each variable's value after every line on paper.
-- Pair them with a patient buddy and have them explain each line back. Reading and explaining
-  code counts as real programming practice.
-- Lower the bar to Predict/Run/Investigate + Modify #1. Skip *Make* and *Other half*.
+- Pair them with a patient classmate and have them explain each line back.
+- Lower the bar to Learn it + Predict/Run/Investigate + Modify #1. Skip *Make*.
 
 ---
 
@@ -220,7 +228,6 @@ each puzzle's Java view before pasting lesson code in.
 ---
 
 ## Going further
-- Keep the code-reading warm-ups going after the lessons end.
 - When students start on a real FTC robot, they can start a fresh package for that robot and
   copy in their `RobotHardware` class as a starting point.
 - FRC-bound students: read [frc-bridge.md](reference/frc-bridge.md) and then the WPILib

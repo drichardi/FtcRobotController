@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" role="img" aria-label="Driver Station: find and run your program">
+<title>Driver Station: find and run your program</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="499" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">A  Open the TeleOp list and find your name</text>
+<rect x="20" y="42" width="460" height="400" rx="14" fill="#212121" stroke="#000000" stroke-width="2"/>
+<rect x="30" y="52" width="440" height="380" rx="6" fill="#424242" stroke="none" stroke-width="1"/>
+<rect x="30" y="52" width="440" height="36" rx="6" fill="#1565c0" stroke="none" stroke-width="1"/>
+<text x="42" y="76" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="600" text-anchor="start" xml:space="preserve">1234-RC</text>
+<text x="454" y="76" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="normal" text-anchor="middle" xml:space="preserve">⋮</text>
+<rect x="36" y="102" width="130" height="32" rx="6" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<text x="101.0" y="122.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">Autonomous ▾</text>
+<rect x="334" y="102" width="130" height="32" rx="6" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<text x="399.0" y="122.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">TeleOp ▾</text>
+<rect x="331" y="99" width="136" height="38" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="312" cy="118" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="312" y="123" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<rect x="130" y="146" width="300" height="270" rx="4" fill="#fafafa" stroke="#9e9e9e" stroke-width="1"/>
+<text x="144" y="170" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="start" xml:space="preserve">Select TeleOp</text>
+<text x="144" y="200" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1565c0" font-weight="bold" text-anchor="start" xml:space="preserve">Ava</text>
+<rect x="136" y="208" width="288" height="26" rx="3" fill="#e3f2fd" stroke="none" stroke-width="1"/>
+<rect x="133" y="205" width="294" height="32" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="412" cy="221" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="412" y="226" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<text x="160" y="226" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">L01 Hello Robot - Ava</text>
+<text x="144" y="256" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1565c0" font-weight="bold" text-anchor="start" xml:space="preserve">Ben</text>
+<text x="160" y="282" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">L01 Hello Robot - Ben</text>
+<text x="144" y="312" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1565c0" font-weight="bold" text-anchor="start" xml:space="preserve">Cam</text>
+<text x="160" y="338" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">L01 Hello Robot - Cam</text>
+<text x="144" y="406" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="11" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">(grouped by the group = &quot;…&quot; in your code)</text>
+<text x="500" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">B  INIT, then START</text>
+<rect x="500" y="42" width="460" height="400" rx="14" fill="#212121" stroke="#000000" stroke-width="2"/>
+<rect x="510" y="52" width="440" height="380" rx="6" fill="#424242" stroke="none" stroke-width="1"/>
+<rect x="510" y="52" width="440" height="36" rx="6" fill="#1565c0" stroke="none" stroke-width="1"/>
+<text x="522" y="76" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="600" text-anchor="start" xml:space="preserve">1234-RC</text>
+<text x="934" y="76" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="normal" text-anchor="middle" xml:space="preserve">⋮</text>
+<text x="730" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="600" text-anchor="middle" xml:space="preserve">L01 Hello Robot - Ava</text>
+<rect x="650" y="138" width="160" height="54" rx="8" fill="#757575" stroke="none" stroke-width="1"/>
+<text x="730" y="173" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">INIT</text>
+<rect x="647" y="135" width="166" height="60" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="628" cy="165" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="628" y="170" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<circle cx="730" cy="228" r="26" fill="#43a047" stroke="none" stroke-width="1"/>
+<path d="M722,214 L742,228 L722,242 Z" stroke="#ffffff" stroke-width="1" fill="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="699" y="197" width="62" height="62" rx="28" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="784" cy="228" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="784" y="233" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">4</text>
+<text x="820" y="233" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="normal" text-anchor="start" xml:space="preserve">appears after INIT</text>
+<rect x="520" y="274" width="420" height="140" rx="4" fill="#303030" stroke="none" stroke-width="1"/>
+<text x="534" y="300" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#e0e0e0" font-weight="normal" text-anchor="start" xml:space="preserve">Status : Running!</text>
+<text x="534" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#e0e0e0" font-weight="normal" text-anchor="start" xml:space="preserve">Programmer : Ava and Ben</text>
+<text x="534" y="352" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#e0e0e0" font-weight="normal" text-anchor="start" xml:space="preserve">Seconds since INIT : 12.3</text>
+<text x="534" y="398" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#ffcc80" font-weight="normal" text-anchor="start" xml:space="preserve">← telemetry shows up here</text>
+<text x="966" y="489" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>

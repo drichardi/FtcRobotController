@@ -27,6 +27,8 @@ Keep this open while you code. Everything you did in Blocks has a Java twin.
 | `call sleep 1000` | `sleep(1000);` |
 
 ## Gamepad
+![Gamepad map with Java names](../images/concept-gamepad.svg)
+
 | Blocks | Java | Type |
 |---|---|---|
 | `gamepad1.LeftStickY` | `gamepad1.left_stick_y` | `double` (up is **negative**!) |

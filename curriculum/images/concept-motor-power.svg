@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img" aria-label="Motor power from -1.0 to 1.0">
+<title>Motor power from -1.0 to 1.0</title>
+<defs><marker id="m1f883d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f883d"/></marker><marker id="me8590c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8590c"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="429" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">setPower(…) takes a number from −1.0 to 1.0</text>
+<line x1="80" y1="90" x2="900" y2="90" stroke="#1f2328" stroke-width="3"/>
+<line x1="80.0" y1="80" x2="80.0" y2="100" stroke="#1f2328" stroke-width="3"/>
+<text x="80.0" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#cf222e" font-weight="bold" text-anchor="middle" xml:space="preserve">-1.0</text>
+<text x="80.0" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">full speed</text>
+<text x="80.0" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">backward</text>
+<line x1="285.0" y1="80" x2="285.0" y2="100" stroke="#1f2328" stroke-width="3"/>
+<text x="285.0" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#cf222e" font-weight="bold" text-anchor="middle" xml:space="preserve">-0.5</text>
+<text x="285.0" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">half speed</text>
+<text x="285.0" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">backward</text>
+<line x1="490.0" y1="80" x2="490.0" y2="100" stroke="#1f2328" stroke-width="3"/>
+<text x="490.0" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">0</text>
+<text x="490.0" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">stopped</text>
+<text x="490.0" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve"></text>
+<line x1="695.0" y1="80" x2="695.0" y2="100" stroke="#1f2328" stroke-width="3"/>
+<text x="695.0" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">+0.5</text>
+<text x="695.0" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">half speed</text>
+<text x="695.0" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">forward</text>
+<line x1="900.0" y1="80" x2="900.0" y2="100" stroke="#1f2328" stroke-width="3"/>
+<text x="900.0" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">+1.0</text>
+<text x="900.0" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">full speed</text>
+<text x="900.0" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">forward</text>
+<text x="20" y="196" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Each side of the robot has its own motor:</text>
+<rect x="140" y="266" width="80" height="100" rx="8" fill="#dfe6ee" stroke="#59636e" stroke-width="1.5"/>
+<text x="180" y="320" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">robot</text>
+<rect x="126" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<line x1="112" y1="332.0" x2="112" y2="300.0" stroke="#e8590c" stroke-width="3" marker-end="url(#me8590c)"/>
+<text x="112" y="368" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="middle" xml:space="preserve">+0.5</text>
+<rect x="226" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<line x1="248" y1="332.0" x2="248" y2="300.0" stroke="#e8590c" stroke-width="3" marker-end="url(#me8590c)"/>
+<text x="248" y="368" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="middle" xml:space="preserve">+0.5</text>
+<text x="180" y="398" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">both +0.5</text>
+<line x1="180" y1="258" x2="180" y2="224" stroke="#1f883d" stroke-width="4" marker-end="url(#m1f883d)"/>
+<text x="180" y="418" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">drives straight</text>
+<rect x="450" y="266" width="80" height="100" rx="8" fill="#dfe6ee" stroke="#59636e" stroke-width="1.5"/>
+<text x="490" y="320" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">robot</text>
+<rect x="436" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<line x1="422" y1="332.0" x2="422" y2="300.0" stroke="#e8590c" stroke-width="3" marker-end="url(#me8590c)"/>
+<text x="422" y="368" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="middle" xml:space="preserve">+0.5</text>
+<rect x="536" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<line x1="558" y1="300.0" x2="558" y2="332.0" stroke="#e8590c" stroke-width="3" marker-end="url(#me8590c)"/>
+<text x="558" y="276" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="middle" xml:space="preserve">-0.5</text>
+<text x="490" y="398" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">left +0.5, right −0.5</text>
+<path d="M462,250 Q490,224 518,250" stroke="#1f883d" stroke-width="4" fill="none" marker-end="url(#m1f883d)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="490" y="418" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">spins in place</text>
+<rect x="760" y="266" width="80" height="100" rx="8" fill="#dfe6ee" stroke="#59636e" stroke-width="1.5"/>
+<text x="800" y="320" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">robot</text>
+<rect x="746" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<rect x="846" y="286" width="8" height="60" rx="3" fill="#57606a" stroke="none" stroke-width="1"/>
+<text x="800" y="398" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">both 0</text>
+<text x="800" y="418" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">stops (until you change it)</text>
+</svg>

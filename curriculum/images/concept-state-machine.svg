@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="380" viewBox="0 0 980 380" role="img" aria-label="State machine example: a traffic light">
+<title>State machine example: a traffic light</title>
+<defs><marker id="m59636e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="379" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">A state machine: named states + rules for moving between them</text>
+<text x="20" y="58" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Example: a traffic light. It is always in exactly ONE state.</text>
+<circle cx="180" cy="170" r="62" fill="#ffffff" stroke="#1a7f37" stroke-width="4"/>
+<text x="180" y="176" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#1a7f37" font-weight="bold" text-anchor="middle" xml:space="preserve">GREEN</text>
+<circle cx="490" cy="170" r="62" fill="#ffffff" stroke="#bf8700" stroke-width="4"/>
+<text x="490" y="176" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#bf8700" font-weight="bold" text-anchor="middle" xml:space="preserve">YELLOW</text>
+<circle cx="800" cy="170" r="62" fill="#ffffff" stroke="#cf222e" stroke-width="4"/>
+<text x="800" y="176" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#cf222e" font-weight="bold" text-anchor="middle" xml:space="preserve">RED</text>
+<line x1="246" y1="170" x2="422" y2="170" stroke="#59636e" stroke-width="2.5" marker-end="url(#m59636e)"/>
+<text x="334" y="158" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">after 10 s</text>
+<line x1="556" y1="170" x2="732" y2="170" stroke="#59636e" stroke-width="2.5" marker-end="url(#m59636e)"/>
+<text x="644" y="158" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">after 3 s</text>
+<path d="M800,234 C780,320 200,320 180,236" stroke="#59636e" stroke-width="2.5" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="490" y="322" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">after 10 s</text>
+<line x1="60" y1="170" x2="114" y2="170" stroke="#59636e" stroke-width="2.5" marker-end="url(#m59636e)"/>
+<text x="40" y="165" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">start</text>
+<text x="20" y="362" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">In code: an enum lists the states, a switch runs the current state, and a timer decides when to move on.</text>
+</svg>

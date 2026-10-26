@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="460" viewBox="0 0 980 460" role="img" aria-label="Android Studio: copy a lesson into your folder">
+<title>Android Studio: copy a lesson into your folder</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="459" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">A  Right-click the lesson → Copy</text>
+<rect x="20" y="42" width="300" height="230" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M31,63.0 L35,67.0 L39,63.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45,60 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="65" y="70" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">lessons</text>
+<rect x="21" y="78" width="298" height="22" rx="0" fill="#2e436e" stroke="none" stroke-width="1"/>
+<circle cx="70" cy="89" r="7" fill="#3c7dd9" stroke="none" stroke-width="1"/>
+<text x="70" y="93" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">C</text>
+<text x="83" y="94" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">L01_HelloRobot</text>
+<circle cx="70" cy="113" r="7" fill="#3c7dd9" stroke="none" stroke-width="1"/>
+<text x="70" y="117" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">C</text>
+<text x="83" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">L02_DriveSequence</text>
+<rect x="80" y="126" width="200" height="88" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<text x="94" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Cut</text>
+<text x="268" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+X</text>
+<rect x="84" y="159" width="192" height="24" rx="4" fill="#2e436e" stroke="none" stroke-width="1"/>
+<text x="94" y="176" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Copy</text>
+<text x="268" y="176" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+C</text>
+<text x="94" y="202" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Paste</text>
+<text x="268" y="202" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+V</text>
+<rect x="81" y="156" width="198" height="30" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="300" cy="171" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="300" y="176" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<text x="340" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">B  Right-click YOUR folder → Paste</text>
+<rect x="340" y="42" width="300" height="230" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M351,63.0 L355,67.0 L359,63.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M365,60 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="385" y="70" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">students</text>
+<rect x="341" y="78" width="298" height="22" rx="0" fill="#2e436e" stroke="none" stroke-width="1"/>
+<path d="M369,87.0 L373,91.0 L377,87.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M383,84 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="403" y="94" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">ava</text>
+<rect x="400" y="104" width="200" height="88" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<text x="414" y="128" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Cut</text>
+<text x="588" y="128" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+X</text>
+<text x="414" y="154" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Copy</text>
+<text x="588" y="154" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+C</text>
+<rect x="404" y="163" width="192" height="24" rx="4" fill="#2e436e" stroke="none" stroke-width="1"/>
+<text x="414" y="180" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Paste</text>
+<text x="588" y="180" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+V</text>
+<rect x="401" y="160" width="198" height="30" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="620" cy="175" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="620" y="180" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<text x="660" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">C  Keep the name → OK</text>
+<rect x="660" y="42" width="300" height="230" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M660,72 L660,48 Q660,42 666,42 L954,42 Q960,42 960,48 L960,72 Z" fill="#1e1f22"/>
+<text x="672" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Copy Class</text>
+<text x="942" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="914" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="886" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<text x="674" y="98" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Copy class L01_HelloRobot</text>
+<text x="674" y="126" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">New name:</text>
+<rect x="674" y="134" width="272" height="26" rx="5" fill="#1e1f22" stroke="#43454a" stroke-width="1"/>
+<text x="683" y="151.32" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">L01_HelloRobot</text>
+<text x="674" y="180" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Destination package:</text>
+<rect x="674" y="188" width="272" height="26" rx="5" fill="#1e1f22" stroke="#43454a" stroke-width="1"/>
+<text x="683" y="205.32" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">…teamcode.students.ava</text>
+<rect x="671" y="185" width="278" height="32" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<rect x="866" y="230" width="80" height="28" rx="6" fill="#3574f0" stroke="#3574f0" stroke-width="1"/>
+<text x="906.0" y="248.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="600" text-anchor="middle" xml:space="preserve">OK</text>
+<rect x="863" y="227" width="86" height="34" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="846" cy="244" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="846" y="249" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<text x="20" y="310" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">Check: the destination package ends in .students.yourname.</text>
+<text x="20" y="334" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">Shortcut: click the lesson and press Ctrl+C, then click your folder and press Ctrl+V.</text>
+<text x="20" y="370" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Copying RobotHardware + L15 together? Select both files (hold Ctrl) before copying.</text>
+<text x="966" y="449" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>
