@@ -103,3 +103,7 @@ Fill in: stick at 0.5 → power ____. Stick at 1.0 → power ____. Why does this
 | Turning goes the wrong way | Swap the `+` and `-` in the two formulas, or put a `-` in front of the turn stick. |
 | Robot drifts with sticks centered | Watch the telemetry. If drive or turn isn't 0.00 at rest, the stick may be worn. |
 | *cannot find symbol: Range* | The `import com.qualcomm.robotcore.util.Range;` line is missing at the top. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 05: Tank Drive](05-tank-drive.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 07: Buttons and If →](07-buttons-and-if.md)

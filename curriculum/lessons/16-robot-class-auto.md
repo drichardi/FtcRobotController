@@ -97,5 +97,10 @@ left side goes forward and the right side goes backward.
 | Turns are too big or too small | Tune `INCHES_PER_90_DEGREE_TURN`. |
 | A drive "times out" every time | The timeout is too short for the distance, or a wheel is blocked. |
 
-**What's next?** See [From FTC to FRC](../reference/frc-bridge.md) to learn how these ideas carry
-over to FRC, then try the extensions in the course guide.
+**What's next?** You've finished the lessons! Ask your teacher about extension challenges, like
+turning with the IMU or driving a mecanum robot, or start using your `RobotHardware` class on
+your own project.
+
+---
+<!-- lesson-nav -->
+[← Lesson 15: Robot Class: TeleOp](15-robot-class-teleop.md) · [All lessons](../START-HERE.md#lessons) · [Back to Start Here →](../START-HERE.md)

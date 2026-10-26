@@ -80,8 +80,7 @@ curriculum/
 ├── images/                       ← screen drawings (00-*.svg) and concept diagrams (concept-*.svg)
 └── reference/
     ├── blocks-to-java.md         ← cheat sheet (print it!)
-    ├── deploying-and-managing.md ← deploying (USB/Wi-Fi), cleaning up the menu, deploy troubleshooting
-    └── frc-bridge.md             ← how all of this carries over to FRC
+    └── deploying-and-managing.md ← deploying (USB/Wi-Fi), cleaning up the menu, deploy troubleshooting
 
 TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/
 ├── L01_HelloRobot.java … L16_AutoWithClass.java   ← one working OpMode per lesson
@@ -230,5 +229,3 @@ each puzzle's Java view before pasting lesson code in.
 ## Going further
 - When students start on a real FTC robot, they can start a fresh package for that robot and
   copy in their `RobotHardware` class as a starting point.
-- FRC-bound students: read [frc-bridge.md](reference/frc-bridge.md) and then the WPILib
-  "Zero to Robot" guide.

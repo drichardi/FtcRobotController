@@ -71,7 +71,6 @@ struggle is where the learning happens.
 ## Reference pages
 - [Blocks → Java cheat sheet](reference/blocks-to-java.md): every Blocks block's Java twin, plus common errors
 - [Deploying and Managing Programs](reference/deploying-and-managing.md): putting code on the robot, cleaning up the menu
-- [From FTC to FRC](reference/frc-bridge.md): how all of this carries over to FRC robots
 
 ## Two program types you'll see
 | | **TeleOp** (driver control) | **Autonomous** |

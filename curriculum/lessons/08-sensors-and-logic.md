@@ -110,3 +110,7 @@ buzz only once?)
 | `isPressed()` is always false | REV touch sensors use the **odd-numbered** channel of a digital port (for example port 1, not 0) in the configuration. |
 | Arm drifts down at power 0 | Make sure the BRAKE line is there. A heavy arm may still need a little holding power. |
 | Arm goes the wrong way | Swap the signs of the up and down powers, or reverse the motor. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 07: Buttons and If](07-buttons-and-if.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 09: Loops →](09-loops.md)

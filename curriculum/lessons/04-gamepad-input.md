@@ -103,3 +103,7 @@ it on telemetry. What would this be useful for on a real robot?
 | Values never change | Are the lines that read the gamepad *inside* the `while` loop? |
 | Gamepad does nothing at all | On the Driver Station, press **Start + A** on the gamepad to make it gamepad 1. |
 | *cannot find symbol* on a gamepad name | Check the spelling against the gamepad picture: they use `_` (like `left_stick_y`). |
+
+---
+<!-- lesson-nav -->
+[← Lesson 03: Variables and Types](03-variables.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 05: Tank Drive →](05-tank-drive.md)

@@ -100,3 +100,7 @@ first, with arrows and a time for each step.
 | Robot spins when it should go straight | One motor's direction is wrong. Try reversing the other motor instead. |
 | Can't find the program on the Driver Station | It's an **Autonomous** program, so look in the Autonomous list. |
 | Robot never stops | Does your last step set both powers to `0`? |
+
+---
+<!-- lesson-nav -->
+[← Lesson 01: Hello, Robot!](01-hello-robot.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 03: Variables and Types →](03-variables.md)

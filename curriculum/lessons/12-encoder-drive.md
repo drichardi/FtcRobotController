@@ -110,3 +110,7 @@ Use `leftDrive.getCurrentPosition()` for the ticks.
 | Robot doesn't move at all | `setTargetPosition` must come **before** `setMode(RUN_TO_POSITION)`. |
 | One wheel spins forever | That motor's encoder cable is unplugged, or its direction is wrong so it drives *away* from its target. |
 | Distance is way off | Check `TICKS_PER_MOTOR_REV` for **your** motor, and the gear ratio. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 11: Methods](11-methods.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 13: Toggles →](13-toggle.md)

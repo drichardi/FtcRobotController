@@ -102,3 +102,7 @@ Add a `private boolean clawOpen` **field** to `RobotHardware`. `setClawOpen` sho
 | Changes to `RobotHardware` don't do anything | Your L15 is still importing the teacher's `lessons.RobotHardware`. Delete that import line. |
 | *has private access* | That's encapsulation working. Add a public method to `RobotHardware` instead. |
 | Error at INIT about a missing device | `init()` looks for **all** the hardware. Every device in its list must be in the robot configuration. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 14: State Machines](14-state-machine-auto.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 16: Robot Class: Autonomous →](16-robot-class-auto.md)

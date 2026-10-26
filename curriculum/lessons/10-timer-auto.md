@@ -101,3 +101,7 @@ avoids that?
 | It stops instantly | Is the sensor already pressed? Is `timer.reset()` right before the loop? |
 | It never stops | Check the loop question. Are you using `&&`, and is the `!` in front of the sensor? |
 | *cannot find symbol: ElapsedTime* | The `import com.qualcomm.robotcore.util.ElapsedTime;` line is missing. |
+
+---
+<!-- lesson-nav -->
+[← Lesson 09: Loops](09-loops.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 11: Methods →](11-methods.md)

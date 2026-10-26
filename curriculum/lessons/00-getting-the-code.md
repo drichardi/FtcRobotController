@@ -254,3 +254,7 @@ Do this **every** class, starting today.
 1. In your own words, what's the difference between a **commit** and a **push**?
 2. Why does each person get their own folder?
 3. Your teammate says "My program disappeared from the robot!" What probably happened?
+
+---
+<!-- lesson-nav -->
+[← Start Here](../START-HERE.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 01: Hello, Robot! →](01-hello-robot.md)

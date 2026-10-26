@@ -89,3 +89,7 @@ even though the wheels are moving?
 | Robot spins when both sticks are up | One motor needs `setDirection(REVERSE)`. Try the other side. |
 | Robot is too fast to control | Lower `maxSpeed`. |
 | Nothing moves | Is the robot plugged in and on? Does the telemetry show power values changing? |
+
+---
+<!-- lesson-nav -->
+[← Lesson 04: Reading the Gamepad](04-gamepad-input.md) · [All lessons](../START-HERE.md#lessons) · [Lesson 06: Arcade Drive →](06-arcade-drive.md)
