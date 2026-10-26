@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-label="Edit your copy: unique name and delete @Disabled">
+<title>Edit your copy: unique name and delete @Disabled</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="419" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="32" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">BEFORE  (your copy, right after pasting)</text>
+<rect x="20" y="42" width="600" height="140" rx="6" fill="#1e1f22" stroke="#43454a" stroke-width="1"/>
+<rect x="20" y="42" width="34" height="140" rx="6" fill="#26282b" stroke="none" stroke-width="1"/>
+<text x="66" y="70" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#cf8e6d" font-weight="normal">package </tspan><tspan fill="#bcbec4" font-weight="normal">org.firstinspires.ftc.teamcode.students.ava;</tspan></text>
+<text x="66" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#7a7e85" font-weight="normal">⋮</tspan></text>
+<text x="66" y="118" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#b3ae60" font-weight="normal">@TeleOp</tspan><tspan fill="#bcbec4" font-weight="normal">(name = </tspan><tspan fill="#6aab73" font-weight="normal">&quot;L01 Hello Robot&quot;</tspan><tspan fill="#bcbec4" font-weight="normal">, group = </tspan><tspan fill="#6aab73" font-weight="normal">&quot;Lessons&quot;</tspan><tspan fill="#bcbec4" font-weight="normal">)</tspan></text>
+<text x="66" y="142" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#b3ae60" font-weight="normal">@Disabled</tspan><tspan fill="#7a7e85" font-weight="normal">  // Hides this ORIGINAL…</tspan></text>
+<text x="66" y="166" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#cf8e6d" font-weight="normal">public class </tspan><tspan fill="#bcbec4" font-weight="normal">L01_HelloRobot </tspan><tspan fill="#cf8e6d" font-weight="normal">extends </tspan><tspan fill="#bcbec4" font-weight="normal">LinearOpMode {</tspan></text>
+<text x="640" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">✓ Android Studio changed this for you</text>
+<rect x="53" y="98" width="546" height="30" rx="3" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="610" cy="113" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="610" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<text x="640" y="122" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">Change the name and group</text>
+<rect x="56" y="125" width="540" height="24" rx="3" fill="#cf222e" stroke="none" stroke-width="1" opacity="0.25"/>
+<line x1="56" y1="137" x2="300" y2="137" stroke="#ff6b6b" stroke-width="2"/>
+<circle cx="610" cy="137" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="610" y="142" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<text x="640" y="146" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">Delete this whole line</text>
+<text x="20" y="240" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">AFTER</text>
+<rect x="20" y="250" width="600" height="116" rx="6" fill="#1e1f22" stroke="#43454a" stroke-width="1"/>
+<rect x="20" y="250" width="34" height="116" rx="6" fill="#26282b" stroke="none" stroke-width="1"/>
+<text x="66" y="278" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#cf8e6d" font-weight="normal">package </tspan><tspan fill="#bcbec4" font-weight="normal">org.firstinspires.ftc.teamcode.students.ava;</tspan></text>
+<text x="66" y="302" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#7a7e85" font-weight="normal">⋮</tspan></text>
+<text x="66" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#b3ae60" font-weight="normal">@TeleOp</tspan><tspan fill="#bcbec4" font-weight="normal">(name = </tspan><tspan fill="#6aab73" font-weight="normal">&quot;L01 Hello Robot - Ava&quot;</tspan><tspan fill="#bcbec4" font-weight="normal">, group = </tspan><tspan fill="#6aab73" font-weight="normal">&quot;Ava&quot;</tspan><tspan fill="#bcbec4" font-weight="normal">)</tspan></text>
+<text x="66" y="350" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" text-anchor="start" xml:space="preserve"><tspan fill="#cf8e6d" font-weight="normal">public class </tspan><tspan fill="#bcbec4" font-weight="normal">L01_HelloRobot </tspan><tspan fill="#cf8e6d" font-weight="normal">extends </tspan><tspan fill="#bcbec4" font-weight="normal">LinearOpMode {</tspan></text>
+<text x="640" y="330" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">Unique name + your own group</text>
+<text x="640" y="350.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">The import line for Disabled can stay.</text>
+<text x="640" y="368.2" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Android Studio just grays it out.</text>
+<text x="966" y="409" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>

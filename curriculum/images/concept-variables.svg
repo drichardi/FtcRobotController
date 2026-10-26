@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="400" viewBox="0 0 980 400" role="img" aria-label="Variables are named boxes with a type">
+<title>Variables are named boxes with a type</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="399" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">A variable is a named box. Its type says what can go inside.</text>
+<rect x="60" y="62" width="113.6" height="46" rx="6" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+<text x="116.8" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="26" fill="#0969da" font-weight="bold" text-anchor="middle" xml:space="preserve">double</text>
+<text x="116.8" y="132" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#0969da" font-weight="bold" text-anchor="middle" xml:space="preserve">type</text>
+<text x="116.8" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">what kind of value</text>
+<rect x="191.6" y="62" width="222.79999999999998" height="46" rx="6" fill="#ffffff" stroke="#8250df" stroke-width="2"/>
+<text x="303.0" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="26" fill="#8250df" font-weight="bold" text-anchor="middle" xml:space="preserve">wheelDiameter</text>
+<text x="303.0" y="132" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#8250df" font-weight="bold" text-anchor="middle" xml:space="preserve">name</text>
+<text x="303.0" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">what you call it</text>
+<rect x="432.4" y="62" width="35.6" height="46" rx="6" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+<text x="450.2" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="26" fill="#59636e" font-weight="bold" text-anchor="middle" xml:space="preserve">=</text>
+<text x="450.2" y="132" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="bold" text-anchor="middle" xml:space="preserve">store</text>
+<text x="450.2" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">put a value in</text>
+<rect x="486.0" y="62" width="82.4" height="46" rx="6" fill="#ffffff" stroke="#1f883d" stroke-width="2"/>
+<text x="527.2" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="26" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">3.78</text>
+<text x="527.2" y="132" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">value</text>
+<text x="527.2" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">what’s inside</text>
+<rect x="586.4" y="62" width="35.6" height="46" rx="6" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+<text x="604.1999999999999" y="94" font-family="Consolas, Menlo, Courier New, monospace" font-size="26" fill="#59636e" font-weight="bold" text-anchor="middle" xml:space="preserve">;</text>
+<text x="604.1999999999999" y="132" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="bold" text-anchor="middle" xml:space="preserve">end</text>
+<text x="604.1999999999999" y="150" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">end of the line</text>
+<rect x="40" y="196" width="200" height="26" rx="6" fill="#0969da" stroke="none" stroke-width="1"/>
+<text x="140" y="214" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">int  —  whole numbers</text>
+<rect x="40" y="222" width="200" height="80" rx="6" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+<text x="140" y="272" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">12345</text>
+<text x="140" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#0969da" font-weight="bold" text-anchor="middle" xml:space="preserve">teamNumber</text>
+<rect x="270" y="196" width="200" height="26" rx="6" fill="#8250df" stroke="none" stroke-width="1"/>
+<text x="370" y="214" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">double  —  decimal numbers</text>
+<rect x="270" y="222" width="200" height="80" rx="6" fill="#ffffff" stroke="#8250df" stroke-width="2"/>
+<text x="370" y="272" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">3.78</text>
+<text x="370" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#8250df" font-weight="bold" text-anchor="middle" xml:space="preserve">wheelDiameter</text>
+<rect x="500" y="196" width="200" height="26" rx="6" fill="#1f883d" stroke="none" stroke-width="1"/>
+<text x="600" y="214" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">boolean  —  true or false</text>
+<rect x="500" y="222" width="200" height="80" rx="6" fill="#ffffff" stroke="#1f883d" stroke-width="2"/>
+<text x="600" y="272" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">true</text>
+<text x="600" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">hasClaw</text>
+<rect x="730" y="196" width="200" height="26" rx="6" fill="#bf8700" stroke="none" stroke-width="1"/>
+<text x="830" y="214" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">String  —  text, in quotes</text>
+<rect x="730" y="222" width="200" height="80" rx="6" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<text x="830" y="272" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">&quot;Sparky&quot;</text>
+<text x="830" y="326" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#bf8700" font-weight="bold" text-anchor="middle" xml:space="preserve">robotName</text>
+<rect x="40" y="350" width="900" height="38" rx="8" fill="#ffebe9" stroke="#cf222e" stroke-width="1"/>
+<text x="56" y="375" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" text-anchor="start" xml:space="preserve"><tspan fill="#cf222e" font-weight="bold">int cookies = 7.5;</tspan><tspan fill="#1f2328" font-weight="normal">    ✖  An int box can’t hold a decimal. Java stops you before the robot runs.</tspan></text>
+</svg>

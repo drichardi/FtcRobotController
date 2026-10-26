@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="470" viewBox="0 0 980 470" role="img" aria-label="A loop that checks time and a sensor">
+<title>A loop that checks time and a sensor</title>
+<defs><marker id="m59636e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker><marker id="mcf222e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf222e"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="469" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Don’t sleep. Check every pass of the loop.</text>
+<rect x="40" y="70" width="260" height="56" rx="8" fill="#dafbe1" stroke="#1f883d" stroke-width="1.5"/>
+<text x="170.0" y="93.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">timer.reset()</text>
+<text x="170.0" y="112.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">motors ON</text>
+<line x1="300" y1="98" x2="360" y2="98" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<path d="M560,23.0 L760.0,98 L560,173.0 L360.0,98 Z" stroke="#bf8700" stroke-width="1.5" fill="#fff8c5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="560" y="84.7" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">opModeIsActive()</text>
+<text x="560" y="102.9" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">AND  timer.seconds() &lt; 3</text>
+<text x="560" y="121.10000000000001" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">AND  NOT bumper.isPressed()</text>
+<line x1="760" y1="98" x2="820" y2="98" stroke="#1f883d" stroke-width="2"/>
+<text x="790" y="88" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">all true</text>
+<rect x="820" y="70" width="140" height="56" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.5"/>
+<text x="890.0" y="93.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">update</text>
+<text x="890.0" y="112.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">telemetry</text>
+<path d="M890,126 L890,226 L560,226 L560,176" stroke="#59636e" stroke-width="2" fill="none" marker-end="url(#m59636e)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="725" y="244" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">check again (many times per second)</text>
+<line x1="360" y1="98" x2="360" y2="98" stroke="#59636e" stroke-width="2"/>
+<path d="M560,176 L560,176" stroke="#59636e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="458" y1="137" x2="300" y2="300" stroke="#cf222e" stroke-width="2" marker-end="url(#mcf222e)"/>
+<text x="392" y="230" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">any one false</text>
+<rect x="160" y="302" width="220" height="50" rx="8" fill="#ffebe9" stroke="#cf222e" stroke-width="1.5"/>
+<text x="270.0" y="331.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">motors OFF</text>
+<line x1="270" y1="352" x2="270" y2="380" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<rect x="60" y="382" width="860" height="70" rx="8" fill="#ffffff" stroke="#d1d9e0" stroke-width="1.5"/>
+<text x="490.0" y="412.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">Why did it stop? Check each reason with if / else if / else:</text>
+<text x="490.0" y="431.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">bumper pressed?  →  “Bumper hit something”     time up?  →  “Time ran out”     otherwise  →  “STOP pressed”</text>
+<text x="560" y="300" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">With sleep(3000) the robot is BLIND for 3 seconds.</text>
+<text x="560" y="322" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">With this loop it checks the time AND the sensor</text>
+<text x="560" y="342" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">dozens of times every second.</text>
+</svg>

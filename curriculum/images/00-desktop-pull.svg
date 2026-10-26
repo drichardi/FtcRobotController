@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="280" viewBox="0 0 980 280" role="img" aria-label="GitHub Desktop: fetch, pull, and push buttons">
+<title>GitHub Desktop: fetch, pull, and push buttons</title>
+<defs><marker id="m59636e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="279" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<rect x="20" y="30" width="290" height="56" rx="6" fill="#24292e" stroke="none" stroke-width="1"/>
+<text x="36" y="52" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="600" text-anchor="start" xml:space="preserve">Fetch origin</text>
+<text x="36" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#959da5" font-weight="normal" text-anchor="start" xml:space="preserve">Last fetched 2 minutes ago</text>
+<text x="165" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">Checks GitHub for</text>
+<text x="165" y="138" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">teammates’ changes.</text>
+<circle cx="165" cy="170" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="165" y="175" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<line x1="316" y1="58" x2="344" y2="58" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<rect x="350" y="30" width="290" height="56" rx="6" fill="#24292e" stroke="none" stroke-width="1"/>
+<text x="366" y="52" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="600" text-anchor="start" xml:space="preserve">Pull origin  ↓2</text>
+<text x="366" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#959da5" font-weight="normal" text-anchor="start" xml:space="preserve">2 commits to download</text>
+<text x="495" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">Downloads teammates’</text>
+<text x="495" y="138" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">changes. Do it first!</text>
+<circle cx="495" cy="170" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="495" y="175" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<line x1="646" y1="58" x2="674" y2="58" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<rect x="680" y="30" width="290" height="56" rx="6" fill="#24292e" stroke="none" stroke-width="1"/>
+<text x="696" y="52" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="600" text-anchor="start" xml:space="preserve">Push origin  ↑1</text>
+<text x="696" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#959da5" font-weight="normal" text-anchor="start" xml:space="preserve">1 commit to upload</text>
+<text x="825" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">Uploads your commits</text>
+<text x="825" y="138" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">to GitHub.</text>
+<circle cx="825" cy="170" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="825" y="175" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<text x="490" y="210" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">It’s the same button in the top bar. Its label changes to tell you what to do next.</text>
+<text x="966" y="269" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>

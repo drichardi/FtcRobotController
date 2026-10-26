@@ -32,11 +32,15 @@ or OnBot Java programs saved on the hub.
 ---
 
 ## Deploy over USB (the usual way)
+![Deploying from Android Studio](../images/00-studio-run.svg)
+
 1. Turn the robot on. Plug the Control Hub into your laptop with a USB-C **data** cable.
 2. In the device dropdown at the top of Android Studio, pick **REV Robotics Control Hub**.
 3. Make sure the run dropdown next to it says **TeamCode**.
 4. Click **▶ Run**. Watch the bottom bar: *Gradle build* → *Installing* → *Launch succeeded*.
 5. Wait about 15–30 seconds for the Driver Station to reconnect.
+
+![Finding your program on the Driver Station](../images/00-driver-station.svg)
 
 **Taking turns:** only one laptop deploys at a time. Whoever deploys last decides what's on the
 robot, which is why everyone pulls first.
@@ -84,7 +88,7 @@ the file is there. Nothing you ever committed is truly lost.
 ### Group menu rule
 Agree on a limit as a group. A good one: **each person keeps at most 3 of their own programs
 enabled** (the current lesson and the one or two you're still working on). Do a cleanup
-every few lessons, and before obstacle course runs.
+every few lessons.
 
 ### Why the teacher's originals are hidden
 Every file in `lessons/` already has `@Disabled`, so the 17 originals never clutter the menu.

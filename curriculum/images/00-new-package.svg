@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="450" viewBox="0 0 980 450" role="img" aria-label="Android Studio: make your own package (folder)">
+<title>Android Studio: make your own package (folder)</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="449" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">A  Right-click the teamcode package → New → Package</text>
+<rect x="20" y="42" width="560" height="340" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M31,65.0 L35,69.0 L39,65.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45,62 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="65" y="72" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">TeamCode</text>
+<path d="M49,89.0 L53,93.0 L57,89.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63,86 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="83" y="96" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">java</text>
+<rect x="21" y="104" width="558" height="22" rx="0" fill="#2e436e" stroke="none" stroke-width="1"/>
+<path d="M67,113.0 L71,117.0 L75,113.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M81,110 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="101" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">org.firstinspires.ftc.teamcode</text>
+<path d="M85,137.0 L89,141.0 L93,137.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M99,134 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="119" y="144" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">lessons</text>
+<rect x="21" y="100" width="296" height="30" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="334" cy="115" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="334" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<rect x="150" y="140" width="190" height="140" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<rect x="154" y="147" width="182" height="24" rx="4" fill="#2e436e" stroke="none" stroke-width="1"/>
+<text x="164" y="164" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">New</text>
+<text x="328" y="164" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">▸</text>
+<text x="164" y="190" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Cut</text>
+<text x="328" y="190" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+X</text>
+<text x="164" y="216" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Copy</text>
+<text x="328" y="216" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+C</text>
+<text x="164" y="242" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Paste</text>
+<text x="328" y="242" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Ctrl+V</text>
+<text x="164" y="268" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Delete…</text>
+<text x="328" y="268" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#868a91" font-weight="normal" text-anchor="end" xml:space="preserve">Delete</text>
+<rect x="151" y="144" width="188" height="30" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="150" cy="159" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="150" y="164" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<rect x="350" y="140" width="200" height="114" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<text x="364" y="164" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Java Class</text>
+<text x="364" y="190" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Kotlin Class/File</text>
+<text x="364" y="216" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">File</text>
+<rect x="354" y="225" width="192" height="24" rx="4" fill="#2e436e" stroke="none" stroke-width="1"/>
+<text x="364" y="242" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Package</text>
+<rect x="351" y="222" width="198" height="30" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="568" cy="237" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="568" y="242" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<text x="600" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">B  Type your package name</text>
+<rect x="600" y="42" width="360" height="160" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M600,72 L600,48 Q600,42 606,42 L954,42 Q960,42 960,48 L960,72 Z" fill="#1e1f22"/>
+<text x="612" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">New Package</text>
+<text x="942" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="914" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="886" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<rect x="616" y="92" width="328" height="32" rx="5" fill="#1e1f22" stroke="#3574f0" stroke-width="2"/>
+<text x="626" y="113" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" text-anchor="start" xml:space="preserve"><tspan fill="#868a91" font-weight="normal">org.firstinspires.ftc.teamcode.</tspan><tspan fill="#ffb86b" font-weight="bold">students.ava</tspan></text>
+<circle cx="944" cy="162" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="944" y="167" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">4</text>
+<text x="616" y="154.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Type the orange part: students.yourname</text>
+<text x="616" y="172.2" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">all lowercase, no spaces.</text>
+<text x="616" y="190.4" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Press Enter.</text>
+<text x="600" y="250" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="start" xml:space="preserve">Your new folder appears here:</text>
+<rect x="600" y="262" width="360" height="120" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M611,283.0 L615,287.0 L619,283.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M625,280 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="645" y="290" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">org.firstinspires.ftc.teamcode</text>
+<path d="M629,307.0 L633,311.0 L637,307.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M643,304 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="663" y="314" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">lessons</text>
+<path d="M629,331.0 L633,335.0 L637,331.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M643,328 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="663" y="338" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">students</text>
+<rect x="601" y="346" width="358" height="22" rx="0" fill="#2e436e" stroke="none" stroke-width="1"/>
+<path d="M647,355.0 L651,359.0 L655,355.0" stroke="#868a91" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M661,352 h5 l2,2 h7 v9 h-14 Z" fill="#8c8c8c"/>
+<text x="681" y="362" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">ava</text>
+<text x="966" y="439" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>

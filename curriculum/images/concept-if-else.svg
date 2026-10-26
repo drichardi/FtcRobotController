@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="640" viewBox="0 0 820 640" role="img" aria-label="if / else if / else flowchart">
+<title>if / else if / else flowchart</title>
+<defs><marker id="m1f883d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f883d"/></marker><marker id="m59636e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker><marker id="mcf222e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf222e"/></marker></defs>
+<rect x="0.5" y="0.5" width="819" height="639" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">if / else if / else: only ONE branch runs</text>
+<path d="M230,68.0 L340.0,110 L230,152.0 L120.0,110 Z" stroke="#bf8700" stroke-width="1.5" fill="#fff8c5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="230" y="106.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">is dpad_up</text>
+<text x="230" y="123.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">pressed?</text>
+<line x1="340" y1="110" x2="470" y2="110" stroke="#1f883d" stroke-width="2" marker-end="url(#m1f883d)"/>
+<text x="380" y="102" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">true</text>
+<rect x="472" y="86" width="180" height="48" rx="8" fill="#dafbe1" stroke="#1f883d" stroke-width="1.5"/>
+<text x="562.0" y="114.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">gear = FAST</text>
+<line x1="652" y1="110" x2="720" y2="110" stroke="#59636e" stroke-width="2"/>
+<line x1="230" y1="152" x2="230" y2="188" stroke="#cf222e" stroke-width="2" marker-end="url(#mcf222e)"/>
+<text x="242" y="176" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">false</text>
+<path d="M230,188.0 L340.0,230 L230,272.0 L120.0,230 Z" stroke="#bf8700" stroke-width="1.5" fill="#fff8c5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="230" y="226.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">is dpad_right</text>
+<text x="230" y="243.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">pressed?</text>
+<line x1="340" y1="230" x2="470" y2="230" stroke="#1f883d" stroke-width="2" marker-end="url(#m1f883d)"/>
+<text x="380" y="222" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">true</text>
+<rect x="472" y="206" width="180" height="48" rx="8" fill="#dafbe1" stroke="#1f883d" stroke-width="1.5"/>
+<text x="562.0" y="234.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">gear = MEDIUM</text>
+<line x1="652" y1="230" x2="720" y2="230" stroke="#59636e" stroke-width="2"/>
+<line x1="230" y1="272" x2="230" y2="308" stroke="#cf222e" stroke-width="2" marker-end="url(#mcf222e)"/>
+<text x="242" y="296" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">false</text>
+<path d="M230,308.0 L340.0,350 L230,392.0 L120.0,350 Z" stroke="#bf8700" stroke-width="1.5" fill="#fff8c5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="230" y="346.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">is dpad_down</text>
+<text x="230" y="363.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">pressed?</text>
+<line x1="340" y1="350" x2="470" y2="350" stroke="#1f883d" stroke-width="2" marker-end="url(#m1f883d)"/>
+<text x="380" y="342" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">true</text>
+<rect x="472" y="326" width="180" height="48" rx="8" fill="#dafbe1" stroke="#1f883d" stroke-width="1.5"/>
+<text x="562.0" y="354.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="middle" xml:space="preserve">gear = SLOW</text>
+<line x1="652" y1="350" x2="720" y2="350" stroke="#59636e" stroke-width="2"/>
+<line x1="230" y1="392" x2="230" y2="428" stroke="#cf222e" stroke-width="2" marker-end="url(#mcf222e)"/>
+<text x="242" y="416" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">false</text>
+<rect x="120" y="430" width="220" height="48" rx="8" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1.5"/>
+<text x="230.0" y="449.1" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">no change:</text>
+<text x="230.0" y="468.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">keep the old gear</text>
+<line x1="720" y1="110" x2="720" y2="540" stroke="#59636e" stroke-width="2"/>
+<line x1="230" y1="478" x2="230" y2="540" stroke="#59636e" stroke-width="2"/>
+<line x1="230" y1="540" x2="720" y2="540" stroke="#59636e" stroke-width="2"/>
+<line x1="475" y1="540" x2="475" y2="568" stroke="#59636e" stroke-width="2" marker-end="url(#m59636e)"/>
+<rect x="365" y="570" width="220" height="40" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.5"/>
+<text x="475.0" y="594.55" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">drive using the gear</text>
+<text x="560" y="180" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">As soon as one answer is</text>
+<text x="560" y="198" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">true, the rest are skipped.</text>
+</svg>

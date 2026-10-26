@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-label="Anatomy of a method">
+<title>Anatomy of a method</title>
+<defs><marker id="me8590c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8590c"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="519" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">A method is a named chunk of code you can reuse</text>
+<text x="40" y="104" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">private </text>
+<line x1="44" y1="114" x2="132.8" y2="114" stroke="#0969da" stroke-width="3"/>
+<text x="90.4" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#0969da" font-weight="bold" text-anchor="middle" xml:space="preserve">who can use it</text>
+<text x="90.4" y="158" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">only this file</text>
+<text x="140.8" y="104" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" fill="#8250df" font-weight="bold" text-anchor="start" xml:space="preserve">void </text>
+<line x1="144.8" y1="114" x2="195.8" y2="114" stroke="#8250df" stroke-width="3"/>
+<line x1="172.3" y1="116" x2="172.3" y2="166" stroke="#8250df" stroke-width="1.5"/>
+<text x="172.3" y="182" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#8250df" font-weight="bold" text-anchor="middle" xml:space="preserve">gives back</text>
+<text x="172.3" y="200" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">void = nothing</text>
+<text x="203.8" y="104" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">driveForward</text>
+<line x1="207.8" y1="114" x2="347.0" y2="114" stroke="#1f883d" stroke-width="3"/>
+<text x="279.4" y="140" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f883d" font-weight="bold" text-anchor="middle" xml:space="preserve">name</text>
+<text x="279.4" y="158" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">a verb: what it does</text>
+<text x="355.0" y="104" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">(double power, long timeMs)</text>
+<line x1="359.0" y1="114" x2="687.2" y2="114" stroke="#e8590c" stroke-width="3"/>
+<line x1="525.1" y1="116" x2="525.1" y2="166" stroke="#e8590c" stroke-width="1.5"/>
+<text x="525.1" y="182" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#e8590c" font-weight="bold" text-anchor="middle" xml:space="preserve">parameters</text>
+<text x="525.1" y="200" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="normal" text-anchor="middle" xml:space="preserve">inputs, each with a type</text>
+<text x="695.2" y="104" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve"> {</text>
+<text x="40" y="236" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">    setDrivePower(power, power);</text>
+<text x="40" y="260" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">    sleep(timeMs);</text>
+<text x="40" y="284" font-family="Consolas, Menlo, Courier New, monospace" font-size="17" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">}</text>
+<text x="40" y="336" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Calling it:</text>
+<text x="40" y="372" font-family="Consolas, Menlo, Courier New, monospace" font-size="21" text-anchor="start" xml:space="preserve"><tspan fill="#1f883d" font-weight="bold">driveForward(</tspan><tspan fill="#e8590c" font-weight="bold">0.5</tspan><tspan fill="#1f2328" font-weight="bold">, </tspan><tspan fill="#e8590c" font-weight="bold">1000</tspan><tspan fill="#1f883d" font-weight="bold">);</tspan></text>
+<path d="M228,352 C250,260 440,240 470,124" stroke="#e8590c" stroke-width="2" fill="none" marker-end="url(#me8590c)" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M296,352 C330,280 600,250 628,124" stroke="#e8590c" stroke-width="2" fill="none" marker-end="url(#me8590c)" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="340" y="372" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">← the values you pass in are called ARGUMENTS</text>
+<rect x="40" y="410" width="900" height="86" rx="10" fill="#f6f8fa" stroke="#d1d9e0" stroke-width="1"/>
+<text x="60" y="442" font-family="Consolas, Menlo, Courier New, monospace" font-size="16" text-anchor="start" xml:space="preserve"><tspan fill="#8250df" font-weight="bold">int </tspan><tspan fill="#1f883d" font-weight="bold">inchesToTicks</tspan><tspan fill="#e8590c" font-weight="bold">(double inches) {  </tspan><tspan fill="#8250df" font-weight="bold">return </tspan><tspan fill="#1f2328" font-weight="normal">(int) (inches * TICKS_PER_INCH);  }</tspan></text>
+<text x="60" y="476" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Not void? Then the method RETURNS an answer of that type, here an int.</text>
+</svg>

@@ -1,9 +1,53 @@
 # Lesson 08 — Sensors and Boolean Logic
 
-**Code:** [`L08_SensorsAndLogic.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L08_SensorsAndLogic.java)
-**Big idea:** Combine true/false values with `&&` (AND), `||` (OR), and `!` (NOT).
-**Hardware:** `arm` motor, `touch_sensor`. No arm yet? Use any spare motor and press the sensor with your finger.
-**Start of class:** Pull in GitHub Desktop, copy this lesson's `.java` file into your `students/yourname` folder, give it a unique `name`, and delete its `@Disabled` line ([daily routine](00-getting-the-code.md#daily-routine)). Do everything below on **your copy**.
+> **You will learn:** how to read a touch sensor, and how to combine true/false values with
+> AND, OR, and NOT.
+> **You need:** an `arm` motor and a `touch_sensor`. No arm yet? Use any spare motor and press the sensor with your finger.
+> **Time:** about 40 minutes · **Program type:** TeleOp
+> **Code:** [`L08_SensorsAndLogic.java`](../../TeamCode/src/main/java/org/firstinspires/ftc/teamcode/lessons/L08_SensorsAndLogic.java)
+
+## Before you start
+1. **Pull** in GitHub Desktop.
+2. **Copy** `L08_SensorsAndLogic.java` into your `students/yourname` folder.
+3. In your copy, give it a unique `name` and **delete `@Disabled`**.
+
+[Forgot how? Lesson 00, Step 7 has pictures.](00-getting-the-code.md#step-7--copy-your-first-lesson)
+
+---
+
+## 📖 Learn it
+
+**A touch sensor** is a button the robot can feel. `topLimit.isPressed()` gives `true` while
+it's pressed and `false` when it isn't. Mounted at the top of an arm's travel, it's called a
+**limit switch**: it tells the program "the arm can't go any higher."
+
+**Boolean logic** combines true/false values:
+| Java | Name | `true` when… | Example |
+|---|---|---|---|
+| `a && b` | AND | **both** are true | Y pressed **and** not at the top |
+| `a \|\| b` | OR | **either one** (or both) is true | bumper hit **or** time ran out |
+| `!a` | NOT | `a` is false | **not** at the top |
+
+**A truth table** lists every possible combination. With two true/false values there are only
+4 combinations, so you can check them all:
+
+| `a` | `b` | `a && b` | `a \|\| b` |
+|---|---|---|---|
+| false | false | false | false |
+| false | true | false | true |
+| true | false | false | true |
+| true | true | true | true |
+
+**Good names make logic readable.** The code stores each question in a well-named variable
+first:
+```java
+boolean upRequested = gamepad1.y;
+boolean atTop = topLimit.isPressed();
+if (upRequested && !atTop) { ... }    // reads like English: "up requested and not at top"
+```
+
+**BRAKE mode.** `setZeroPowerBehavior(BRAKE)` makes a motor hold still at power 0, instead of
+coasting or letting the arm fall.
 
 ---
 
@@ -23,29 +67,46 @@
 Test both predictions.
 
 ## 4. Investigate
-1. Change `upRequested && !atTop` to `upRequested || !atTop`. Use your truth table to predict what happens when **nobody touches the gamepad**. Then test it carefully (wheels/arm clear of hands!). Change it back.
+1. Change `upRequested && !atTop` to `upRequested || !atTop`. Use your truth table to predict what happens when **nobody touches the gamepad**. Then test it carefully (keep hands clear!). Change it back.
 2. Why does the code store `gamepad1.y` in a variable called `upRequested` instead of using `gamepad1.y` directly in the `if`?
 3. Watch `Arm encoder` as the arm moves. Which direction makes the number go up?
+
+<details><summary>💡 Hint for #1</summary>
+
+"Nobody touches the gamepad" means `upRequested` is false. If the arm is somewhere in the
+middle, `atTop` is false too. Find that row in your table, in the `||` column.
+
+</details>
 
 ## 5. Modify
 1. Add a **software lower limit**: don't let the arm go down if `arm.getCurrentPosition()` is below `0`. (You'll need `&&` again.)
 2. Make the arm move slower when the left bumper is held.
 
-## 6. Make
-Use `gamepad1.rumble(200);` to make the gamepad buzz when the driver tries to go past the top limit. (Bonus: how do you stop it from buzzing nonstop?)
+<details><summary>💡 Hint for #1</summary>
 
-## 🔁 Other half: Autonomous
-Write an autonomous that raises the arm **until the limit switch is pressed**, then stops:
-```java
-waitForStart();
-while (opModeIsActive() && !topLimit.isPressed()) {
-    arm.setPower(0.4);
-}
-arm.setPower(0);
-```
-1. Read the `while` condition out loud. When does the loop end?
-2. What happens if the touch sensor is unplugged or never gets pressed? Why is that dangerous?
-   *(Lesson 10 fixes this with a timer.)*
+Change the `else if (downRequested)` question so it's only true when down is requested **and**
+the arm position is greater than 0. The encoder counts from wherever the arm was when the
+robot turned on, so start with the arm all the way down.
+
+</details>
+
+## 6. Make
+Use `gamepad1.rumble(200);` to make the gamepad buzz for 200 milliseconds when the driver tries
+to go past the top limit. (Bonus: what happens if you hold Y at the top? How could you make it
+buzz only once?)
 
 ---
+
+## ✅ Check yourself
+- [ ] I can read a touch sensor.
+- [ ] I can fill in a truth table for `&&`, `||`, and `!`.
+- [ ] I can write a safety rule as one boolean expression.
+
 **Exit ticket:** A rule says "the arm may go up only if the driver presses Y AND the arm is NOT at the top AND the claw is closed." Write it as one Java boolean expression.
+
+## 🆘 Stuck?
+| Problem | Try this |
+|---|---|
+| `isPressed()` is always false | REV touch sensors use the **odd-numbered** channel of a digital port (for example port 1, not 0) in the configuration. |
+| Arm drifts down at power 0 | Make sure the BRAKE line is there. A heavy arm may still need a little holding power. |
+| Arm goes the wrong way | Swap the signs of the up and down powers, or reverse the motor. |

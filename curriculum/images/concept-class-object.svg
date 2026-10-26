@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="470" viewBox="0 0 980 470" role="img" aria-label="A class is a blueprint; objects are built from it">
+<title>A class is a blueprint; objects are built from it</title>
+<defs><marker id="m0969da" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0969da"/></marker></defs>
+<rect x="0.5" y="0.5" width="979" height="469" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">A class is a blueprint. An object is built from it.</text>
+<rect x="30" y="60" width="380" height="380" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+<text x="50" y="92" font-family="Consolas, Menlo, Courier New, monospace" font-size="18" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">class RobotHardware</text>
+<text x="50" y="112" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">(the blueprint: RobotHardware.java)</text>
+<rect x="46" y="128" width="348" height="130" rx="8" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="60" y="152" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">private  (hidden inside)</text>
+<text x="76" y="178" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">leftDrive, rightDrive</text>
+<text x="76" y="200" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">arm, claw</text>
+<text x="76" y="222" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">armTopLimit</text>
+<rect x="46" y="272" width="348" height="150" rx="8" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="60" y="296" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">public  (anyone can use)</text>
+<text x="76" y="322" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">init()</text>
+<text x="76" y="342" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">arcadeDrive(drive, turn, speed)</text>
+<text x="76" y="362" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">setArmPower(power)</text>
+<text x="76" y="382" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">setClawOpen(open)</text>
+<text x="76" y="402" font-family="Consolas, Menlo, Courier New, monospace" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">encoderDrive(…)</text>
+<path d="M412,200 C480,200 500,140 560,140" stroke="#0969da" stroke-width="2" fill="none" marker-end="url(#m0969da)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="486" y="110" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#0969da" font-weight="normal" text-anchor="middle" xml:space="preserve">new</text>
+<text x="486" y="125" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#0969da" font-weight="normal" text-anchor="middle" xml:space="preserve">RobotHardware(this)</text>
+<rect x="562" y="80" width="390" height="140" rx="10" fill="#dafbe1" stroke="#1f883d" stroke-width="2"/>
+<text x="582" y="110" font-family="Consolas, Menlo, Courier New, monospace" font-size="18" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">robot</text>
+<text x="646" y="110" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">(an object in your TeleOp)</text>
+<text x="582" y="146" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">robot.arcadeDrive(…)</text>
+<text x="582" y="172" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="normal" text-anchor="start" xml:space="preserve">✔ uses the public methods</text>
+<text x="582" y="198" font-family="Consolas, Menlo, Courier New, monospace" font-size="13" fill="#cf222e" font-weight="normal" text-anchor="start" xml:space="preserve">robot.leftDrive.setPower(1);   ✖ private!</text>
+<path d="M412,260 C480,260 500,340 560,340" stroke="#0969da" stroke-width="2" fill="none" marker-end="url(#m0969da)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="486" y="400" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#0969da" font-weight="normal" text-anchor="middle" xml:space="preserve">new</text>
+<text x="486" y="415" font-family="Consolas, Menlo, Courier New, monospace" font-size="12" fill="#0969da" font-weight="normal" text-anchor="middle" xml:space="preserve">RobotHardware(this)</text>
+<rect x="562" y="280" width="390" height="140" rx="10" fill="#dafbe1" stroke="#1f883d" stroke-width="2"/>
+<text x="582" y="310" font-family="Consolas, Menlo, Courier New, monospace" font-size="18" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">robot</text>
+<text x="646" y="310" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">(an object in your Autonomous)</text>
+<text x="582" y="346" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">robot.encoderDrive(…)</text>
+<text x="582" y="372" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f883d" font-weight="normal" text-anchor="start" xml:space="preserve">✔ uses the public methods</text>
+</svg>

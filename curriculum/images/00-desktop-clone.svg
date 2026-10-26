@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-label="GitHub Desktop: clone the group repository">
+<title>GitHub Desktop: clone the group repository</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="759" height="499" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<rect x="30" y="20" width="700" height="430" rx="6" fill="#ffffff" stroke="#b8b8b8" stroke-width="1"/>
+<path d="M30,50 L30,26 Q30,20 36,20 L724,20 Q730,20 730,26 L730,50 Z" fill="#f0f0f0"/>
+<text x="42" y="40.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">Clone a repository</text>
+<text x="712" y="40.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="684" y="40.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="656" y="40.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#1f2328" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<text x="54" y="82" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="start" xml:space="preserve">GitHub.com</text>
+<text x="204" y="82" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">GitHub Enterprise</text>
+<text x="354" y="82" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">URL</text>
+<line x1="52" y1="92" x2="140" y2="92" stroke="#0366d6" stroke-width="3"/>
+<rect x="45" y="61" width="102" height="36" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="30" cy="80" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="30" y="85" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<line x1="31" y1="96" x2="729" y2="96" stroke="#d1d9e0" stroke-width="1"/>
+<rect x="54" y="112" width="652" height="30" rx="5" fill="#ffffff" stroke="#8c959f" stroke-width="1"/>
+<text x="63" y="131.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Filter your repositories</text>
+<rect x="54" y="154" width="652" height="160" rx="4" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="66" y="176" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="600" text-anchor="start" xml:space="preserve">captain-username</text>
+<rect x="56" y="184" width="648" height="28" rx="0" fill="#0366d6" stroke="none" stroke-width="1"/>
+<text x="76" y="203" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="normal" text-anchor="start" xml:space="preserve">robotics-group-3</text>
+<rect x="53" y="181" width="654" height="34" rx="2" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="724" cy="198" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="724" y="203" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<text x="66" y="236" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-weight="600" text-anchor="start" xml:space="preserve">your-username</text>
+<text x="76" y="262" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">some-other-repo</text>
+<text x="54" y="342" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="start" xml:space="preserve">Local path</text>
+<rect x="54" y="350" width="540" height="30" rx="5" fill="#ffffff" stroke="#8c959f" stroke-width="1"/>
+<text x="63" y="369.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">C:\Robotics\robotics-group-3</text>
+<rect x="604" y="350" width="102" height="30" rx="6" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="655.0" y="369.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">Choose…</text>
+<rect x="51" y="347" width="546" height="36" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="30" cy="365" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="30" y="370" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<text x="54" y="400" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">Not OneDrive, Desktop, or Documents if they sync to the cloud.</text>
+<rect x="512" y="418" width="90" height="32" rx="6" fill="#0366d6" stroke="#0366d6" stroke-width="1"/>
+<text x="557.0" y="439.04" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="600" text-anchor="middle" xml:space="preserve">Clone</text>
+<rect x="612" y="418" width="94" height="32" rx="6" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="659.0" y="439.04" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="600" text-anchor="middle" xml:space="preserve">Cancel</text>
+<rect x="509" y="415" width="96" height="38" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="490" cy="434" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="490" y="439" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">4</text>
+<text x="746" y="489" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>

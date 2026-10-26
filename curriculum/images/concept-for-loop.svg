@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img" aria-label="Anatomy of a for loop">
+<title>Anatomy of a for loop</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="429" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="20" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Anatomy of a for loop</text>
+<text x="60" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">for (</text>
+<text x="132.0" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">int i = 0</text>
+<text x="261.6" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">; </text>
+<text x="290.40000000000003" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">i &lt; 3</text>
+<text x="362.40000000000003" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">; </text>
+<text x="391.20000000000005" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#8250df" font-weight="bold" text-anchor="start" xml:space="preserve">i++</text>
+<text x="434.40000000000003" y="90" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">) {</text>
+<text x="110" y="130" font-family="Consolas, Menlo, Courier New, monospace" font-size="20" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">    telemetry.addData(&quot;i&quot;, i);   </text>
+<text x="60" y="166" font-family="Consolas, Menlo, Courier New, monospace" font-size="24" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">}</text>
+<circle cx="92" cy="124" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="92" y="129" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<circle cx="196.8" cy="54" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="196.8" y="59" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<text x="196.8" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="1" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve"></text>
+<circle cx="326.40000000000003" cy="54" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="326.40000000000003" y="59" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<text x="326.40000000000003" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="1" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve"></text>
+<circle cx="412.80000000000007" cy="54" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="412.80000000000007" y="59" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">4</text>
+<text x="412.80000000000007" y="34" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="1" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve"></text>
+<text x="540" y="70" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">1  START: runs once, before anything else</text>
+<text x="540" y="94" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">2  CHECK: if true, do the body; if false, leave</text>
+<text x="540" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">3  BODY: the code inside { }</text>
+<text x="540" y="142" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#8250df" font-weight="bold" text-anchor="start" xml:space="preserve">4  AFTER each lap: i++ adds 1, then CHECK again</text>
+<text x="60" y="214" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="16" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Trace it:</text>
+<rect x="60" y="236" width="600" height="36" rx="4" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="76" y="260" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">i = 0</text>
+<text x="196" y="260" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">0 &lt; 3 ?  true</text>
+<text x="400" y="260" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">body runs (shows 0)</text>
+<rect x="60" y="276" width="600" height="36" rx="4" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="76" y="300" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">i = 1</text>
+<text x="196" y="300" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">1 &lt; 3 ?  true</text>
+<text x="400" y="300" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">body runs (shows 1)</text>
+<rect x="60" y="316" width="600" height="36" rx="4" fill="#ffffff" stroke="#d1d9e0" stroke-width="1"/>
+<text x="76" y="340" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">i = 2</text>
+<text x="196" y="340" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#1f883d" font-weight="bold" text-anchor="start" xml:space="preserve">2 &lt; 3 ?  true</text>
+<text x="400" y="340" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">body runs (shows 2)</text>
+<rect x="60" y="356" width="600" height="36" rx="4" fill="#ffebe9" stroke="#d1d9e0" stroke-width="1"/>
+<text x="76" y="380" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#0969da" font-weight="bold" text-anchor="start" xml:space="preserve">i = 3</text>
+<text x="196" y="380" font-family="Consolas, Menlo, Courier New, monospace" font-size="15" fill="#cf222e" font-weight="bold" text-anchor="start" xml:space="preserve">3 &lt; 3 ?  false</text>
+<text x="400" y="380" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="normal" text-anchor="start" xml:space="preserve">loop ends</text>
+<text x="690" y="260" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Runs 3 times: i is 0, 1, 2.</text>
+<text x="690" y="284" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">Counting starts at 0, and</text>
+<text x="690" y="304" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">“&lt; 3” stops BEFORE 3.</text>
+<text x="690" y="340" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#1f2328" font-weight="bold" text-anchor="start" xml:space="preserve">Blocks version:</text>
+<text x="690" y="362" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#59636e" font-weight="normal" text-anchor="start" xml:space="preserve">“repeat 3 times”</text>
+</svg>

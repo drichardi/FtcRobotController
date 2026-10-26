@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="545" viewBox="0 0 980 545" role="img" aria-label="Android Studio: open the project and wait for Gradle sync">
+<title>Android Studio: open the project and wait for Gradle sync</title>
+<defs></defs>
+<rect x="0.5" y="0.5" width="979" height="544" rx="10" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="20" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">A  Welcome screen</text>
+<rect x="20" y="42" width="460" height="210" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M20,72 L20,48 Q20,42 26,42 L474,42 Q480,42 480,48 L480,72 Z" fill="#1e1f22"/>
+<text x="32" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Welcome to Android Studio</text>
+<text x="462" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="434" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="406" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<rect x="21" y="72" width="130" height="179" rx="0" fill="#26282b" stroke="none" stroke-width="1"/>
+<rect x="28" y="86" width="116" height="26" rx="4" fill="#2e436e" stroke="none" stroke-width="1"/>
+<text x="40" y="104" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Projects</text>
+<text x="40" y="134" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#868a91" font-weight="normal" text-anchor="start" xml:space="preserve">Customize</text>
+<text x="40" y="160" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#868a91" font-weight="normal" text-anchor="start" xml:space="preserve">Plugins</text>
+<rect x="170" y="90" width="103.22" height="30" rx="6" fill="#3c3f41" stroke="#43454a" stroke-width="1"/>
+<text x="221.61" y="109.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="middle" xml:space="preserve">New Project</text>
+<rect x="283.22" y="90" width="54.08" height="30" rx="6" fill="#3c3f41" stroke="#43454a" stroke-width="1"/>
+<text x="310.26000000000005" y="109.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="middle" xml:space="preserve">Open</text>
+<rect x="280.22" y="87" width="60.08" height="36" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="310.26000000000005" cy="142" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="310.26000000000005" y="147" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">1</text>
+<rect x="347.3" y="90" width="110.24000000000001" height="30" rx="6" fill="#3c3f41" stroke="#43454a" stroke-width="1"/>
+<text x="402.42" y="109.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="middle" xml:space="preserve">Get from VCS</text>
+<text x="170" y="192" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#868a91" font-weight="normal" text-anchor="start" xml:space="preserve">Or: File → Open… from any project window</text>
+<text x="500" y="30" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">B  Pick the cloned folder</text>
+<rect x="500" y="42" width="460" height="210" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M500,72 L500,48 Q500,42 506,42 L954,42 Q960,42 960,48 L960,72 Z" fill="#1e1f22"/>
+<text x="512" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Open File or Project</text>
+<text x="942" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="914" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="886" y="62.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<rect x="512" y="82" width="436" height="26" rx="5" fill="#1e1f22" stroke="#43454a" stroke-width="1"/>
+<text x="521" y="99.32" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">C:\Robotics\robotics-group-3</text>
+<path d="M520,120 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="540" y="130" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Robotics</text>
+<rect x="512" y="139" width="436" height="22" rx="0" fill="#2e436e" stroke="none" stroke-width="1"/>
+<rect x="509" y="136" width="442" height="28" rx="2" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="930" cy="150" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="930" y="155" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">2</text>
+<path d="M540,144 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="560" y="154" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="start" xml:space="preserve">robotics-group-3</text>
+<path d="M560,168 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="580" y="178" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">FtcRobotController</text>
+<path d="M560,192 h5 l2,2 h7 v9 h-14 Z" fill="#c09553"/>
+<text x="580" y="202" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">TeamCode</text>
+<text x="580" y="226" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">settings.gradle</text>
+<text x="540" y="248" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">↑ pick the folder that holds settings.gradle</text>
+<rect x="870" y="218" width="74" height="26" rx="6" fill="#3574f0" stroke="#3574f0" stroke-width="1"/>
+<text x="907.0" y="235.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="600" text-anchor="middle" xml:space="preserve">OK</text>
+<text x="20" y="286" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">C  Trust the project</text>
+<rect x="20" y="298" width="460" height="200" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M20,328 L20,304 Q20,298 26,298 L474,298 Q480,298 480,304 L480,328 Z" fill="#1e1f22"/>
+<text x="32" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Trust and Open Project?</text>
+<text x="462" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="434" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="406" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<text x="36" y="358.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Trust and Open Project ‘robotics-group-3’?</text>
+<text x="36" y="376.2" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Opening a project can run code from it.</text>
+<rect x="36" y="438" width="120" height="30" rx="6" fill="#3574f0" stroke="#3574f0" stroke-width="1"/>
+<text x="96.0" y="457.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="600" text-anchor="middle" xml:space="preserve">Trust Project</text>
+<rect x="166" y="438" width="160" height="30" rx="6" fill="#3c3f41" stroke="#43454a" stroke-width="1"/>
+<text x="246.0" y="457.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="middle" xml:space="preserve">Preview in Safe Mode</text>
+<rect x="336" y="438" width="80" height="30" rx="6" fill="#3c3f41" stroke="#43454a" stroke-width="1"/>
+<text x="376.0" y="457.68" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="600" text-anchor="middle" xml:space="preserve">Cancel</text>
+<rect x="33" y="435" width="126" height="36" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="96" cy="488" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="96" y="493" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">3</text>
+<text x="500" y="286" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="15" fill="#59636e" font-weight="bold" text-anchor="start" xml:space="preserve">D  Wait for Gradle sync</text>
+<rect x="500" y="298" width="460" height="200" rx="6" fill="#2b2d30" stroke="#43454a" stroke-width="1"/>
+<path d="M500,328 L500,304 Q500,298 506,298 L954,298 Q960,298 960,304 L960,328 Z" fill="#1e1f22"/>
+<text x="512" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">robotics-group-3 – Android Studio</text>
+<text x="942" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">✕</text>
+<text x="914" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">☐</text>
+<text x="886" y="318.0" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#dfe1e5" font-weight="normal" text-anchor="middle" xml:space="preserve">—</text>
+<rect x="501" y="328" width="458" height="120" rx="0" fill="#1e1f22" stroke="none" stroke-width="1"/>
+<text x="730" y="394" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#868a91" font-weight="normal" text-anchor="middle" xml:space="preserve">(project opens here)</text>
+<rect x="501" y="448" width="458" height="49" rx="0" fill="#2b2d30" stroke="none" stroke-width="1"/>
+<text x="514" y="477" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="13" fill="#dfe1e5" font-weight="normal" text-anchor="start" xml:space="preserve">Gradle sync running…</text>
+<rect x="800" y="466" width="140" height="10" rx="5" fill="#43454a" stroke="none" stroke-width="1"/>
+<rect x="800" y="466" width="70" height="10" rx="5" fill="#3574f0" stroke="none" stroke-width="1"/>
+<rect x="505" y="453" width="446" height="38" rx="6" fill="none" stroke="#e8590c" stroke-width="3"/>
+<circle cx="520" cy="434" r="13" fill="#e8590c" stroke="#ffffff" stroke-width="2"/>
+<text x="520" y="439" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold" text-anchor="middle" xml:space="preserve">4</text>
+<text x="540" y="438" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#e8590c" font-weight="bold" text-anchor="start" xml:space="preserve">First time: several minutes. Wait until it finishes.</text>
+<text x="966" y="534" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" fill="#59636e" font-style="italic" text-anchor="end">Simplified drawing — your screen may look a little different.</text>
+</svg>
