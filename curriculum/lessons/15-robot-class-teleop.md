@@ -18,7 +18,7 @@ Drive L15. Test drive, arm (Y/A), limit switch, and claw toggle (B).
 1. Find the **constructor** in `RobotHardware`. How is it different from a normal method?
 2. In L15, try adding `robot.leftDrive.setPower(1);`. Read the error. What does `private` protect?
 3. The arm limit-switch rule used to be in the OpMode (Lesson 08). Where is it now? Why is that **safer**?
-4. Count the lines in L15. Now count L07 + L08 + L13 together. Which would you rather debug at a competition?
+4. Count the lines in L15. Now count L07 + L08 + L13 together. Which would you rather debug while the robot is misbehaving on the obstacle course?
 
 ## 4. Modify
 1. Let a second driver control the arm and claw with `gamepad2`.
@@ -26,6 +26,12 @@ Drive L15. Test drive, arm (Y/A), limit switch, and claw toggle (B).
 
 ## 5. Make
 Move the claw toggle **into** `RobotHardware`: write `toggleClaw()` and `isClawOpen()` methods. The object should remember its own claw state, so L15 no longer needs the `clawOpen` variable.
+
+## 🔁 Other half: Autonomous
+Before Lesson 16, try it yourself: write a short `@Autonomous` that makes a
+`new RobotHardware(this)`, calls `init()`, and uses `robot.arcadeDrive(...)` and `sleep()` to
+drive the obstacle course's straightaway. How many lines did it take? What did you **not** have
+to write because the class already handles it?
 
 ---
 **Exit ticket:** Explain class vs. object using something in this room. (Example: a cookie cutter and cookies.)

@@ -26,5 +26,10 @@ Run it on the floor. Then run your FTCSIM movement puzzle solution in Java mode 
 ## 5. Make
 Program the robot to drive the shape of a capital **L**, then a capital **Z**. Draw your plan first.
 
+## 🏁 Obstacle course connection
+Driver control arrives in Lesson 05. For now, use your sequence to drive the **straightaway**
+of the obstacle course. How many milliseconds does it take to reach the first cone? Write it down,
+because you'll compare it with encoder driving in Lesson 12.
+
 ---
 **Exit ticket:** In Blocks, what block did the job of `sleep()`? Why does a motor keep spinning during `sleep()`?

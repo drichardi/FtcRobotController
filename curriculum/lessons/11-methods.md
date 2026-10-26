@@ -26,5 +26,14 @@ Run L11 and confirm it matches L09.
 ## 5. Make
 Write a method `drivePolygon(int sides, long turnTimeMs)` that drives any regular shape. Then make `runOpMode()` drive a triangle, then a square, each with **one line** of code.
 
+## 🔁 Other half: TeleOp
+Methods clean up driver control too. In your arcade drive TeleOp, move the drive math into a
+method:
+```java
+private void arcadeDrive(double drive, double turn, double maxSpeed) { ... }
+```
+The loop in `runOpMode()` should shrink to reading the gamepad, choosing a speed, and calling
+`arcadeDrive(...)`. What does your autonomous from Lesson 06 gain if it can call the **same** method?
+
 ---
 **Exit ticket:** In Blocks, what did you call the thing Java calls a "method"? Name one method from the FTC SDK you've used that you *didn't* write.

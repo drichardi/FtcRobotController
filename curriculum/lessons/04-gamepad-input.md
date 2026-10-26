@@ -33,5 +33,18 @@ Move every stick and press every button that the code reads. Fill in this table:
 ## 5. Make
 Create a variable `double throttle` that equals `forward` multiplied by the right trigger. Show it on telemetry. What would this be useful for on a real robot?
 
+## 🔁 Other half: Autonomous
+Autonomous programs can read the gamepad too, but only **before** START, while the program is
+in INIT. Make an `@Autonomous` copy of this lesson and replace `waitForStart();` with:
+```java
+while (opModeInInit()) {
+    telemetry.addData("A button", gamepad1.a);
+    telemetry.addLine("Press START when ready");
+    telemetry.update();
+}
+```
+Press INIT and push A. Then press START. Why might it be useful to set things up with the
+gamepad *before* an autonomous run starts? *(You'll use this in Lessons 07 and 13.)*
+
 ---
 **Exit ticket:** In your own words, what is "the game loop" and why does every TeleOp need one?

@@ -41,7 +41,13 @@ Test it. Tune `CLAW_OPEN_POSITION` and `CLAW_CLOSED_POSITION` so the claw doesn'
 Add a second toggle on **X** that switches between "fast" and "slow" mode and shows it on telemetry.
 
 ## 6. Make
-Use D-pad UP and DOWN (with edge detection) to choose a number from 0 to 10, shown on telemetry. *(This is exactly how teams pick an "autonomous delay" before a match!)*
+Use D-pad UP and DOWN (with edge detection) to choose a number from 0 to 10, shown on telemetry.
+
+## 🔁 Other half: Autonomous route picker
+Combine your *Make* code with the INIT loop from Lesson 07. During INIT, D-pad UP/DOWN picks
+**route 1, 2, or 3** (one tap = one step, thanks to edge detection), shown on telemetry.
+After START, run the chosen route. Use `if`/`else if`, or look ahead to `switch` in Lesson 14.
+Route ideas: 1 = straightaway only, 2 = straightaway + slalom, 3 = straightaway + wall tap.
 
 ---
 **Exit ticket:** Explain to a Blocks programmer why "if A is pressed, flip the claw" doesn't work.

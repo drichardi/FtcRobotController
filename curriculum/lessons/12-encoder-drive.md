@@ -22,13 +22,27 @@ Put a strip of tape at the start. Measure where the robot ends up after the firs
 1. Why does `inchesToTicks` have `int` in front of its name instead of `void`?
 2. What does `(int)` do to `1086.7`? Is that rounding?
 3. Change the battery to a low one (or set power to 0.3). Does the robot still go 24"? Compare to driving by time in Lesson 09.
-4. What is the 5-second `timeout` for? Describe a match situation where it saves you.
+4. What is the 5-second `timeout` for? Describe an obstacle-course situation where it saves you.
 
 ## 4. Modify — Calibrate
 Drive 48". Measure the actual distance. Adjust `WHEEL_DIAMETER_INCHES` until it's within ½". Record the before/after in your engineering notebook.
 
 ## 5. Make
 Write `double ticksToInches(int ticks)`, the reverse of `inchesToTicks`. Use it to show "inches traveled so far" on telemetry while driving.
+
+## 🔁 Other half: TeleOp arm presets
+Encoders make driver control easier too. In a TeleOp, make two **arm preset** buttons:
+A sends the arm to `0` ticks (down) and Y sends it to a "carry" height you measure (try `300`).
+```java
+arm.setTargetPosition(300);
+arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+arm.setPower(0.4);
+```
+Reset the arm encoder once in INIT with `STOP_AND_RESET_ENCODER`, with the arm all the way
+down. Watch the encoder value on telemetry. Why does the arm need to start in the same place
+every time?
+
+🏁 **Obstacle course:** **Level 5**: drive the straightaway and box turn by encoders and land on the tape mark.
 
 ---
 **Exit ticket:** Why are constants written in `ALL_CAPS`, and why is it better to use `TICKS_PER_INCH` than to type `45.28` everywhere?

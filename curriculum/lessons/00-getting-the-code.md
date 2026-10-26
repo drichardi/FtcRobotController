@@ -3,12 +3,12 @@
 **Big ideas:** **Version control** (saving a project's history and sharing it safely) and
 **project structure** (knowing which files are yours to change).
 **You need:** a GitHub account, GitHub Desktop, Android Studio, and your group's Control Hub (Part B).
-**Time:** Part A ≈ 45 min (Session 1) · Part B ≈ 25 min (Session 2)
+**Time:** Part A ≈ 45 min · Part B ≈ 25 min (they can be on different days)
 
 ---
 
 ## Why are we doing this?
-Real robot code is written by a **team**, on **many computers**, over **a whole season**.
+Real robot code is written by a **team**, on **many computers**, over **weeks or months**.
 Without a system, someone always ends up asking "Whose laptop has the code that worked on Saturday?"
 **Git** is that system. **GitHub** stores your team's code online. **GitHub Desktop** is the
 app that moves code between GitHub and your computer. Every FRC team and most FTC teams use it.
@@ -204,7 +204,7 @@ Do this **every** class, starting today.
 3. **Push origin.** Never leave class without pushing.
 
 ### The golden rules
-1. **Only edit files in your own folder.** (The capstone is the exception. Your group will plan who owns which file.)
+1. **Only edit files in your own folder.** (Shared obstacle-course code is the exception. Your group will plan who owns which file. See [Obstacle Course](../obstacle-course.md#working-as-a-group-in-one-folder).)
 2. **Pull when you sit down. Push before you leave.**
 3. **Pull before you deploy.**
 4. **Commit messages say what you did:** ✅ `Add slow mode to my arcade drive` ❌ `stuff`, `asdf`, `final final 2`

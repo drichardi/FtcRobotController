@@ -27,5 +27,17 @@ Test all three. Try pressing STOP partway through, too.
 ## 5. Make — Ping-pong
 Make the robot drive forward until the bumper is hit, back up 1 second, and repeat **3 times**. *(Hint: you need a loop inside a loop. These are called **nested loops**.)*
 
+## 🔁 Other half: TeleOp course timer
+Add a **course timer** to your arcade drive TeleOp:
+1. Create an `ElapsedTime` and reset it right after `waitForStart()`.
+2. Show `timer.seconds()` on telemetry every loop.
+3. When the touch sensor is pressed (tap the finish wall!), **freeze** the time. You'll need a
+   `boolean finished` and a `double finalTime` declared above the loop.
+4. Show `Final time` once finished. Driving should still work afterward.
+
+Use it to time your obstacle course runs.
+
+🏁 **Obstacle course:** **Level 4**: autonomously drive to the wall and stop on the bumper.
+
 ---
 **Exit ticket:** Give two reasons why `while + timer` is better than `sleep()` for autonomous.
