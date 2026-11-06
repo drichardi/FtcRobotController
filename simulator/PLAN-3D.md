@@ -2,6 +2,30 @@
 
 **Branch:** `sim-3d` · **Status:** Phases 0–5 built; waiting for a MacBook Air check
 
+## ✅ Next: test on a MacBook Air (before Phase 6)
+Phases 0–5 are built and tested on Windows only. To try them:
+
+1. **GitHub Desktop**: Fetch origin, then switch **Current Branch** to `sim-3d-phase5` (it has everything).
+2. **Android Studio**: File → Sync Project with Gradle Files (the first sync downloads ~60 MB).
+3. Run **Robot Simulator**. If the window doesn't show, check the Dock (it may open behind Android Studio).
+
+**3D view (go/no-go)**
+- [ ] View: 3D appears. Note the **fps** number (bottom right): ______
+- [ ] Mission 1 and Mission 10 run smoothly in Overhead, Chase, and Orbit; drag and scroll work.
+- [ ] Wheels roll forward when the robot drives forward.
+- [ ] The simulator window came to the front by itself (yes / no).
+- [ ] "Robot Connected (simulator)" fits inside its green banner.
+
+**Robot builder**
+- [ ] Robot panel → **Build...** → **New**. Build a driving robot: frame, 4 wheels on the sides, a motor on
+      each side, Control Hub, battery (optional: upright → motor → arm → claw). Time: ______ (goal: under 15 minutes)
+- [ ] Parts snap where you expect. Note anything fiddly: ______
+- [ ] Name it, **Save and drive it ▶**, and run Mission 1 with it.
+- [ ] No error messages or freezes (screenshot any you see).
+
+**Also needed:** a picture of the challenge block's metal attachment (shape, size, height), so the
+hook rule uses real sizes instead of placeholders.
+
 ## The idea
 Students build a robot from a parts menu, including **their own 3D-printed parts**, wire it to
 the Control Hub, configure it, program it, and test it, all on a laptop. The current 2D
