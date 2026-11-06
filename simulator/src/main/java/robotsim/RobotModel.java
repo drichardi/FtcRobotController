@@ -31,6 +31,8 @@ public final class RobotModel {
     public final double armMaxDeg, armLimitDeg, armSpeedDeg, armTicksPerDeg;
     /** Where the arm's pivot is (ahead of the center, height above the floor) and how long it is. */
     public final double armPivotAhead, armPivotHeight, armLength;
+    /** A hook on the arm, this far from the pivot, that can catch a block's handle. NaN = no hook. */
+    public final double hookAlongArm;
 
     // ---- claw and sensors ----
     /** How fast the claw servo moves, in position units per second. */
@@ -58,6 +60,7 @@ public final class RobotModel {
         armPivotAhead = b.armPivotAhead;
         armPivotHeight = b.armPivotHeight;
         armLength = b.armLength;
+        hookAlongArm = b.hookAlongArm;
         clawSpeed = b.clawSpeed;
         colorSensorAhead = b.colorSensorAhead;
         motorPorts = b.motorPorts.clone();
@@ -82,6 +85,18 @@ public final class RobotModel {
                 .digitalPort(1, Device.TOUCH)
                 .i2cBus(1, Device.COLOR)
                 .build();
+    }
+
+    /**
+     * The arm's angle above horizontal, in degrees, for a position on the arm's 0-100 scale:
+     * 0 is resting down in front, near the floor; 100 is nearly straight up.
+     */
+    public double armElevationDeg(double armDeg) {
+        return -35 + armDeg * 1.2;
+    }
+
+    public boolean hasHook() {
+        return !Double.isNaN(hookAlongArm);
     }
 
     /** Encoder ticks for one inch of wheel travel. */
@@ -111,6 +126,7 @@ public final class RobotModel {
         private int leftMount = 1, rightMount = 1;
         private double armMaxDeg, armLimitDeg, armSpeedDeg, armTicksPerDeg = 1;
         private double armPivotAhead, armPivotHeight, armLength;
+        private double hookAlongArm = Double.NaN;
         private double clawSpeed, colorSensorAhead;
         private final Device[] motorPorts = new Device[4];
         private final Device[] servoPorts = new Device[6];
@@ -147,6 +163,12 @@ public final class RobotModel {
             armPivotAhead = pivotAhead;
             armPivotHeight = pivotHeight;
             armLength = length;
+            return this;
+        }
+
+        /** Puts a hook on the arm, this far from the pivot. */
+        Builder hook(double alongArm) {
+            hookAlongArm = alongArm;
             return this;
         }
 

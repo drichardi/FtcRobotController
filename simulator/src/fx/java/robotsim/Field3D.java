@@ -37,6 +37,7 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.CullFace;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.MeshView;
+import javafx.scene.shape.Sphere;
 import javafx.scene.shape.TriangleMesh;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -56,7 +57,7 @@ import javax.swing.JComponent;
 final class Field3D implements FieldView3D {
 
     private static final double FIELD = World.FIELD;
-    private static final double BLOCK = 6;
+    private static final double BLOCK = World.BLOCK_SIZE;
 
     private static final Color TILE_A = Color.web("#b9bec6");
     private static final Color TILE_B = Color.web("#a7adb6");
@@ -68,6 +69,7 @@ final class Field3D implements FieldView3D {
     private static final Color TODO = Color.web("#e8590c");
     private static final Color BLOCK_COLOR = Color.web("#f2c200");
     private static final Color TRAIL = Color.web("#8250df");
+    private static final Color BALL_COLOR = Color.web("#e5534b");
 
     private final JFXPanel panel = new JFXPanel();
     private final AtomicBoolean updatePending = new AtomicBoolean(false);
@@ -81,6 +83,7 @@ final class Field3D implements FieldView3D {
     private final Group fieldStatic = new Group();
     private final Group goalsGroup = new Group();
     private final Group blocksGroup = new Group();
+    private final Group ballsGroup = new Group();
     private final Group trailGroup = new Group();
     private final Group robot = new Group();
     private final Rotate robotYaw = new Rotate(0, Rotate.Y_AXIS);
@@ -98,6 +101,7 @@ final class Field3D implements FieldView3D {
     private Label banner, hintLabel, fpsLabel;
 
     private Mission builtMission;
+    private Mission blocksBuiltFor;
     private List<Mission.Tape> builtTapes;
     private int builtTrailSize = -1;
 
@@ -187,7 +191,7 @@ final class Field3D implements FieldView3D {
         AmbientLight ambient = new AmbientLight(Color.gray(0.5));
         PointLight sun = new PointLight(Color.gray(0.45));
         sun.getTransforms().add(new Translate(FIELD * 0.3, -260, FIELD * 0.2));
-        world.getChildren().addAll(fieldStatic, goalsGroup, trailGroup, blocksGroup, robot, ambient, sun);
+        world.getChildren().addAll(fieldStatic, goalsGroup, trailGroup, blocksGroup, ballsGroup, robot, ambient, sun);
         robot.getTransforms().addAll(robotPos, robotYaw);
 
         PerspectiveCamera camera = new PerspectiveCamera(true);
@@ -362,6 +366,14 @@ final class Field3D implements FieldView3D {
         fingerLeft = box(3, 2.4, 0.6, metal);
         fingerRight = box(3, 2.4, 0.6, metal);
         arm.getChildren().addAll(bar, fingerLeft, fingerRight);
+        if (m.hasHook()) {
+            // A small J-shaped hook hanging under the arm
+            Box shank = box(0.4, 1.4, 0.4, metal);
+            shank.getTransforms().add(new Translate(armPivotX + m.hookAlongArm, -armPivotHeight + 0.7, 0));
+            Box tip = box(1.0, 0.4, 0.4, metal);
+            tip.getTransforms().add(new Translate(armPivotX + m.hookAlongArm + 0.3, -armPivotHeight + 1.3, 0));
+            arm.getChildren().addAll(shank, tip);
+        }
         arm.getTransforms().add(armPitch);
 
         robot.getChildren().addAll(chassis, deck, wheels, hub, battery, bumper, arrow, arrowHead, sensor, tower, arm);
@@ -377,11 +389,6 @@ final class Field3D implements FieldView3D {
         Box b = new Box(w, h, d);
         b.setMaterial(m);
         return b;
-    }
-
-    /** The arm's angle above horizontal: 0° on the simulator's arm is down in front, near the floor. */
-    private static double armElevation(double armDeg) {
-        return -35 + armDeg * 1.2;
     }
 
     // ------------------------------------------------------------------ field
@@ -437,6 +444,9 @@ final class Field3D implements FieldView3D {
             goalMaterials.add(mat);
             if (goal instanceof Mission.ZoneGoal) {
                 Mission.ZoneGoal z = (Mission.ZoneGoal) goal;
+                addZone(z.zone, z.zoneName, mat);
+            } else if (goal instanceof Mission.BallInZoneGoal) {
+                Mission.BallInZoneGoal z = (Mission.BallInZoneGoal) goal;
                 addZone(z.zone, z.zoneName, mat);
             } else if (goal instanceof Mission.BlockInZoneGoal) {
                 Mission.BlockInZoneGoal z = (Mission.BlockInZoneGoal) goal;
@@ -523,7 +533,8 @@ final class Field3D implements FieldView3D {
             boolean current = i == s.goalIndex;
             Mission.Goal g = s.mission.goals.get(i);
             Color base = done ? DONE : (g instanceof Mission.ZoneGoal ? ZONE
-                    : g instanceof Mission.BlockInZoneGoal ? BLOCK_COLOR.darker() : TODO);
+                    : g instanceof Mission.BlockInZoneGoal ? BLOCK_COLOR.darker()
+                    : g instanceof Mission.BallInZoneGoal ? BALL_COLOR : TODO);
             goalMaterials.get(i).setDiffuseColor(base.deriveColor(0, current || done ? 1 : 0.7, 1, 1));
         }
 
@@ -536,7 +547,7 @@ final class Field3D implements FieldView3D {
         robotYaw.setAngle(-s.headingDeg);
         leftSpin.setAngle(-s.leftTicks / ticksPerWheelTurn * 360);
         rightSpin.setAngle(-s.rightTicks / ticksPerWheelTurn * 360);
-        double elevation = armElevation(s.armDeg);
+        double elevation = s.robot.armElevationDeg(s.armDeg);
         armPitch.setAngle(-elevation);
         double spread = s.clawPos >= 0.5 ? 2.6 : 1.4;
         double tipX = armPivotX + armLength + 1.2;
@@ -553,11 +564,12 @@ final class Field3D implements FieldView3D {
     }
 
     private void updateBlocks(World.Snapshot s, double elevation) {
-        while (blocksGroup.getChildren().size() < s.blocks.size()) {
-            blocksGroup.getChildren().add(box(BLOCK, BLOCK, BLOCK, new PhongMaterial(BLOCK_COLOR)));
-        }
-        while (blocksGroup.getChildren().size() > s.blocks.size()) {
-            blocksGroup.getChildren().remove(blocksGroup.getChildren().size() - 1);
+        if (blocksGroup.getChildren().size() != s.blocks.size() || s.mission != blocksBuiltFor) {
+            blocksGroup.getChildren().clear();
+            for (double[] b : s.blocks) {
+                blocksGroup.getChildren().add(blockNode(b[6] > 0));
+            }
+            blocksBuiltFor = s.mission;
         }
         double e = Math.toRadians(elevation);
         double h = Math.toRadians(s.headingDeg);
@@ -571,9 +583,42 @@ final class Field3D implements FieldView3D {
                 n.getTransforms().setAll(new Translate(s.x + ahead * Math.cos(h), -Math.max(BLOCK / 2, up - 1), s.y + ahead * Math.sin(h)),
                         new Rotate(-s.headingDeg, Rotate.Y_AXIS));
             } else {
-                n.getTransforms().setAll(new Translate(b[0], -BLOCK / 2, b[1]));
+                // On the floor, or hanging from the hook (lifted)
+                n.getTransforms().setAll(new Translate(b[0], -(BLOCK / 2 + b[4]), b[1]),
+                        new Rotate(-b[3], Rotate.Y_AXIS));
             }
         }
+        while (ballsGroup.getChildren().size() < s.balls.size()) {
+            Sphere ball = new Sphere(1, 24);
+            ball.setMaterial(new PhongMaterial(BALL_COLOR));
+            ballsGroup.getChildren().add(ball);
+        }
+        while (ballsGroup.getChildren().size() > s.balls.size()) {
+            ballsGroup.getChildren().remove(ballsGroup.getChildren().size() - 1);
+        }
+        for (int i = 0; i < s.balls.size(); i++) {
+            double[] b = s.balls.get(i);
+            Sphere ball = (Sphere) ballsGroup.getChildren().get(i);
+            ball.setRadius(b[2]);
+            ball.getTransforms().setAll(new Translate(b[0], -b[2], b[1]));
+        }
+    }
+
+    /** A yellow block, with a metal handle on top if a hook can lift it. */
+    private Node blockNode(boolean handle) {
+        Box cube = box(BLOCK, BLOCK, BLOCK, new PhongMaterial(BLOCK_COLOR));
+        if (!handle) {
+            return new Group(cube);
+        }
+        PhongMaterial metal = new PhongMaterial(Color.web("#8c959f"));
+        double h = World.HANDLE_HEIGHT;
+        Box postA = box(0.4, h, 0.4, metal);
+        postA.getTransforms().add(new Translate(-1.6, -(BLOCK / 2 + h / 2), 0));
+        Box postB = box(0.4, h, 0.4, metal);
+        postB.getTransforms().add(new Translate(1.6, -(BLOCK / 2 + h / 2), 0));
+        Box bar = box(3.6, 0.4, 0.4, metal);
+        bar.getTransforms().add(new Translate(0, -(BLOCK / 2 + h), 0));
+        return new Group(cube, postA, postB, bar);
     }
 
     private void updateTrail(World.Snapshot s) {

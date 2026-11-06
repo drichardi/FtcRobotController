@@ -31,6 +31,7 @@ final class FieldPanel extends JPanel {
     private static final Color TRAIL = new Color(0x8250DF);
     private static final Color ROBOT = new Color(0x3D4451);
     private static final Color BLOCK = new Color(0xF2C200);
+    private static final Color BALL = new Color(0xE5534B);
 
     private World.Snapshot snap;
     private String hint;
@@ -81,6 +82,7 @@ final class FieldPanel extends JPanel {
             drawTrail(g);
         }
         drawBlocks(g, false);
+        drawBalls(g);
         drawRobot(g);
         drawBlocks(g, true);
         drawBanner(g);
@@ -139,7 +141,18 @@ final class FieldPanel extends JPanel {
             boolean done = i < snap.goalIndex;
             boolean current = i == snap.goalIndex;
             Color c = done ? DONE : (goal instanceof Mission.ZoneGoal ? ZONE : TODO);
-            if (goal instanceof Mission.ZoneGoal) {
+            if (goal instanceof Mission.BallInZoneGoal) {
+                Mission.BallInZoneGoal z = (Mission.BallInZoneGoal) goal;
+                Color bc = done ? DONE : BALL;
+                Rectangle2D r = new Rectangle2D.Double(px(z.zone.getX()), py(z.zone.getMaxY()),
+                        z.zone.getWidth() * scale, z.zone.getHeight() * scale);
+                g.setColor(alpha(bc, current || done ? 70 : 40));
+                g.fill(r);
+                g.setColor(bc);
+                g.setStroke(new BasicStroke(3f));
+                g.draw(r);
+                label(g, z.zoneName, r.getCenterX(), r.getCenterY(), bc);
+            } else if (goal instanceof Mission.ZoneGoal) {
                 Mission.ZoneGoal z = (Mission.ZoneGoal) goal;
                 Rectangle2D r = new Rectangle2D.Double(px(z.zone.getX()), py(z.zone.getMaxY()),
                         z.zone.getWidth() * scale, z.zone.getHeight() * scale);
@@ -223,19 +236,45 @@ final class FieldPanel extends JPanel {
         g.draw(p);
     }
 
-    private void drawBlocks(Graphics2D g, boolean heldOnly) {
+    private void drawBlocks(Graphics2D g0, boolean heldOnly) {
         for (double[] b : snap.blocks) {
-            boolean held = b[2] > 0;
+            boolean held = b[2] > 0 || b[5] > 0;
             if (held != heldOnly) {
                 continue;
             }
-            double s = 6 * scale;
-            Rectangle2D r = new Rectangle2D.Double(px(b[0]) - s / 2, py(b[1]) - s / 2, s, s);
-            g.setColor(held && snap.armDeg > 30 ? alpha(BLOCK, 150) : BLOCK);
+            Graphics2D g = (Graphics2D) g0.create();
+            g.translate(px(b[0]), py(b[1]));
+            g.rotate(-Math.toRadians(b[3]));
+            double s = World.BLOCK_SIZE * scale;
+            Rectangle2D r = new Rectangle2D.Double(-s / 2, -s / 2, s, s);
+            // See-through when it's lifted off the floor
+            boolean lifted = (b[2] > 0 && snap.armDeg > 30) || b[4] > 0.5;
+            g.setColor(lifted ? alpha(BLOCK, 150) : BLOCK);
             g.fill(r);
             g.setColor(new Color(0x9A7B00));
             g.setStroke(new BasicStroke(1.5f));
             g.draw(r);
+            if (b[6] > 0) {
+                // the metal handle on top, for a hook
+                g.setColor(new Color(0x57606A));
+                g.fill(new Rectangle2D.Double(-s * 0.3, -s * 0.07, s * 0.6, s * 0.14));
+            }
+            g.dispose();
+        }
+    }
+
+    private void drawBalls(Graphics2D g) {
+        for (double[] b : snap.balls) {
+            double r = b[2] * scale;
+            Ellipse2D e = new Ellipse2D.Double(px(b[0]) - r, py(b[1]) - r, 2 * r, 2 * r);
+            g.setColor(BALL);
+            g.fill(e);
+            g.setColor(BALL.darker());
+            g.setStroke(new BasicStroke(1.5f));
+            g.draw(e);
+            // a highlight, so it reads as a ball
+            g.setColor(new Color(255, 255, 255, 120));
+            g.fill(new Ellipse2D.Double(px(b[0]) - r * 0.45, py(b[1]) - r * 0.6, r * 0.6, r * 0.45));
         }
     }
 

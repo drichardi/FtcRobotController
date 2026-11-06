@@ -23,6 +23,10 @@ import java.util.Random;
 public final class World {
 
     public static final double FIELD = 144;
+    /** Blocks are 6-inch cubes. A hook block has a metal handle this tall on top. */
+    public static final double BLOCK_SIZE = 6, HANDLE_HEIGHT = 1.5;
+    /** How close (sideways) a hook must be to a handle to catch it, in inches. */
+    static final double HOOK_CATCH = 1.5;
 
     /** The robot's design. */
     final RobotModel robot;
@@ -41,6 +45,9 @@ public final class World {
     /** 1.0 = full battery. A low battery makes every motor weaker, like on a real robot. */
     volatile double battery = 1.0;
     final List<Block> blocks = new ArrayList<Block>();
+    final List<Ball> balls = new ArrayList<Ball>();
+    /** Physics for blocks and balls, in missions where they're real objects (else null). */
+    private ObjectPhysics physics;
     final List<double[]> trail = new ArrayList<double[]>();
     /** Tape on the floor for this run (a mission's tape may be shifted on each reset). */
     final List<Mission.Tape> tapes = new ArrayList<Mission.Tape>();
@@ -61,14 +68,31 @@ public final class World {
     String failure = null;
     double initX, initY, initHeading;
 
-    /** A yellow block the claw can pick up. */
+    /** A yellow block the claw can pick up (and a hook can lift, if it has a handle). */
     static final class Block {
-        double x, y;
-        boolean held;
+        double x, y, angleDeg;
+        /** Held in the claw, or hanging from the hook. */
+        boolean held, hooked;
+        /** How high the block's bottom is above the floor (only while hooked). */
+        double lift;
+        final boolean hasHandle;
 
-        Block(double x, double y) {
+        Block(double x, double y, boolean hasHandle) {
             this.x = x;
             this.y = y;
+            this.hasHandle = hasHandle;
+        }
+    }
+
+    /** A ball the robot can push. */
+    static final class Ball {
+        double x, y;
+        final double radius;
+
+        Ball(double x, double y, double radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
         }
     }
 
@@ -101,7 +125,21 @@ public final class World {
         bumperContact = false;
         blocks.clear();
         for (double[] b : m.blocks) {
-            blocks.add(new Block(b[0], b[1]));
+            blocks.add(new Block(b[0], b[1], b.length > 2 && b[2] > 0));
+        }
+        balls.clear();
+        for (double[] b : m.balls) {
+            balls.add(new Ball(b[0], b[1], b[2] / 2));
+        }
+        physics = null;
+        if (m.physicalObjects) {
+            physics = new ObjectPhysics(m, robot);
+            for (Block b : blocks) {
+                physics.addBlock(b);
+            }
+            for (Ball b : balls) {
+                physics.addBall(b);
+            }
         }
         tapes.clear();
         double shiftX = m.tapeShiftsX.length == 0 ? 0 : m.tapeShiftsX[random.nextInt(m.tapeShiftsX.length)];
@@ -150,7 +188,8 @@ public final class World {
         stepDrive(dt);
         stepArm(dt);
         stepClaw(dt);
-        bumperContact = intersectsAnything(frontStrip());
+        stepHook();
+        bumperContact = intersectsAnything(frontStrip()) || touchesObject(frontStrip(), 0);
         recordTrail();
         checkMission(initPhase, runPhase, nowNanos);
     }
@@ -178,7 +217,25 @@ public final class World {
 
         prevX = x;
         prevY = y;
-        if (intersectsAnything(robotShape(nx, ny, newHeading))) {
+        boolean stuck = intersectsAnything(robotShape(nx, ny, newHeading));
+        if (physics != null) {
+            // Push blocks and balls. One that can't get out of the way stops the robot like a wall.
+            if (stuck) {
+                physics.step(dt, x, y, headingRad, x, y, headingRad);
+            } else {
+                physics.step(dt, x, y, headingRad, nx, ny, newHeading);
+            }
+            for (Block b : blocks) {
+                physics.readBack(b);
+            }
+            for (Ball b : balls) {
+                physics.readBack(b);
+            }
+            if (!stuck && touchesObject(robotShape(nx, ny, newHeading), 0.15)) {
+                stuck = true;
+            }
+        }
+        if (stuck) {
             // Stuck against something: wheels stall, so encoders stop counting too.
             blocked = true;
             left.speed = 0;
@@ -226,16 +283,107 @@ public final class World {
         if (wasOpen && !open && armDeg < 30) {
             // Closing: grab a block that is right in front of the robot.
             for (Block b : blocks) {
-                if (!b.held && grabZone().contains(b.x, b.y)) {
+                if (!b.held && !b.hooked && grabZone().contains(b.x, b.y)) {
                     b.held = true;
+                    if (physics != null) {
+                        physics.remove(b);
+                    }
                     break;
                 }
             }
         } else if (!wasOpen && open) {
             for (Block b : blocks) {
-                b.held = false;
+                if (b.held) {
+                    b.held = false;
+                    b.angleDeg = Math.toDegrees(headingRad);
+                    if (physics != null) {
+                        physics.addBlock(b);
+                    }
+                }
             }
         }
+    }
+
+    /**
+     * A hook on the arm catches a block's handle when the arm lifts with the hook right under the
+     * handle. The block hangs from the hook until it's set back down on the floor.
+     */
+    private void stepHook() {
+        if (!robot.hasHook()) {
+            return;
+        }
+        double[] tip = hookTip();
+        for (Block b : blocks) {
+            if (b.hooked) {
+                b.x = tip[0];
+                b.y = tip[1];
+                b.angleDeg = Math.toDegrees(headingRad);
+                b.lift = Math.max(0, tip[2] - HANDLE_HEIGHT - BLOCK_SIZE);
+                if (b.lift <= 0 && arm.speed < 0) {
+                    // Set down on the floor: the hook lets go.
+                    b.hooked = false;
+                    if (physics != null) {
+                        physics.addBlock(b);
+                    }
+                }
+                return;
+            }
+        }
+        if (arm.speed <= 0) {
+            return;
+        }
+        for (Block b : blocks) {
+            if (b.hasHandle && !b.held && Math.hypot(tip[0] - b.x, tip[1] - b.y) <= HOOK_CATCH
+                    && tip[2] >= BLOCK_SIZE && tip[2] <= BLOCK_SIZE + HANDLE_HEIGHT + 0.5) {
+                b.hooked = true;
+                b.lift = 0;
+                if (physics != null) {
+                    physics.remove(b);
+                }
+                return;
+            }
+        }
+    }
+
+    /** Where the hook's tip is: field x, field y, and height above the floor. */
+    double[] hookTip() {
+        double e = Math.toRadians(robot.armElevationDeg(armDeg));
+        double ahead = robot.armPivotAhead + robot.hookAlongArm * Math.cos(e);
+        double height = robot.armPivotHeight + robot.hookAlongArm * Math.sin(e);
+        return new double[]{x + ahead * Math.cos(headingRad), y + ahead * Math.sin(headingRad), height};
+    }
+
+    /** True if a shape overlaps a block or ball on the floor by more than the given depth (inches). */
+    private boolean touchesObject(Area shape, double depth) {
+        if (physics == null) {
+            return false;
+        }
+        for (Block b : blocks) {
+            if (!b.held && !b.hooked && overlaps(shape, blockShape(b), depth)) {
+                return true;
+            }
+        }
+        for (Ball b : balls) {
+            if (overlaps(shape, new Area(new java.awt.geom.Ellipse2D.Double(b.x - b.radius, b.y - b.radius,
+                    2 * b.radius, 2 * b.radius)), depth)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean overlaps(Area a, Area b, double depth) {
+        Area both = new Area(a);
+        both.intersect(b);
+        if (both.isEmpty()) {
+            return false;
+        }
+        Rectangle2D r = both.getBounds2D();
+        return r.getWidth() > depth && r.getHeight() > depth;
+    }
+
+    private static Area blockShape(Block b) {
+        return shape(b.x, b.y, Math.toRadians(b.angleDeg), -BLOCK_SIZE / 2, -BLOCK_SIZE / 2, BLOCK_SIZE, BLOCK_SIZE);
     }
 
     private void recordTrail() {
@@ -389,7 +537,12 @@ public final class World {
         s.blocked = blocked;
         s.blocks = new ArrayList<double[]>();
         for (Block b : blocks) {
-            s.blocks.add(new double[]{b.x, b.y, b.held ? 1 : 0});
+            s.blocks.add(new double[]{b.x, b.y, b.held ? 1 : 0, b.angleDeg, b.lift, b.hooked ? 1 : 0,
+                    b.hasHandle ? 1 : 0});
+        }
+        s.balls = new ArrayList<double[]>();
+        for (Ball b : balls) {
+            s.balls.add(new double[]{b.x, b.y, b.radius});
         }
         s.trail = new ArrayList<double[]>(trail);
         s.goalIndex = goalIndex;
@@ -421,7 +574,11 @@ public final class World {
         public int leftTicks, rightTicks, armTicks, goalIndex;
         public boolean touch, blocked, complete;
         public String failure;
-        public List<double[]> blocks, trail;
+        /** Blocks: x, y, held in claw (1/0), angle, lift height, hooked (1/0), has handle (1/0). */
+        public List<double[]> blocks;
+        /** Balls: x, y, radius. */
+        public List<double[]> balls;
+        public List<double[]> trail;
         public Mission mission;
         public RobotModel robot;
         public List<Mission.Tape> tapes;
