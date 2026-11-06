@@ -133,6 +133,21 @@ public final class Missions {
                 .timed()
                 .build());
 
+        list.add(Mission.builder(10, "Push the Ball")
+                .describe("Practice field with real objects. Drive any TeleOp program (L05, L06, L07, "
+                        + "L15, or M06) and push the red ball into the GOAL. Blocks slide and turn when "
+                        + "you bump them, and stop the robot if they're stuck against a wall. Their metal "
+                        + "handles are for hooks.")
+                .start(24, 72, 0)
+                .ball(60, 72, 5)
+                .hookBlock(48, 30)
+                .hookBlock(92, 112)
+                .hookBlock(100, 40)
+                .goal(new Mission.BallInZoneGoal("Push the ball into the GOAL", "GOAL", 112, 58, 26, 28))
+                .physicalObjects()
+                .timed()
+                .build());
+
         return Collections.unmodifiableList(list);
     }
 }

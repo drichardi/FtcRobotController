@@ -37,7 +37,14 @@ sourceSets {
     }
 }
 
+configurations {
+    // The 3D part uses everything the simulator core uses.
+    fxImplementation.extendsFrom implementation
+}
+
 dependencies {
+    // 2D physics for blocks and balls on the floor (pure Java, works with Java 8)
+    implementation 'org.dyn4j:dyn4j:5.0.2'
     ['base', 'graphics', 'controls', 'swing'].each { name ->
         fxImplementation "org.openjfx:javafx-${name}:${javafxVersion}:${javafxPlatform}"
     }

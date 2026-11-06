@@ -134,7 +134,29 @@ public final class Mission {
         }
     }
 
-    /** Close the claw on a block. */
+    /** Push a ball so its center is inside a box. */
+    public static final class BallInZoneGoal extends Goal {
+        public final Rectangle2D zone;
+        public final String zoneName;
+
+        BallInZoneGoal(String label, String zoneName, double x, double y, double w, double h) {
+            super(label);
+            this.zoneName = zoneName;
+            this.zone = new Rectangle2D.Double(x, y, w, h);
+        }
+
+        @Override
+        boolean check(World world) {
+            for (World.Ball b : world.balls) {
+                if (zone.contains(b.x, b.y)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    /** Close the claw on a block, or catch its handle with a hook. */
     public static final class BlockHeldGoal extends Goal {
         BlockHeldGoal(String label) {
             super(label);
@@ -143,7 +165,7 @@ public final class Mission {
         @Override
         boolean check(World world) {
             for (World.Block b : world.blocks) {
-                if (b.held) {
+                if (b.held || b.hooked) {
                     return true;
                 }
             }
@@ -200,7 +222,7 @@ public final class Mission {
         @Override
         boolean check(World world) {
             for (World.Block b : world.blocks) {
-                if (!b.held && zone.contains(b.x, b.y)) {
+                if (!b.held && !b.hooked && zone.contains(b.x, b.y)) {
                     return true;
                 }
             }
@@ -214,7 +236,15 @@ public final class Mission {
     public final String description;
     public final double startX, startY, startHeadingDeg;
     public final List<Rectangle2D> obstacles;
+    /** Blocks: x, y, and 1 if it has a handle on top for a hook (else 0). */
     public final List<double[]> blocks;
+    /** Balls: x, y, diameter. */
+    public final List<double[]> balls;
+    /**
+     * True if blocks and balls are real objects the robot pushes. Older missions and the lessons
+     * keep "ghost" blocks the robot drives through, because they were written that way.
+     */
+    public final boolean physicalObjects;
     public final List<Goal> goals;
     public final boolean noMoveBeforeStart;
     public final boolean timed;
@@ -235,6 +265,8 @@ public final class Mission {
         startHeadingDeg = b.startHeadingDeg;
         obstacles = Collections.unmodifiableList(b.obstacles);
         blocks = Collections.unmodifiableList(b.blocks);
+        balls = Collections.unmodifiableList(b.balls);
+        physicalObjects = b.physicalObjects || !b.balls.isEmpty();
         goals = Collections.unmodifiableList(b.goals);
         noMoveBeforeStart = b.noMoveBeforeStart;
         timed = b.timed;
@@ -257,6 +289,8 @@ public final class Mission {
         double startX = 12, startY = 12, startHeadingDeg = 0;
         final List<Rectangle2D> obstacles = new ArrayList<Rectangle2D>();
         final List<double[]> blocks = new ArrayList<double[]>();
+        final List<double[]> balls = new ArrayList<double[]>();
+        boolean physicalObjects = false;
         final List<Goal> goals = new ArrayList<Goal>();
         boolean noMoveBeforeStart = false;
         boolean timed = false;
@@ -297,7 +331,24 @@ public final class Mission {
         }
 
         Builder block(double x, double y) {
-            blocks.add(new double[]{x, y});
+            blocks.add(new double[]{x, y, 0});
+            return this;
+        }
+
+        /** A block with a metal handle on top that a hook can catch. */
+        Builder hookBlock(double x, double y) {
+            blocks.add(new double[]{x, y, 1});
+            return this;
+        }
+
+        Builder ball(double x, double y, double diameter) {
+            balls.add(new double[]{x, y, diameter});
+            return this;
+        }
+
+        /** Blocks and balls are real objects: the robot pushes them instead of driving through. */
+        Builder physicalObjects() {
+            physicalObjects = true;
             return this;
         }
 
