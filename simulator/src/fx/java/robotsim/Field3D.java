@@ -56,10 +56,6 @@ import javax.swing.JComponent;
 final class Field3D implements FieldView3D {
 
     private static final double FIELD = World.FIELD;
-    private static final double ROBOT = World.ROBOT;
-    private static final double WHEEL_RADIUS = 3.78 / 2;
-    private static final double TICKS_PER_WHEEL_TURN = 537.7;
-    private static final double ARM_PIVOT_X = 4, ARM_PIVOT_HEIGHT = 7, ARM_LENGTH = 11;
     private static final double BLOCK = 6;
 
     private static final Color TILE_A = Color.web("#b9bec6");
@@ -89,7 +85,10 @@ final class Field3D implements FieldView3D {
     private final Group robot = new Group();
     private final Rotate robotYaw = new Rotate(0, Rotate.Y_AXIS);
     private final Translate robotPos = new Translate();
-    private final Rotate armPitch = new Rotate(0, ARM_PIVOT_X, -ARM_PIVOT_HEIGHT, 0, Rotate.Z_AXIS);
+    private final Rotate armPitch = new Rotate(0, Rotate.Z_AXIS);
+    // The robot's sizes, from the design it was built from
+    private RobotModel builtRobot;
+    private double robotLength, robotWidth, wheelRadius, ticksPerWheelTurn, armPivotX, armPivotHeight, armLength;
     private final Rotate leftSpin = new Rotate(0, Rotate.Z_AXIS);
     private final Rotate rightSpin = new Rotate(0, Rotate.Z_AXIS);
     private Box fingerLeft, fingerRight, bumper, sensor;
@@ -171,6 +170,17 @@ final class Field3D implements FieldView3D {
         return out[0];
     }
 
+    @Override
+    public void close() {
+        Platform.exit();
+        try {
+            // Give the renderer a moment to finish its last frame.
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     // ------------------------------------------------------------------ scene
 
     private void buildScene() {
@@ -178,7 +188,7 @@ final class Field3D implements FieldView3D {
         PointLight sun = new PointLight(Color.gray(0.45));
         sun.getTransforms().add(new Translate(FIELD * 0.3, -260, FIELD * 0.2));
         world.getChildren().addAll(fieldStatic, goalsGroup, trailGroup, blocksGroup, robot, ambient, sun);
-        buildRobot();
+        robot.getTransforms().addAll(robotPos, robotYaw);
 
         PerspectiveCamera camera = new PerspectiveCamera(true);
         camera.setFieldOfView(38);
@@ -290,65 +300,75 @@ final class Field3D implements FieldView3D {
 
     // ------------------------------------------------------------------ robot
 
-    private void buildRobot() {
+    /** Builds the robot's 3D shape from its design. Runs again if the design changes. */
+    private void buildRobot(RobotModel m) {
+        robot.getChildren().clear();
+        robotLength = m.length;
+        robotWidth = m.width;
+        wheelRadius = m.wheelDiameter / 2;
+        ticksPerWheelTurn = m.ticksPerMotorRev;
+        armPivotX = m.armPivotAhead;
+        armPivotHeight = m.armPivotHeight;
+        armLength = m.armLength;
+        armPitch.setPivotX(armPivotX);
+        armPitch.setPivotY(-armPivotHeight);
         PhongMaterial body = new PhongMaterial(ROBOT_BODY);
         PhongMaterial black = new PhongMaterial(Color.web("#141414"));
         PhongMaterial metal = new PhongMaterial(Color.web("#9aa3ad"));
 
-        Box chassis = box(ROBOT - 1, 2, ROBOT - 4, body);
-        chassis.setTranslateY(-(WHEEL_RADIUS + 0.4));
-        Box deck = box(10, 0.4, ROBOT - 6, new PhongMaterial(Color.web("#4b5361")));
-        deck.setTranslateY(-(WHEEL_RADIUS + 1.6));
+        Box chassis = box(robotLength - 1, 2, robotWidth - 4, body);
+        chassis.setTranslateY(-(wheelRadius + 0.4));
+        Box deck = box(10, 0.4, robotWidth - 6, new PhongMaterial(Color.web("#4b5361")));
+        deck.setTranslateY(-(wheelRadius + 1.6));
 
         // Two wheels per side; they spin with the encoder ticks.
         Group wheels = new Group();
         for (int side = -1; side <= 1; side += 2) {
             for (int end = -1; end <= 1; end += 2) {
-                Cylinder w = new Cylinder(WHEEL_RADIUS, 1.4);
+                Cylinder w = new Cylinder(wheelRadius, 1.4);
                 w.setMaterial(black);
                 Group g = new Group(w, spoke(metal));
-                g.getTransforms().addAll(new Translate(end * 5.5, -WHEEL_RADIUS, side * (ROBOT / 2 - 1.2)),
+                g.getTransforms().addAll(new Translate(end * 5.5, -wheelRadius, side * (robotWidth / 2 - 1.2)),
                         side < 0 ? rightSpin : leftSpin, new Rotate(90, Rotate.X_AXIS));
                 wheels.getChildren().add(g);
             }
         }
 
         Box hub = box(4.5, 1.2, 4, new PhongMaterial(Color.web("#2a2a2a")));
-        hub.getTransforms().add(new Translate(-4, -(WHEEL_RADIUS + 2.4), -3));
+        hub.getTransforms().add(new Translate(-4, -(wheelRadius + 2.4), -3));
         Box battery = box(5, 1.8, 3, new PhongMaterial(Color.web("#1f6feb")));
-        battery.getTransforms().add(new Translate(-4, -(WHEEL_RADIUS + 2.7), 3.5));
+        battery.getTransforms().add(new Translate(-4, -(wheelRadius + 2.7), 3.5));
 
         // Front bumper (the touch sensor): red when pressed
-        bumper = box(1.5, 2, ROBOT - 2, bumperMaterial);
-        bumper.getTransforms().add(new Translate(ROBOT / 2 + 0.75, -(WHEEL_RADIUS + 0.2), 0));
+        bumper = box(1.5, 2, robotWidth - 2, bumperMaterial);
+        bumper.getTransforms().add(new Translate(robotLength / 2 + 0.75, -(wheelRadius + 0.2), 0));
 
         // Arrow on top showing the front
         Box arrow = box(6, 0.3, 1.2, new PhongMaterial(Color.WHITE));
-        arrow.getTransforms().add(new Translate(1, -(WHEEL_RADIUS + 1.9), 0));
+        arrow.getTransforms().add(new Translate(1, -(wheelRadius + 1.9), 0));
         Box arrowHead = box(1.6, 0.3, 3.4, new PhongMaterial(Color.WHITE));
-        arrowHead.getTransforms().add(new Translate(4.2, -(WHEEL_RADIUS + 1.9), 0));
+        arrowHead.getTransforms().add(new Translate(4.2, -(wheelRadius + 1.9), 0));
 
-        // Color sensor, looking down at the floor 7 inches ahead of the center
+        // Color sensor, looking down at the floor ahead of the center
         sensor = box(1.6, 0.8, 1.6, sensorMaterial);
-        sensor.getTransforms().add(new Translate(7, -0.9, 0));
+        sensor.getTransforms().add(new Translate(m.colorSensorAhead, -0.9, 0));
 
         // Arm on a motor at the front, with the claw at its end
-        Box tower = box(1.5, ARM_PIVOT_HEIGHT - WHEEL_RADIUS, 1.5, metal);
-        tower.getTransforms().add(new Translate(ARM_PIVOT_X, -(WHEEL_RADIUS + ARM_PIVOT_HEIGHT) / 2 - 1, 0));
+        Box tower = box(1.5, armPivotHeight - wheelRadius, 1.5, metal);
+        tower.getTransforms().add(new Translate(armPivotX, -(wheelRadius + armPivotHeight) / 2 - 1, 0));
         Group arm = new Group();
-        Box bar = box(ARM_LENGTH, 1, 1.2, new PhongMaterial(Color.web("#e8590c")));
-        bar.getTransforms().add(new Translate(ARM_PIVOT_X + ARM_LENGTH / 2, -ARM_PIVOT_HEIGHT, 0));
+        Box bar = box(armLength, 1, 1.2, new PhongMaterial(Color.web("#e8590c")));
+        bar.getTransforms().add(new Translate(armPivotX + armLength / 2, -armPivotHeight, 0));
         fingerLeft = box(3, 2.4, 0.6, metal);
         fingerRight = box(3, 2.4, 0.6, metal);
         arm.getChildren().addAll(bar, fingerLeft, fingerRight);
         arm.getTransforms().add(armPitch);
 
         robot.getChildren().addAll(chassis, deck, wheels, hub, battery, bumper, arrow, arrowHead, sensor, tower, arm);
-        robot.getTransforms().addAll(robotPos, robotYaw);
     }
 
-    private static Node spoke(PhongMaterial m) {
-        Box b = new Box(WHEEL_RADIUS * 1.6, 1.5, 0.5);
+    private Node spoke(PhongMaterial m) {
+        Box b = new Box(wheelRadius * 1.6, 1.5, 0.5);
         b.setMaterial(m);
         return b;
     }
@@ -507,17 +527,21 @@ final class Field3D implements FieldView3D {
             goalMaterials.get(i).setDiffuseColor(base.deriveColor(0, current || done ? 1 : 0.7, 1, 1));
         }
 
+        if (s.robot != builtRobot) {
+            buildRobot(s.robot);
+            builtRobot = s.robot;
+        }
         robotPos.setX(s.x);
         robotPos.setZ(s.y);
         robotYaw.setAngle(-s.headingDeg);
-        leftSpin.setAngle(-s.leftTicks / TICKS_PER_WHEEL_TURN * 360);
-        rightSpin.setAngle(-s.rightTicks / TICKS_PER_WHEEL_TURN * 360);
+        leftSpin.setAngle(-s.leftTicks / ticksPerWheelTurn * 360);
+        rightSpin.setAngle(-s.rightTicks / ticksPerWheelTurn * 360);
         double elevation = armElevation(s.armDeg);
         armPitch.setAngle(-elevation);
         double spread = s.clawPos >= 0.5 ? 2.6 : 1.4;
-        double tipX = ARM_PIVOT_X + ARM_LENGTH + 1.2;
-        fingerLeft.getTransforms().setAll(new Translate(tipX, -ARM_PIVOT_HEIGHT, spread));
-        fingerRight.getTransforms().setAll(new Translate(tipX, -ARM_PIVOT_HEIGHT, -spread));
+        double tipX = armPivotX + armLength + 1.2;
+        fingerLeft.getTransforms().setAll(new Translate(tipX, -armPivotHeight, spread));
+        fingerRight.getTransforms().setAll(new Translate(tipX, -armPivotHeight, -spread));
         bumperMaterial.setDiffuseColor(s.touch ? Color.web("#cf222e") : Color.web("#6e7781"));
         double shade = Math.max(0.05, Math.min(1, s.surface * 1.1));
         sensorMaterial.setDiffuseColor(Color.color(shade, shade, shade));
@@ -542,8 +566,8 @@ final class Field3D implements FieldView3D {
             Node n = blocksGroup.getChildren().get(i);
             if (b[2] > 0) {
                 // Held: hangs from the claw at the end of the arm
-                double ahead = ARM_PIVOT_X + (ARM_LENGTH + 1.2) * Math.cos(e);
-                double up = ARM_PIVOT_HEIGHT + (ARM_LENGTH + 1.2) * Math.sin(e);
+                double ahead = armPivotX + (armLength + 1.2) * Math.cos(e);
+                double up = armPivotHeight + (armLength + 1.2) * Math.sin(e);
                 n.getTransforms().setAll(new Translate(s.x + ahead * Math.cos(h), -Math.max(BLOCK / 2, up - 1), s.y + ahead * Math.sin(h)),
                         new Rotate(-s.headingDeg, Rotate.Y_AXIS));
             } else {

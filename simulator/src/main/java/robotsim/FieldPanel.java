@@ -254,15 +254,16 @@ final class FieldPanel extends JPanel {
         g.fill(new Rectangle2D.Double(8, open - 0.6, 5.5, 1.4));
         g.fill(new Rectangle2D.Double(8, -open - 0.8, 5.5, 1.4));
 
+        double halfL = snap.robot.length / 2, halfW = snap.robot.width / 2;
         g.setColor(ROBOT);
-        g.fill(new RoundRectangle2D.Double(-9, -9, 18, 18, 3, 3));
+        g.fill(new RoundRectangle2D.Double(-halfL, -halfW, 2 * halfL, 2 * halfW, 3, 3));
         // wheels
         g.setColor(new Color(0x111111));
-        g.fill(new RoundRectangle2D.Double(-4.5, 6.2, 9, 2.8, 1, 1));
-        g.fill(new RoundRectangle2D.Double(-4.5, -9, 9, 2.8, 1, 1));
+        g.fill(new RoundRectangle2D.Double(-4.5, halfW - 2.8, 9, 2.8, 1, 1));
+        g.fill(new RoundRectangle2D.Double(-4.5, -halfW, 9, 2.8, 1, 1));
         // bumper (red when the touch sensor is pressed)
         g.setColor(snap.touch ? new Color(0xFF3B30) : new Color(0x6E7781));
-        g.fill(new Rectangle2D.Double(8.2, -8, 1.6, 16));
+        g.fill(new Rectangle2D.Double(halfL - 0.8, -halfW + 1, 1.6, 2 * halfW - 2));
         // arrow showing the front
         g.setColor(Color.WHITE);
         Polygon arrow = new Polygon(new int[]{6, -3, -3}, new int[]{0, 4, -4}, 3);
@@ -270,9 +271,10 @@ final class FieldPanel extends JPanel {
         // color sensor, looking down: its dot shows the shade of the floor under it
         int shade = (int) Math.round(Math.min(1.0, snap.surface / 0.9) * 255);
         g.setColor(new Color(0x00B4D8));
-        g.fill(new Ellipse2D.Double(World.SENSOR_AHEAD - 1.3, -1.3, 2.6, 2.6));
+        double ahead = snap.robot.colorSensorAhead;
+        g.fill(new Ellipse2D.Double(ahead - 1.3, -1.3, 2.6, 2.6));
         g.setColor(new Color(shade, shade, shade));
-        g.fill(new Ellipse2D.Double(World.SENSOR_AHEAD - 0.8, -0.8, 1.6, 1.6));
+        g.fill(new Ellipse2D.Double(ahead - 0.8, -0.8, 1.6, 1.6));
         g.dispose();
 
         // wheel labels, drawn without rotation so the letters stay readable

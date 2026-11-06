@@ -20,6 +20,9 @@ interface FieldView3D {
     /** A picture of the current view (for tests and the docs). Waits for the frame to finish. */
     BufferedImage capture();
 
+    /** Stops drawing before the program quits, so closing the window doesn't print errors. */
+    void close();
+
     /** Builds the 3D view, or explains why it can't. */
     final class Factory {
         private static String problem;
