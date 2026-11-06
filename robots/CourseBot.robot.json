@@ -1,0 +1,23 @@
+{
+  "name": "CourseBot",
+  "format": 1,
+  "parts": [
+    {"id": "frame", "part": "chassis-18", "at": [0, 0, 2.3]},
+    {"id": "hub", "part": "control-hub", "at": [-4, -3, 4.1]},
+    {"id": "battery", "part": "battery", "at": [-4, 3.5, 4.2]},
+    {"id": "switch", "part": "power-switch", "at": [-7.5, 0, 3.8]},
+    {"id": "left-motor", "part": "motor-fast", "at": [-1.5, 5, 2.2], "turn": 90, "port": "motor 0"},
+    {"id": "right-motor", "part": "motor-fast", "at": [-1.5, -5, 2.2], "turn": -90, "port": "motor 1"},
+    {"id": "left-front-wheel", "part": "wheel-96", "at": [5.5, 7.5, 1.89], "on": "left-motor"},
+    {"id": "left-back-wheel", "part": "wheel-96", "at": [-5.5, 7.5, 1.89], "on": "left-motor"},
+    {"id": "right-front-wheel", "part": "wheel-96", "at": [5.5, -7.5, 1.89], "on": "right-motor"},
+    {"id": "right-back-wheel", "part": "wheel-96", "at": [-5.5, -7.5, 1.89], "on": "right-motor"},
+    {"id": "arm-post", "part": "upright-4", "at": [4, -1.6, 4.5]},
+    {"id": "arm-motor", "part": "motor-fast", "at": [4, -1.6, 7], "turn": -90, "port": "motor 2"},
+    {"id": "arm", "part": "arm-11", "at": [4, 0, 7], "on": "arm-motor"},
+    {"id": "claw", "part": "claw", "on": "arm", "along": 11, "port": "servo 0"},
+    {"id": "bumper", "part": "touch-sensor", "at": [9.75, 0, 2.1], "port": "digital 1"},
+    {"id": "floor-sensor", "part": "color-sensor", "at": [7, 0, 0.9], "port": "i2c 1"}
+  ]
+}
+

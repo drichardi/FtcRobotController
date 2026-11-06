@@ -13,6 +13,8 @@ public final class RobotModel {
     enum Device { LEFT_WHEELS, RIGHT_WHEELS, ARM, CLAW, TOUCH, COLOR }
 
     public final String name;
+    /** The design this model was worked out from (null for a model built in code, like in tests). */
+    final RobotDesign design;
 
     // ---- body: the robot's center is the middle of this rectangle ----
     public final double length, width;
@@ -45,6 +47,7 @@ public final class RobotModel {
 
     private RobotModel(Builder b) {
         name = b.name;
+        design = b.design;
         length = b.length;
         width = b.width;
         trackWidth = b.trackWidth;
@@ -69,22 +72,22 @@ public final class RobotModel {
         i2cBuses = b.i2cBuses.clone();
     }
 
-    /** The course robot: the numbers every lesson and mission was written for. */
-    static RobotModel courseBot() {
-        return new Builder("CourseBot")
-                .body(18, 18)
-                // goBILDA-style 312 RPM motor (537.7 ticks/rev) with 96 mm wheels: same numbers as Lesson 12
-                .drivetrain(15, 3.78, 537.7, 40, -1, +1)
-                .arm(100, 95, 120, 5, 4, 7, 11)
-                .claw(2.0)
-                .colorSensor(7.0)
-                .motorPort(0, Device.LEFT_WHEELS)
-                .motorPort(1, Device.RIGHT_WHEELS)
-                .motorPort(2, Device.ARM)
-                .servoPort(0, Device.CLAW)
-                .digitalPort(1, Device.TOUCH)
-                .i2cBus(1, Device.COLOR)
-                .build();
+    private static RobotModel courseBot;
+
+    /**
+     * The course robot, worked out from its design (RobotDesign.courseBot()). Every lesson and
+     * mission was written for these numbers: 18-inch square, wheels 15 inches apart, 96 mm
+     * wheels on 537.7-tick motors, 40 inches per second, left side mirrored.
+     */
+    static synchronized RobotModel courseBot() {
+        if (courseBot == null) {
+            try {
+                courseBot = DesignModel.toModel(RobotDesign.courseBot());
+            } catch (RobotDesign.DesignException e) {
+                throw new IllegalStateException("CourseBot's design is broken: " + e.getMessage(), e);
+            }
+        }
+        return courseBot;
     }
 
     /**
@@ -122,6 +125,7 @@ public final class RobotModel {
 
     static final class Builder {
         private final String name;
+        private RobotDesign design;
         private double length, width, trackWidth, wheelDiameter, ticksPerMotorRev, maxSpeed;
         private int leftMount = 1, rightMount = 1;
         private double armMaxDeg, armLimitDeg, armSpeedDeg, armTicksPerDeg = 1;
@@ -135,6 +139,11 @@ public final class RobotModel {
 
         Builder(String name) {
             this.name = name;
+        }
+
+        Builder design(RobotDesign d) {
+            design = d;
+            return this;
         }
 
         Builder body(double length, double width) {

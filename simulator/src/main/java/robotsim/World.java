@@ -29,11 +29,13 @@ public final class World {
     static final double HOOK_CATCH = 1.5;
 
     /** The robot's design. */
-    final RobotModel robot;
-    final MotorState left, right, arm;
+    RobotModel robot;
+    MotorState left, right, arm;
 
     // pose of the robot's center
     double x, y, headingRad;
+    /** How far each side's wheels have really rolled, in inches (forward is +). Only for drawing. */
+    double leftTravel, rightTravel;
     double prevX, prevY;
     double armDeg = 0;
     double clawTarget = 0.5;
@@ -101,6 +103,11 @@ public final class World {
     }
 
     World(Mission mission, RobotModel robot) {
+        setRobot(robot, mission);
+    }
+
+    /** Swaps in a different robot design and puts it at the mission's start. */
+    synchronized void setRobot(RobotModel robot, Mission mission) {
         this.robot = robot;
         double ticksPerInch = robot.ticksPerInch();
         left = new MotorState("left wheels", robot.leftMount, ticksPerInch, 1.0 / (2 * ticksPerInch), 10);
@@ -149,6 +156,8 @@ public final class World {
         }
         colorGain = 1.0f;
         colorLight = true;
+        leftTravel = 0;
+        rightTravel = 0;
         trail.clear();
         trail.add(new double[]{x, y});
         resetProgress();
@@ -246,6 +255,8 @@ public final class World {
         x = nx;
         y = ny;
         headingRad = newHeading;
+        leftTravel += vL * dt;
+        rightTravel += vR * dt;
         left.rawTicks += vL * left.mount * left.ticksPerUnit * dt;
         right.rawTicks += vR * right.mount * right.ticksPerUnit * dt;
         for (Block b : blocks) {
@@ -528,6 +539,8 @@ public final class World {
         s.leftPower = left.power;
         s.rightPower = right.power;
         s.armPower = arm.power;
+        s.leftTravel = leftTravel;
+        s.rightTravel = rightTravel;
         s.leftTicks = left.reportedPosition();
         s.rightTicks = right.reportedPosition();
         s.armTicks = arm.reportedPosition();
@@ -571,6 +584,8 @@ public final class World {
     /** Everything the screen needs to draw one frame. */
     public static final class Snapshot {
         public double x, y, headingDeg, leftPower, rightPower, armPower, armDeg, clawPos, completeSeconds;
+        /** How far each side's wheels have rolled, in inches (forward is +), for spinning them in 3D. */
+        public double leftTravel, rightTravel;
         public int leftTicks, rightTicks, armTicks, goalIndex;
         public boolean touch, blocked, complete;
         public String failure;
