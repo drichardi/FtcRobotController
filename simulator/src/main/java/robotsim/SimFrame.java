@@ -83,6 +83,8 @@ final class SimFrame extends JFrame {
     /** Robot designs from the repo's robots/ folder (CourseBot is always there). */
     private final JComboBox<DesignChoice> designBox = new JComboBox<DesignChoice>();
     private final JButton partsButton = new JButton("Parts list");
+    private final JButton buildButton = new JButton("Build...");
+    private RobotBuilderLauncher builder;
     private boolean updatingDesigns = false;
     private final JCheckBox trailBox = new JCheckBox("Show trail", true);
     private final JCheckBox batteryBox = new JCheckBox("Low battery");
@@ -186,7 +188,10 @@ final class SimFrame extends JFrame {
         designBox.setFocusable(false);
         designBox.setToolTipText("Robot designs from the robots folder. CourseBot is the course robot.");
         designRow.add(designBox, BorderLayout.CENTER);
-        JPanel designButtons = new JPanel(new GridLayout(1, 2, 4, 0));
+        JPanel designButtons = new JPanel(new GridLayout(1, 3, 4, 0));
+        buildButton.setFocusable(false);
+        buildButton.setToolTipText("Open the robot builder: snap parts together and make your own robot.");
+        designButtons.add(buildButton);
         partsButton.setFocusable(false);
         partsButton.setToolTipText("Every part this design uses, with pictures and counts.");
         JButton refresh = new JButton("\u21bb");
@@ -369,6 +374,12 @@ final class SimFrame extends JFrame {
                 }
             }
         });
+        buildButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openBuilder();
+            }
+        });
         partsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -518,6 +529,26 @@ final class SimFrame extends JFrame {
             world.setRobot(model, (Mission) missionBox.getSelectedItem() != null
                     ? (Mission) missionBox.getSelectedItem() : missions.get(1));
         }
+    }
+
+    /** Opens the robot builder with the current design. "Save and drive it" brings a design back here. */
+    void openBuilder() {
+        if (builder == null) {
+            builder = RobotBuilderLauncher.Factory.create();
+        }
+        if (builder == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, RobotBuilderLauncher.Factory.problem(), "Robot builder",
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        DesignChoice now = (DesignChoice) designBox.getSelectedItem();
+        builder.open(this, robotsFolder(), now == null ? null : now.design, new java.util.function.Consumer<String>() {
+            @Override
+            public void accept(String name) {
+                reloadDesigns(name);
+                SimFrame.this.toFront();
+            }
+        });
     }
 
     /** After a design is refused, the list shows the robot that's really on the field. */
