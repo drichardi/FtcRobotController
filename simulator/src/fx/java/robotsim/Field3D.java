@@ -91,7 +91,7 @@ final class Field3D implements FieldView3D {
     private final Rotate armPitch = new Rotate(0, Rotate.Z_AXIS);
     // The robot's sizes, from the design it was built from
     private RobotModel builtRobot;
-    private double robotLength, robotWidth, wheelRadius, ticksPerWheelTurn, armPivotX, armPivotHeight, armLength;
+    private double robotLength, robotWidth, wheelRadius, armPivotX, armPivotHeight, armLength;
     private double clawAlong;
     private final Rotate leftSpin = new Rotate(0, Rotate.Z_AXIS);
     private final Rotate rightSpin = new Rotate(0, Rotate.Z_AXIS);
@@ -311,7 +311,6 @@ final class Field3D implements FieldView3D {
         robotLength = m.length;
         robotWidth = m.width;
         wheelRadius = m.wheelDiameter / 2;
-        ticksPerWheelTurn = m.ticksPerMotorRev;
         armPivotX = m.armPivotAhead;
         armPivotHeight = m.armPivotHeight;
         armLength = m.armLength;
@@ -500,6 +499,16 @@ final class Field3D implements FieldView3D {
         robot.getChildren().add(arm);
     }
 
+    /**
+     * How far to turn a wheel (about its axle) after rolling this many inches. The wheels' axles
+     * point along JavaFX Z, and a positive turn about Z moves the top of the wheel toward +X, the
+     * robot's front: rolling forward. (Not the encoder count: that depends on the program's
+     * motor direction and resets to 0, which made the wheels spin backward or jump.)
+     */
+    static double wheelSpinDeg(double travelInches, double wheelDiameter) {
+        return travelInches / (Math.PI * wheelDiameter) * 360;
+    }
+
     private static Node placed(Node n, double x, double y, double z) {
         n.getTransforms().add(new Translate(x, y, z));
         return n;
@@ -671,8 +680,8 @@ final class Field3D implements FieldView3D {
         robotPos.setX(s.x);
         robotPos.setZ(s.y);
         robotYaw.setAngle(-s.headingDeg);
-        leftSpin.setAngle(-s.leftTicks / ticksPerWheelTurn * 360);
-        rightSpin.setAngle(-s.rightTicks / ticksPerWheelTurn * 360);
+        leftSpin.setAngle(wheelSpinDeg(s.leftTravel, 2 * wheelRadius));
+        rightSpin.setAngle(wheelSpinDeg(s.rightTravel, 2 * wheelRadius));
         double elevation = s.robot.armElevationDeg(s.armDeg);
         armPitch.setAngle(-elevation);
         double spread = s.clawPos >= 0.5 ? 2.6 : 1.4;
