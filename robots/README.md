@@ -10,4 +10,9 @@ parts: bigger wheels go faster, a TETRIX-style motor is slower and has 1440 tick
 
 Pick a design in the simulator's **Robot** panel. **Parts list** shows every part it uses.
 
+**Build...** opens the robot builder: pick a part from the menu, point at the robot, and click to
+place it. Parts snap where they belong, and each motor, servo, and sensor gets a port. **Save and
+drive it** saves the design here and puts it in the simulator. You can start from CourseBot, but
+save your version with your own name: CourseBot itself stays as it is.
+
 Nothing in this folder goes onto the real robot.

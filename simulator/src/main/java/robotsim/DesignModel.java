@@ -50,9 +50,9 @@ final class DesignModel {
             throw new RobotDesign.DesignException("The left and right wheels need their own motors to turn.");
         }
         double track = average(leftWheels) - average(rightWheels);
-        double diameter = leftWheels.get(0).part.number("diameter");
-        double ticks = leftMotor.part.number("ticksPerRev");
-        double rpm = leftMotor.part.number("rpm");
+        double diameter = leftWheels.get(0).number("diameter");
+        double ticks = leftMotor.number("ticksPerRev");
+        double rpm = leftMotor.number("rpm");
         double maxSpeed = rpm / 60 * Math.PI * diameter * DRIVE_LOAD_FACTOR;
         b.drivetrain(track, diameter, ticks, maxSpeed, mount(leftMotor), mount(rightMotor));
 
@@ -63,8 +63,8 @@ final class DesignModel {
             throw new RobotDesign.DesignException("The arm has to be on a motor (its \"on\" names the motor).");
         }
         if (arm != null) {
-            double ticksPerDeg = armMotor.part.number("ticksPerRev") * arm.part.number("gearRatio") / 360;
-            b.arm(arm.part.number("maxDeg"), arm.part.number("limitDeg"), arm.part.number("speedDeg"), ticksPerDeg,
+            double ticksPerDeg = armMotor.number("ticksPerRev") * arm.number("gearRatio") / 360;
+            b.arm(arm.number("maxDeg"), arm.number("limitDeg"), arm.number("speedDeg"), ticksPerDeg,
                     arm.x, arm.z, arm.part.length);
             for (RobotDesign.Placement p : parts) {
                 if (arm.id.equals(p.on) && p.part.kind == PartCatalog.Kind.HOOK) {
@@ -76,7 +76,7 @@ final class DesignModel {
             b.arm(0, 1000, 0, 1, 0, 0, 0);
         }
         RobotDesign.Placement claw = first(parts, PartCatalog.Kind.CLAW);
-        b.claw(claw == null ? 0 : claw.part.number("speed"));
+        b.claw(claw == null ? 0 : claw.number("speed"));
         RobotDesign.Placement color = first(parts, PartCatalog.Kind.COLOR);
         b.colorSensor(color == null ? 0 : color.x);
 

@@ -1,6 +1,30 @@
 # Plan: 3D Simulator and Robot Builder
 
-**Branch:** `sim-3d` · **Status:** Phases 0–4 built; waiting for a MacBook Air check
+**Branch:** `sim-3d` · **Status:** Phases 0–5 built; waiting for a MacBook Air check
+
+## ✅ Next: test on a MacBook Air (before Phase 6)
+Phases 0–5 are built and tested on Windows only. To try them:
+
+1. **GitHub Desktop**: Fetch origin, then switch **Current Branch** to `sim-3d-phase5` (it has everything).
+2. **Android Studio**: File → Sync Project with Gradle Files (the first sync downloads ~60 MB).
+3. Run **Robot Simulator**. If the window doesn't show, check the Dock (it may open behind Android Studio).
+
+**3D view (go/no-go)**
+- [ ] View: 3D appears. Note the **fps** number (bottom right): ______
+- [ ] Mission 1 and Mission 10 run smoothly in Overhead, Chase, and Orbit; drag and scroll work.
+- [ ] Wheels roll forward when the robot drives forward.
+- [ ] The simulator window came to the front by itself (yes / no).
+- [ ] "Robot Connected (simulator)" fits inside its green banner.
+
+**Robot builder**
+- [ ] Robot panel → **Build...** → **New**. Build a driving robot: frame, 4 wheels on the sides, a motor on
+      each side, Control Hub, battery (optional: upright → motor → arm → claw). Time: ______ (goal: under 15 minutes)
+- [ ] Parts snap where you expect. Note anything fiddly: ______
+- [ ] Name it, **Save and drive it ▶**, and run Mission 1 with it.
+- [ ] No error messages or freezes (screenshot any you see).
+
+**Also needed:** a picture of the challenge block's metal attachment (shape, size, height), so the
+hook rule uses real sizes instead of placeholders.
 
 ## The idea
 Students build a robot from a parts menu, including **their own 3D-printed parts**, wire it to
@@ -198,7 +222,7 @@ itself and the 2D simulator is unchanged.
 | 2 | 3D view | 2D/3D toggle; field, walls, tape, blocks, CourseBot in 3D; cameras: overhead, chase, orbit | L | **Built with Phase 0.** Polish (shadows, nicer parts) can come later |
 | 3 | Game-object physics | Blocks and balls become real objects (dyn4j, choice A) in missions that turn them on; pinned objects stop the robot and press the bumper; the **hook rule** (hook on the arm, handle on the block); Mission 10 "Push the Ball" | M | **Built.** 16 physics checks pass; Mission 10 completes by keyboard; Missions 1–9 and the lessons unchanged |
 | 4 | Parts and designs | Parts catalog with icons; `.robot.json` design files in `robots/`; the robot model is worked out from the design (speed, track, mirrored side, arm, claw, hook, sensor, wiring); design picker; parts list with CSV; 3D robot drawn from its parts | M | **Built.** CourseBot loads from `robots/CourseBot.robot.json` with the exact old numbers; 39 design checks pass; missions and lessons unchanged |
-| 5 | Builder | Build mode: catalog, ghost placement, snapping, rotate, undo, orbit camera | L | A student builds a driving robot from nothing in 15 minutes |
+| 5 | Builder | Builder window (**Build...** in the Robot panel): parts menu with icons; see-through ghost (green fits, red explains why not); snapping (frame first, wheels to the sides, arm on a motor, claw/hook on the arm, bumper front, color sensor under); ports filled in automatically; motor numbers editable; turn, delete, undo/redo; save to `robots/` (CourseBot protected); **Save and drive it** | L | **Built.** 46 editor checks and the window test pass; a robot built from nothing in 15 clicks drives Mission 1 like CourseBot. **Needs a student try on a MacBook Air for the 15-minute goal.** |
 | 6 | **Printed parts (STL)** | Add my part, attach point, size and weight checks, `robots/parts/` sharing | M | A printed funnel on a robot guides a ball where it should go |
 | 7 | Wiring and Robot Check | Click-to-wire; Expansion Hub; the hardware map uses the design's wiring; TETRIX Motor type; inspection panel | M | A miswired motor drives the wrong wheel; Robot Check explains every problem |
 | 8 | Physics from the design | Speed, turning, weight, arm, gripper, and sensor positions come from the design; CSV parts list | M | Bigger wheels drive faster; a TETRIX motor needs 1440 ticks per turn |

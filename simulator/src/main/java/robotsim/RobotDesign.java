@@ -33,9 +33,16 @@ final class RobotDesign {
         final double along;
         /** The port its cable plugs into, like "motor 0", "servo 0", "digital 1", "i2c 1". */
         final String port;
+        /** This part's own numbers where they differ from the catalog, like a motor's real ticks per turn. */
+        final Map<String, Double> settings;
 
         Placement(String id, PartCatalog.PartType part, double x, double y, double z, double turn, String on,
                   double along, String port) {
+            this(id, part, x, y, z, turn, on, along, port, null);
+        }
+
+        Placement(String id, PartCatalog.PartType part, double x, double y, double z, double turn, String on,
+                  double along, String port, Map<String, Double> settings) {
             this.id = id;
             this.part = part;
             this.x = x;
@@ -45,6 +52,14 @@ final class RobotDesign {
             this.on = on;
             this.along = along;
             this.port = port;
+            this.settings = settings == null || settings.isEmpty() ? Collections.<String, Double>emptyMap()
+                    : Collections.unmodifiableMap(new LinkedHashMap<String, Double>(settings));
+        }
+
+        /** A number about this part: its own setting if it has one, else the catalog's. */
+        double number(String key) {
+            Double d = settings.get(key);
+            return d != null ? d : part.number(key);
         }
     }
 
@@ -137,6 +152,9 @@ final class RobotDesign {
             if (p.port != null) {
                 m.put("port", p.port);
             }
+            if (!p.settings.isEmpty()) {
+                m.put("settings", new LinkedHashMap<String, Object>(p.settings));
+            }
             list.add(m);
         }
         root.put("parts", list);
@@ -188,7 +206,15 @@ final class RobotDesign {
             String on = m.get("on") instanceof String ? (String) m.get("on") : null;
             double along = m.get("along") instanceof Number ? ((Number) m.get("along")).doubleValue() : Double.NaN;
             String port = m.get("port") instanceof String ? (String) m.get("port") : null;
-            parts.add(new Placement(id, type, at[0], at[1], at[2], turn, on, along, port));
+            Map<String, Double> settings = new LinkedHashMap<String, Double>();
+            if (m.get("settings") instanceof Map) {
+                for (Map.Entry<String, Object> e : ((Map<String, Object>) m.get("settings")).entrySet()) {
+                    if (e.getValue() instanceof Number) {
+                        settings.put(e.getKey(), ((Number) e.getValue()).doubleValue());
+                    }
+                }
+            }
+            parts.add(new Placement(id, type, at[0], at[1], at[2], turn, on, along, port, settings));
         }
         for (Placement p : parts) {
             if (p.on != null && findIn(parts, p.on) == null) {
