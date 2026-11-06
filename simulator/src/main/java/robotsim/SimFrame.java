@@ -63,6 +63,12 @@ final class SimFrame extends JFrame {
     private final RobotConfig.Store configs = RobotConfig.Store.openDefault();
 
     private final FieldPanel field = new FieldPanel();
+    /** Holds the 2D field and, once someone picks 3D, the 3D view. */
+    private final JPanel viewHolder = new JPanel(new java.awt.CardLayout());
+    private final JRadioButton view2dButton = new JRadioButton("2D", true);
+    private final JRadioButton view3dButton = new JRadioButton("3D");
+    private FieldView3D view3d;
+    private boolean showing3d = false;
     private final ArmPanel armView = new ArmPanel();
     private final JComboBox<Mission> missionBox = new JComboBox<Mission>();
     private final JTextArea missionText = textArea(3, false);
@@ -202,7 +208,31 @@ final class SimFrame extends JFrame {
             }
         });
         viewRow.add(clearTrail);
+        ButtonGroup viewGroup = new ButtonGroup();
+        for (JRadioButton b : new JRadioButton[]{view2dButton, view3dButton}) {
+            b.setFocusable(false);
+            viewGroup.add(b);
+        }
+        view2dButton.setToolTipText("The field seen from above.");
+        view3dButton.setToolTipText("The field in 3D. Drag to look around, scroll to zoom.");
+        view2dButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setView3d(false);
+            }
+        });
+        view3dButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setView3d(true);
+            }
+        });
+        JPanel viewChoice = new JPanel(new FlowLayout(FlowLayout.LEFT, 6, 0));
+        viewChoice.add(new JLabel("View:"));
+        viewChoice.add(view2dButton);
+        viewChoice.add(view3dButton);
         viewPanel.add(full(viewRow));
+        viewPanel.add(full(viewChoice));
         JPanel optionRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 6, 0));
         batteryBox.setFocusable(false);
         batteryBox.setToolTipText("Motors get about 25% weaker, like a robot with a low battery.");
@@ -230,7 +260,8 @@ final class SimFrame extends JFrame {
         sideScroll.getVerticalScrollBar().setUnitIncrement(16);
 
         getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(field, BorderLayout.CENTER);
+        viewHolder.add(field, "2d");
+        getContentPane().add(viewHolder, BorderLayout.CENTER);
         getContentPane().add(sideScroll, BorderLayout.EAST);
 
         Rectangle screen = GraphicsEnvironment.isHeadless() ? new Rectangle(0, 0, 1280, 820)
@@ -585,9 +616,42 @@ final class SimFrame extends JFrame {
         }
 
         World.Snapshot s = world.snapshot();
-        field.show(s, trailBox.isSelected(), keyHint(s, phase));
+        String hint = keyHint(s, phase);
+        if (showing3d) {
+            view3d.show(s, trailBox.isSelected(), hint);
+        } else {
+            field.show(s, trailBox.isSelected(), hint);
+        }
         armView.show(s);
         updateLabels(s, phase);
+    }
+
+    /** Switches between the 2D field and the 3D view. The 3D view starts the first time it's picked. */
+    void setView3d(boolean on) {
+        if (on && view3d == null) {
+            setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.WAIT_CURSOR));
+            view3d = FieldView3D.Factory.create();
+            setCursor(null);
+            if (view3d == null) {
+                view2dButton.setSelected(true);
+                view3dButton.setEnabled(false);
+                view3dButton.setToolTipText(FieldView3D.Factory.problem());
+                javax.swing.JOptionPane.showMessageDialog(this, FieldView3D.Factory.problem(), "3D view",
+                        javax.swing.JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            viewHolder.add(view3d.component(), "3d");
+        }
+        showing3d = on;
+        view2dButton.setSelected(!on);
+        view3dButton.setSelected(on);
+        ((java.awt.CardLayout) viewHolder.getLayout()).show(viewHolder, on ? "3d" : "2d");
+        viewHolder.revalidate();
+    }
+
+    /** For tests and screenshots: the 3D view, if it has been started. */
+    FieldView3D view3d() {
+        return view3d;
     }
 
     /**

@@ -1,6 +1,6 @@
 # Plan: 3D Simulator and Robot Builder
 
-**Branch:** `sim-3d` · **Status:** plan only, nothing built yet
+**Branch:** `sim-3d` · **Status:** Phase 0 and Phase 1 in progress
 
 ## The idea
 Students build a robot from a parts menu, including **their own 3D-printed parts**, wire it to
@@ -13,11 +13,11 @@ simulator stays as it is; **3D is a toggle**.
 ## What we know about the class
 | | |
 |---|---|
-| **Laptops** | MacBook Air (assumed Apple Silicon, M1 or newer). This is the main target. |
+| **Laptops** | MacBook Air, all 2020 or newer (Apple Silicon). This is the main target. |
 | **Parts** | Generic, not brand-specific. |
-| **Motors** | Includes TETRIX motors (fewer, slower, stronger, different ticks per turn). |
+| **Motors** | Includes TETRIX motors (model unknown: default 1440 ticks per turn, editable). |
 | **Wheels** | Some groups use **mecanum** wheels (they can drive sideways). |
-| **Challenge** | Students **3D print parts** to handle game objects like blocks and balls. |
+| **Challenge** | Students **3D print parts** to handle game objects: they **push a ball** and **lift a block** by hooking a metal attachment on its top. |
 
 ## Short verdict
 **Worth doing, as a planning and learning tool, built in stages with a go/no-go test first.**
@@ -193,7 +193,7 @@ itself and the 2D simulator is unchanged.
 
 | # | Phase | Delivers | Size | Done when |
 |---|---|---|---|---|
-| **0** | **Test (go/no-go)** | On a MacBook Air: a 3D field and robot (inside the window and in its own window); a sample STL loaded; blocks and balls pushed with dyn4j **and** scooped with Libbulletjme | S–M | Smooth on a MacBook Air; we pick A or B with evidence |
+| **0** | **Test (go/no-go)** | A 3D view inside the simulator window, with a 2D/3D toggle, three cameras, and an fps counter. (Choice A plus hooks is decided, so no full-3D physics test is needed.) | S–M | **Built.** 63 fps on Windows; waiting for a MacBook Air check |
 | 1 | RobotModel | World reads a model instead of constants; CourseBot as a design file | M | Every mission, lesson, and harness result identical to today |
 | 2 | 3D view | 2D/3D toggle; field, walls, tape, blocks, CourseBot in 3D; cameras: overhead, chase, orbit | L | Every mission plays the same in both views |
 | 3 | Game-object physics | Blocks and balls become physical objects (choice A or B); missions say which objects are on the field | M | The robot pushes a ball; existing missions still pass |
@@ -231,13 +231,20 @@ between phases.
 | Custom robots break missions | Missions list what they need ("needs a claw"); CourseBot always available |
 | More code for a teacher to maintain | Same structure and style as today; this plan and code comments explain the design |
 
+## Decisions
+- **Printed parts: A plus hooks.** Balls are **pushed** (floor-level 2D physics, choice A). Blocks
+  are **lifted by a hook** that catches a metal attachment on the block's top. That's a rule, like
+  today's claw grab: when a hook point on a printed part reaches the block's handle and lifts, the
+  block hangs from it until it's set down or unhooked. No full 3D physics needed. A student marks
+  the hook point on their STL when they add it.
+- **Laptops:** MacBook Air, 2020 or newer, so Apple Silicon only.
+- **TETRIX motors:** model unknown. Default 1440 ticks per turn (common for TETRIX encoders), and
+  every motor's numbers are editable in the builder.
+
 ## Questions still open
-1. **Printed parts: A or B?** Does the challenge need parts that only *push and guide* objects on
-   the floor (A), or parts that *lift and carry* them (B)?
-2. **Are all the MacBook Airs Apple Silicon (2020 or newer)?** If some are older Intel models, Phase 0
-   tests one of those too.
-3. **Game objects:** the block and ball sizes (and ball weight) once the challenge is designed.
-4. **TETRIX motor model** (for example TorqueNADO), so the motor numbers are right.
+1. **The block's metal attachment:** a picture (shape, size, how high it sits) so the hook rule
+   matches it.
+2. **Game objects:** the block and ball sizes (and ball weight) once the challenge is designed.
 
 ## Prior art
 - [Autodesk Synthesis](https://github.com/Autodesk/synthesis): free, open-source 3D simulator for

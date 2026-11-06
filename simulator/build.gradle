@@ -7,11 +7,40 @@
  *
  * The simulator compiles the team's code from TeamCode/src/main/java (the lessons, missions,
  * and students folders) by itself every time you press INIT, so there is nothing else to build.
+ *
+ * Two parts:
+ *   src/main  the simulator and its copy of the FTC classes. Java 8, like the robot, because
+ *             students' code is compiled against these classes.
+ *   src/fx    the 3D view (JavaFX). Java 17. Optional: without it, the simulator is 2D only.
  */
 
 plugins {
     id 'java'
     id 'application'
+}
+
+// JavaFX has a different download for each kind of computer.
+def javafxVersion = '21.0.6'
+def javafxPlatform = {
+    def os = System.getProperty('os.name').toLowerCase()
+    def arm = System.getProperty('os.arch').toLowerCase().contains('aarch64')
+    if (os.contains('mac')) return arm ? 'mac-aarch64' : 'mac'
+    if (os.contains('win')) return 'win'
+    return arm ? 'linux-aarch64' : 'linux'
+}()
+
+sourceSets {
+    fx {
+        java.srcDir 'src/fx/java'
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+dependencies {
+    ['base', 'graphics', 'controls', 'swing'].each { name ->
+        fxImplementation "org.openjfx:javafx-${name}:${javafxVersion}:${javafxPlatform}"
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -21,11 +50,16 @@ tasks.withType(JavaCompile).configureEach {
     options.compilerArgs << '-Xlint:-options'
 }
 
+tasks.named('compileFxJava', JavaCompile) {
+    options.release = 17
+}
+
 application {
     mainClass = 'robotsim.SimulatorMain'
 }
 
 tasks.named('run', JavaExec) {
+    classpath = sourceSets.fx.runtimeClasspath
     systemProperty 'robotsim.teamcode', file('../TeamCode/src/main/java').absolutePath
     workingDir = rootProject.projectDir
 }
