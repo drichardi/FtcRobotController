@@ -1,6 +1,6 @@
 # Plan: 3D Simulator and Robot Builder
 
-**Branch:** `sim-3d` · **Status:** Phases 0, 1, and 3 built (Phase 2 came with Phase 0); waiting for a MacBook Air check
+**Branch:** `sim-3d` · **Status:** Phases 0–4 built; waiting for a MacBook Air check
 
 ## The idea
 Students build a robot from a parts menu, including **their own 3D-printed parts**, wire it to
@@ -197,7 +197,7 @@ itself and the 2D simulator is unchanged.
 | 1 | RobotModel | World, both views, and the hardware map read a `RobotModel` instead of constants; CourseBot is one model. (CourseBot's design *file* comes with Phase 4.) | M | **Built.** 18 missions and lessons match the old results (differences only within normal run-to-run timing variation) |
 | 2 | 3D view | 2D/3D toggle; field, walls, tape, blocks, CourseBot in 3D; cameras: overhead, chase, orbit | L | **Built with Phase 0.** Polish (shadows, nicer parts) can come later |
 | 3 | Game-object physics | Blocks and balls become real objects (dyn4j, choice A) in missions that turn them on; pinned objects stop the robot and press the bumper; the **hook rule** (hook on the arm, handle on the block); Mission 10 "Push the Ball" | M | **Built.** 16 physics checks pass; Mission 10 completes by keyboard; Missions 1–9 and the lessons unchanged |
-| 4 | Parts and designs | Parts catalog with icons, design files, parts list panel | M | CourseBot loads from its file; parts list shows its parts |
+| 4 | Parts and designs | Parts catalog with icons; `.robot.json` design files in `robots/`; the robot model is worked out from the design (speed, track, mirrored side, arm, claw, hook, sensor, wiring); design picker; parts list with CSV; 3D robot drawn from its parts | M | **Built.** CourseBot loads from `robots/CourseBot.robot.json` with the exact old numbers; 39 design checks pass; missions and lessons unchanged |
 | 5 | Builder | Build mode: catalog, ghost placement, snapping, rotate, undo, orbit camera | L | A student builds a driving robot from nothing in 15 minutes |
 | 6 | **Printed parts (STL)** | Add my part, attach point, size and weight checks, `robots/parts/` sharing | M | A printed funnel on a robot guides a ball where it should go |
 | 7 | Wiring and Robot Check | Click-to-wire; Expansion Hub; the hardware map uses the design's wiring; TETRIX Motor type; inspection panel | M | A miswired motor drives the wrong wheel; Robot Check explains every problem |

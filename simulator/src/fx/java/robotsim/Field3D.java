@@ -92,6 +92,7 @@ final class Field3D implements FieldView3D {
     // The robot's sizes, from the design it was built from
     private RobotModel builtRobot;
     private double robotLength, robotWidth, wheelRadius, ticksPerWheelTurn, armPivotX, armPivotHeight, armLength;
+    private double clawAlong;
     private final Rotate leftSpin = new Rotate(0, Rotate.Z_AXIS);
     private final Rotate rightSpin = new Rotate(0, Rotate.Z_AXIS);
     private Box fingerLeft, fingerRight, bumper, sensor;
@@ -316,6 +317,13 @@ final class Field3D implements FieldView3D {
         armLength = m.armLength;
         armPitch.setPivotX(armPivotX);
         armPitch.setPivotY(-armPivotHeight);
+        clawAlong = armLength;
+        fingerLeft = null;
+        fingerRight = null;
+        if (m.design != null) {
+            buildFromDesign(m.design);
+            return;
+        }
         PhongMaterial body = new PhongMaterial(ROBOT_BODY);
         PhongMaterial black = new PhongMaterial(Color.web("#141414"));
         PhongMaterial metal = new PhongMaterial(Color.web("#9aa3ad"));
@@ -377,6 +385,124 @@ final class Field3D implements FieldView3D {
         arm.getTransforms().add(armPitch);
 
         robot.getChildren().addAll(chassis, deck, wheels, hub, battery, bumper, arrow, arrowHead, sensor, tower, arm);
+    }
+
+    /**
+     * Builds the robot part by part from its design. Robot coordinates (x forward, y left, z up)
+     * become JavaFX (x, -z, y) inside the robot group. Parts on the arm swing with it.
+     */
+    private void buildFromDesign(RobotDesign design) {
+        Group arm = new Group();
+        arm.getTransforms().add(armPitch);
+        PhongMaterial metal = new PhongMaterial(Color.web("#9aa3ad"));
+        for (RobotDesign.Placement p : design.parts()) {
+            PartCatalog.PartType t = p.part;
+            PhongMaterial color = new PhongMaterial(Color.rgb((t.color >> 16) & 255, (t.color >> 8) & 255, t.color & 255));
+            RobotDesign.Placement on = p.on == null ? null : design.find(p.on);
+            boolean onArm = on != null && on.part.kind == PartCatalog.Kind.ARM;
+            if (onArm) {
+                double along = Double.isNaN(p.along) ? on.part.length : p.along;
+                if (t.kind == PartCatalog.Kind.CLAW) {
+                    clawAlong = along;
+                    fingerLeft = box(3, 2.4, 0.6, metal);
+                    fingerRight = box(3, 2.4, 0.6, metal);
+                    Box servo = box(1.2, 1.4, 2.0, new PhongMaterial(Color.web("#1f2328")));
+                    servo.getTransforms().add(new Translate(armPivotX + along, -armPivotHeight - 0.6, 0));
+                    arm.getChildren().addAll(fingerLeft, fingerRight, servo);
+                } else if (t.kind == PartCatalog.Kind.HOOK) {
+                    Box shank = box(0.4, 1.4, 0.4, metal);
+                    shank.getTransforms().add(new Translate(armPivotX + along, -armPivotHeight + 0.7, 0));
+                    Box tip = box(1.0, 0.4, 0.4, metal);
+                    tip.getTransforms().add(new Translate(armPivotX + along + 0.3, -armPivotHeight + 1.3, 0));
+                    arm.getChildren().addAll(shank, tip);
+                } else {
+                    Box b = box(t.length, t.height, t.width, color);
+                    b.getTransforms().add(new Translate(armPivotX + along, -armPivotHeight, 0));
+                    arm.getChildren().add(b);
+                }
+                continue;
+            }
+            Translate at = new Translate(p.x, -p.z, p.y);
+            Rotate turn = new Rotate(-p.turn, Rotate.Y_AXIS);
+            switch (t.kind) {
+                case CHASSIS: {
+                    Group frame = new Group();
+                    double rail = 1.2;
+                    frame.getChildren().addAll(
+                            placed(box(rail, t.height, t.width, color), t.length / 2 - rail / 2, 0, 0),
+                            placed(box(rail, t.height, t.width, color), -t.length / 2 + rail / 2, 0, 0),
+                            placed(box(t.length, t.height, rail, color), 0, 0, t.width / 2 - rail / 2),
+                            placed(box(t.length, t.height, rail, color), 0, 0, -t.width / 2 + rail / 2),
+                            placed(box(t.length - 2, 0.3, t.width - 2, new PhongMaterial(Color.web("#4b5361"))), 0, 0.6, 0));
+                    // White arrow on top showing the front
+                    PhongMaterial white = new PhongMaterial(Color.WHITE);
+                    frame.getChildren().addAll(placed(box(6, 0.3, 1.2, white), 1, -t.height / 2 - 0.2, 0),
+                            placed(box(1.6, 0.3, 3.4, white), 4.2, -t.height / 2 - 0.2, 0));
+                    frame.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(frame);
+                    break;
+                }
+                case ARM: {
+                    Box bar = box(t.length, t.height, t.width, color);
+                    bar.getTransforms().add(new Translate(armPivotX + t.length / 2, -armPivotHeight, 0));
+                    arm.getChildren().add(bar);
+                    break;
+                }
+                case WHEEL: {
+                    double r = t.number("diameter") / 2;
+                    Cylinder w = new Cylinder(r, t.width);
+                    w.setMaterial(color);
+                    Box spoke = box(r * 1.6, t.width + 0.1, 0.5, metal);
+                    Group g = new Group(w, spoke);
+                    g.getTransforms().addAll(new Translate(p.x, -r, p.y), turn, p.y < 0 ? rightSpin : leftSpin,
+                            new Rotate(90, Rotate.X_AXIS));
+                    robot.getChildren().add(g);
+                    break;
+                }
+                case MOTOR: {
+                    Cylinder can = new Cylinder(t.width / 2, t.length * 0.65);
+                    can.setMaterial(color);
+                    can.getTransforms().addAll(new Translate(-t.length * 0.17, 0, 0), new Rotate(90, Rotate.Z_AXIS));
+                    Box gearbox = box(t.length * 0.3, t.width, t.width, new PhongMaterial(Color.web("#c9a227")));
+                    gearbox.getTransforms().add(new Translate(t.length * 0.33, 0, 0));
+                    Group g = new Group(can, gearbox);
+                    g.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(g);
+                    break;
+                }
+                case TOUCH:
+                    bumper = box(t.length, t.height, t.width, bumperMaterial);
+                    bumper.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(bumper);
+                    break;
+                case COLOR:
+                    sensor = box(t.length, t.height, t.width, sensorMaterial);
+                    sensor.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(sensor);
+                    break;
+                case HUB: {
+                    Box hub = box(t.length, t.height, t.width, color);
+                    Box led = box(0.5, 0.2, 0.5, new PhongMaterial(Color.web("#2ea043")));
+                    led.getTransforms().add(new Translate(t.length / 2 - 0.6, -t.height / 2 - 0.1, t.width / 2 - 0.6));
+                    Group g = new Group(hub, led);
+                    g.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(g);
+                    break;
+                }
+                default: {
+                    Box b = box(t.length, t.height, t.width, color);
+                    b.getTransforms().addAll(at, turn);
+                    robot.getChildren().add(b);
+                    break;
+                }
+            }
+        }
+        robot.getChildren().add(arm);
+    }
+
+    private static Node placed(Node n, double x, double y, double z) {
+        n.getTransforms().add(new Translate(x, y, z));
+        return n;
     }
 
     private Node spoke(PhongMaterial m) {
@@ -550,9 +676,11 @@ final class Field3D implements FieldView3D {
         double elevation = s.robot.armElevationDeg(s.armDeg);
         armPitch.setAngle(-elevation);
         double spread = s.clawPos >= 0.5 ? 2.6 : 1.4;
-        double tipX = armPivotX + armLength + 1.2;
-        fingerLeft.getTransforms().setAll(new Translate(tipX, -armPivotHeight, spread));
-        fingerRight.getTransforms().setAll(new Translate(tipX, -armPivotHeight, -spread));
+        double tipX = armPivotX + clawAlong + 1.2;
+        if (fingerLeft != null) {
+            fingerLeft.getTransforms().setAll(new Translate(tipX, -armPivotHeight, spread));
+            fingerRight.getTransforms().setAll(new Translate(tipX, -armPivotHeight, -spread));
+        }
         bumperMaterial.setDiffuseColor(s.touch ? Color.web("#cf222e") : Color.web("#6e7781"));
         double shade = Math.max(0.05, Math.min(1, s.surface * 1.1));
         sensorMaterial.setDiffuseColor(Color.color(shade, shade, shade));

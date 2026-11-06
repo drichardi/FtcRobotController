@@ -20,6 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -79,6 +80,10 @@ final class SimFrame extends JFrame {
     private final JButton resetButton = new JButton("Reset robot");
     private final JButton reloadButton = new JButton("Reload code");
     private final JLabel robotLabel = new JLabel();
+    /** Robot designs from the repo's robots/ folder (CourseBot is always there). */
+    private final JComboBox<DesignChoice> designBox = new JComboBox<DesignChoice>();
+    private final JButton partsButton = new JButton("Parts list");
+    private boolean updatingDesigns = false;
     private final JCheckBox trailBox = new JCheckBox("Show trail", true);
     private final JCheckBox batteryBox = new JCheckBox("Low battery");
     private final JCheckBox gamepad2Box = new JCheckBox("Keys drive gamepad2");
@@ -104,6 +109,7 @@ final class SimFrame extends JFrame {
             missionBox.addItem(m);
         }
         reloadCode(null);
+        reloadDesigns(RobotConfig.COURSE_BOT);
         selectMission(missions.get(1), true);
 
         Timer timer = new Timer(15, new ActionListener() {
@@ -175,6 +181,28 @@ final class SimFrame extends JFrame {
         side.add(dsPanel);
 
         JPanel robotPanel = section("Robot");
+        JPanel designRow = new JPanel(new BorderLayout(6, 0));
+        designRow.add(new JLabel("Design:"), BorderLayout.WEST);
+        designBox.setFocusable(false);
+        designBox.setToolTipText("Robot designs from the robots folder. CourseBot is the course robot.");
+        designRow.add(designBox, BorderLayout.CENTER);
+        JPanel designButtons = new JPanel(new GridLayout(1, 2, 4, 0));
+        partsButton.setFocusable(false);
+        partsButton.setToolTipText("Every part this design uses, with pictures and counts.");
+        JButton refresh = new JButton("\u21bb");
+        refresh.setFocusable(false);
+        refresh.setToolTipText("Look for new or changed designs in the robots folder.");
+        refresh.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DesignChoice now = (DesignChoice) designBox.getSelectedItem();
+                reloadDesigns(now == null ? RobotConfig.COURSE_BOT : now.toString());
+            }
+        });
+        designButtons.add(partsButton);
+        designButtons.add(refresh);
+        designRow.add(designButtons, BorderLayout.EAST);
+        robotPanel.add(full(designRow));
         JPanel robotRow = new JPanel(new BorderLayout(8, 0));
         robotLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 11));
         robotRow.add(robotLabel, BorderLayout.CENTER);
@@ -333,6 +361,25 @@ final class SimFrame extends JFrame {
                 resetRobot();
             }
         });
+        designBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!updatingDesigns) {
+                    useDesign((DesignChoice) designBox.getSelectedItem());
+                }
+            }
+        });
+        partsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DesignChoice c = (DesignChoice) designBox.getSelectedItem();
+                if (c != null && c.design != null) {
+                    PartsListDialog.show(SimFrame.this, c.design);
+                } else if (c != null) {
+                    useDesign(c);
+                }
+            }
+        });
         reloadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -372,6 +419,126 @@ final class SimFrame extends JFrame {
                 }
             }
         });
+    }
+
+    // ------------------------------------------------------------------ robot designs
+
+    /** One entry in the design list: a design from a file (or built in), or a file with a problem. */
+    static final class DesignChoice {
+        final String name;
+        final RobotDesign design;
+        final String problem;
+
+        DesignChoice(String name, RobotDesign design, String problem) {
+            this.name = name;
+            this.design = design;
+            this.problem = problem;
+        }
+
+        @Override
+        public String toString() {
+            return problem == null ? name : name + "  (has a problem)";
+        }
+    }
+
+    /** The repo's robots/ folder (TeamCode/src/main/java is four folders below the repo). */
+    private File robotsFolder() {
+        String override = System.getProperty("robotsim.robots");
+        if (override != null) {
+            return new File(override);
+        }
+        File repo = loader.root().getAbsoluteFile();
+        for (int i = 0; i < 4 && repo != null; i++) {
+            repo = repo.getParentFile();
+        }
+        return repo == null ? new File("robots") : new File(repo, "robots");
+    }
+
+    private void reloadDesigns(String keepName) {
+        List<DesignChoice> choices = new ArrayList<DesignChoice>();
+        boolean haveCourseBot = false;
+        File[] files = robotsFolder().listFiles();
+        if (files != null) {
+            java.util.Arrays.sort(files);
+            for (File f : files) {
+                if (!f.getName().endsWith(".robot.json")) {
+                    continue;
+                }
+                String name = f.getName().substring(0, f.getName().length() - ".robot.json".length());
+                try {
+                    RobotDesign d = RobotDesign.load(f);
+                    DesignModel.toModel(d);
+                    choices.add(new DesignChoice(d.name, d, null));
+                    haveCourseBot |= d.name.equals(RobotConfig.COURSE_BOT);
+                } catch (RobotDesign.DesignException e) {
+                    choices.add(new DesignChoice(name, null, f.getName() + ": " + e.getMessage()));
+                }
+            }
+        }
+        if (!haveCourseBot) {
+            choices.add(0, new DesignChoice(RobotConfig.COURSE_BOT, RobotDesign.courseBot(), null));
+        }
+        updatingDesigns = true;
+        designBox.removeAllItems();
+        DesignChoice keep = null;
+        for (DesignChoice c : choices) {
+            designBox.addItem(c);
+            if (c.name.equals(keepName) && c.problem == null) {
+                keep = c;
+            }
+        }
+        designBox.setSelectedItem(keep != null ? keep : choices.get(0));
+        updatingDesigns = false;
+        useDesign((DesignChoice) designBox.getSelectedItem());
+    }
+
+    /** Puts the chosen design on the field. A design with a problem explains it instead. */
+    private void useDesign(DesignChoice choice) {
+        if (choice == null) {
+            return;
+        }
+        if (choice.problem != null) {
+            showCurrentDesign();
+            javax.swing.JOptionPane.showMessageDialog(this, "This design can't be used yet:\n\n" + choice.problem,
+                    "Robot design", javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        RobotModel model;
+        try {
+            model = choice.design.name.equals(RobotConfig.COURSE_BOT) && choice.design.toJsonText()
+                    .equals(RobotDesign.courseBot().toJsonText()) ? RobotModel.courseBot() : DesignModel.toModel(choice.design);
+        } catch (RobotDesign.DesignException e) {
+            showCurrentDesign();
+            javax.swing.JOptionPane.showMessageDialog(this, e.getMessage(), "Robot design",
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (model != world.robot) {
+            runner.stop();
+            world.setRobot(model, (Mission) missionBox.getSelectedItem() != null
+                    ? (Mission) missionBox.getSelectedItem() : missions.get(1));
+        }
+    }
+
+    /** After a design is refused, the list shows the robot that's really on the field. */
+    private void showCurrentDesign() {
+        updatingDesigns = true;
+        for (int i = 0; i < designBox.getItemCount(); i++) {
+            DesignChoice c = designBox.getItemAt(i);
+            if (c.problem == null && c.name.equals(world.robot.name)) {
+                designBox.setSelectedIndex(i);
+            }
+        }
+        updatingDesigns = false;
+    }
+
+    /** For tests: picks a design by name. */
+    void chooseDesign(String name) {
+        for (int i = 0; i < designBox.getItemCount(); i++) {
+            if (designBox.getItemAt(i).name.equals(name)) {
+                designBox.setSelectedIndex(i);
+            }
+        }
     }
 
     private void resetRobot() {

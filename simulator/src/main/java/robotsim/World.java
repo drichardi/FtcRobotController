@@ -29,8 +29,8 @@ public final class World {
     static final double HOOK_CATCH = 1.5;
 
     /** The robot's design. */
-    final RobotModel robot;
-    final MotorState left, right, arm;
+    RobotModel robot;
+    MotorState left, right, arm;
 
     // pose of the robot's center
     double x, y, headingRad;
@@ -101,6 +101,11 @@ public final class World {
     }
 
     World(Mission mission, RobotModel robot) {
+        setRobot(robot, mission);
+    }
+
+    /** Swaps in a different robot design and puts it at the mission's start. */
+    synchronized void setRobot(RobotModel robot, Mission mission) {
         this.robot = robot;
         double ticksPerInch = robot.ticksPerInch();
         left = new MotorState("left wheels", robot.leftMount, ticksPerInch, 1.0 / (2 * ticksPerInch), 10);
