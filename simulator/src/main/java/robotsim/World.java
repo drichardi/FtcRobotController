@@ -12,7 +12,8 @@ import java.util.Random;
 /**
  * The simulated field and robot. Units are inches, seconds, and degrees.
  *
- * The robot matches the course's robot configuration: two drive motors (the left one is
+ * The robot's size, drivetrain, arm, claw, and sensors come from a RobotModel (CourseBot, the
+ * course robot, unless another design is given). CourseBot has two drive motors (the left one is
  * mounted mirrored, so programs must reverse it), an arm motor with a touch sensor at the top,
  * and a claw servo. The touch sensor is ALSO pressed when the front bumper touches a wall,
  * so it works for both the arm lessons and the bumper lessons. Space presses it by hand.
@@ -21,23 +22,11 @@ import java.util.Random;
  */
 public final class World {
 
-    // ---- robot geometry and physics ----
     public static final double FIELD = 144;
-    public static final double ROBOT = 18;
-    public static final double TRACK_WIDTH = 15;
-    /** Wheel speed at full power, inches per second. */
-    public static final double MAX_SPEED = 40;
-    /** goBILDA 312 RPM motor (537.7 ticks/rev) with 96 mm wheels: same numbers as Lesson 12. */
-    public static final double TICKS_PER_INCH = 537.7 / (3.78 * Math.PI);
-    public static final double ARM_MAX_DEG = 100;
-    public static final double ARM_LIMIT_DEG = 95;
-    public static final double ARM_SPEED_DEG = 120;
-    public static final double ARM_TICKS_PER_DEG = 5;
-    public static final double CLAW_SPEED = 2.0;
 
-    final MotorState left = new MotorState("left_drive", -1, TICKS_PER_INCH, 1.0 / (2 * TICKS_PER_INCH), 10);
-    final MotorState right = new MotorState("right_drive", +1, TICKS_PER_INCH, 1.0 / (2 * TICKS_PER_INCH), 10);
-    final MotorState arm = new MotorState("arm", +1, ARM_TICKS_PER_DEG, 1.0 / (10 * ARM_TICKS_PER_DEG), 5);
+    /** The robot's design. */
+    final RobotModel robot;
+    final MotorState left, right, arm;
 
     // pose of the robot's center
     double x, y, headingRad;
@@ -55,11 +44,10 @@ public final class World {
     final List<double[]> trail = new ArrayList<double[]>();
     /** Tape on the floor for this run (a mission's tape may be shifted on each reset). */
     final List<Mission.Tape> tapes = new ArrayList<Mission.Tape>();
-    private final Random random = new Random();
+    /** Tape positions and sensor noise. Tests can fix the seed with -Drobotsim.seed=... */
+    private final Random random = new Random(Long.getLong("robotsim.seed", System.nanoTime()));
 
     // ---- color sensor (REV Color Sensor V3, at the front of the robot, looking down) ----
-    /** Where the sensor sits, in robot coordinates: 7 inches in front of the center. */
-    static final double SENSOR_AHEAD = 7.0;
     /** The gray foam tiles reflect this much red, green, and blue light. */
     static final float[] FLOOR = {0.30f, 0.31f, 0.33f};
     float colorGain = 1.0f;
@@ -85,6 +73,15 @@ public final class World {
     }
 
     public World(Mission mission) {
+        this(mission, RobotModel.courseBot());
+    }
+
+    World(Mission mission, RobotModel robot) {
+        this.robot = robot;
+        double ticksPerInch = robot.ticksPerInch();
+        left = new MotorState("left wheels", robot.leftMount, ticksPerInch, 1.0 / (2 * ticksPerInch), 10);
+        right = new MotorState("right wheels", robot.rightMount, ticksPerInch, 1.0 / (2 * ticksPerInch), 10);
+        arm = new MotorState("arm", +1, robot.armTicksPerDeg, 1.0 / (10 * robot.armTicksPerDeg), 5);
         reset(mission);
     }
 
@@ -161,7 +158,7 @@ public final class World {
     private void stepDrive(double dt) {
         for (MotorState m : new MotorState[]{left, right}) {
             double v = m.voltage();
-            double target = v * m.mount * MAX_SPEED * battery;
+            double target = v * m.mount * robot.maxSpeed * battery;
             double tau;
             if (Math.abs(v) > 0.001) {
                 tau = 0.1;
@@ -173,7 +170,7 @@ public final class World {
         }
         double vL = left.speed, vR = right.speed;
         double v = (vL + vR) / 2.0;
-        double omega = (vR - vL) / TRACK_WIDTH;
+        double omega = (vR - vL) / robot.trackWidth;
         double newHeading = headingRad + omega * dt;
         double midHeading = headingRad + omega * dt / 2.0;
         double nx = x + v * Math.cos(midHeading) * dt;
@@ -192,8 +189,8 @@ public final class World {
         x = nx;
         y = ny;
         headingRad = newHeading;
-        left.rawTicks += vL * left.mount * TICKS_PER_INCH * dt;
-        right.rawTicks += vR * right.mount * TICKS_PER_INCH * dt;
+        left.rawTicks += vL * left.mount * left.ticksPerUnit * dt;
+        right.rawTicks += vR * right.mount * right.ticksPerUnit * dt;
         for (Block b : blocks) {
             if (b.held) {
                 double[] p = clawPoint();
@@ -207,19 +204,19 @@ public final class World {
         double v = arm.voltage();
         double rate;
         if (Math.abs(v) > 0.001) {
-            rate = v * ARM_SPEED_DEG * battery;
+            rate = v * robot.armSpeedDeg * battery;
         } else {
             // With FLOAT, gravity slowly pulls the arm down. BRAKE holds it.
             rate = arm.zeroPowerBehavior == DcMotor.ZeroPowerBehavior.BRAKE ? 0 : -40;
         }
-        armDeg = MotorState.clip(armDeg + rate * dt, 0, ARM_MAX_DEG);
+        armDeg = MotorState.clip(armDeg + rate * dt, 0, robot.armMaxDeg);
         arm.speed = rate;
-        arm.rawTicks = armDeg * ARM_TICKS_PER_DEG;
+        arm.rawTicks = armDeg * arm.ticksPerUnit;
     }
 
     private void stepClaw(double dt) {
         boolean wasOpen = clawPos >= 0.5;
-        double step = CLAW_SPEED * dt;
+        double step = robot.clawSpeed * dt;
         if (Math.abs(clawTarget - clawPos) <= step) {
             clawPos = clawTarget;
         } else {
@@ -272,7 +269,8 @@ public final class World {
     // ---- sensors ----
 
     double[] sensorPoint() {
-        return new double[]{x + SENSOR_AHEAD * Math.cos(headingRad), y + SENSOR_AHEAD * Math.sin(headingRad)};
+        double ahead = robot.colorSensorAhead;
+        return new double[]{x + ahead * Math.cos(headingRad), y + ahead * Math.sin(headingRad)};
     }
 
     /**
@@ -314,7 +312,7 @@ public final class World {
     }
 
     boolean touchPressed() {
-        return bumperContact || armDeg >= ARM_LIMIT_DEG || manualTouch;
+        return bumperContact || armDeg >= robot.armLimitDeg || manualTouch;
     }
 
     /** How fast the robot is moving forward or back (a spin in place is 0). */
@@ -329,21 +327,21 @@ public final class World {
     // ---- geometry ----
 
     private Area robotShape(double cx, double cy, double heading) {
-        return shape(cx, cy, heading, -ROBOT / 2, -ROBOT / 2, ROBOT, ROBOT);
+        return shape(cx, cy, heading, -robot.length / 2, -robot.width / 2, robot.length, robot.width);
     }
 
     /** A thin strip along the front of the robot: the bumper. */
     private Area frontStrip() {
-        return shape(x, y, headingRad, ROBOT / 2, -ROBOT / 2 + 1, 1.5, ROBOT - 2);
+        return shape(x, y, headingRad, robot.length / 2, -robot.width / 2 + 1, 1.5, robot.width - 2);
     }
 
     private Area grabZone() {
-        return shape(x, y, headingRad, ROBOT / 2 - 2, -5, 9, 10);
+        return shape(x, y, headingRad, robot.length / 2 - 2, -5, 9, 10);
     }
 
     /** Where a held block sits: just in front of the claw. */
     private double[] clawPoint() {
-        double d = ROBOT / 2 + 3;
+        double d = robot.length / 2 + 3;
         return new double[]{x + d * Math.cos(headingRad), y + d * Math.sin(headingRad)};
     }
 
@@ -399,6 +397,7 @@ public final class World {
         s.completeSeconds = (completeNanos >= 0 && startNanos >= 0) ? (completeNanos - startNanos) / 1e9 : -1;
         s.failure = failure;
         s.mission = mission;
+        s.robot = robot;
         s.tapes = new ArrayList<Mission.Tape>(tapes);
         double[] sp = sensorPoint();
         s.sensorX = sp[0];
@@ -424,6 +423,7 @@ public final class World {
         public String failure;
         public List<double[]> blocks, trail;
         public Mission mission;
+        public RobotModel robot;
         public List<Mission.Tape> tapes;
         public double sensorX, sensorY, brightness, surface;
         public float colorGain;

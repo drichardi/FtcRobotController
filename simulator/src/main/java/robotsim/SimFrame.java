@@ -363,6 +363,13 @@ final class SimFrame extends JFrame {
             public void windowDeactivated(WindowEvent e) {
                 keyboard.releaseAll();
             }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (view3d != null) {
+                    view3d.close();
+                }
+            }
         });
     }
 

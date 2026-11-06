@@ -1,6 +1,6 @@
 # Plan: 3D Simulator and Robot Builder
 
-**Branch:** `sim-3d` · **Status:** Phase 0 and Phase 1 in progress
+**Branch:** `sim-3d` · **Status:** Phases 0 and 1 built; waiting for a MacBook Air check
 
 ## The idea
 Students build a robot from a parts menu, including **their own 3D-printed parts**, wire it to
@@ -194,7 +194,7 @@ itself and the 2D simulator is unchanged.
 | # | Phase | Delivers | Size | Done when |
 |---|---|---|---|---|
 | **0** | **Test (go/no-go)** | A 3D view inside the simulator window, with a 2D/3D toggle, three cameras, and an fps counter. (Choice A plus hooks is decided, so no full-3D physics test is needed.) | S–M | **Built.** 63 fps on Windows; waiting for a MacBook Air check |
-| 1 | RobotModel | World reads a model instead of constants; CourseBot as a design file | M | Every mission, lesson, and harness result identical to today |
+| 1 | RobotModel | World, both views, and the hardware map read a `RobotModel` instead of constants; CourseBot is one model. (CourseBot's design *file* comes with Phase 4.) | M | **Built.** 18 missions and lessons match the old results (differences only within normal run-to-run timing variation) |
 | 2 | 3D view | 2D/3D toggle; field, walls, tape, blocks, CourseBot in 3D; cameras: overhead, chase, orbit | L | Every mission plays the same in both views |
 | 3 | Game-object physics | Blocks and balls become physical objects (choice A or B); missions say which objects are on the field | M | The robot pushes a ball; existing missions still pass |
 | 4 | Parts and designs | Parts catalog with icons, design files, parts list panel | M | CourseBot loads from its file; parts list shows its parts |
